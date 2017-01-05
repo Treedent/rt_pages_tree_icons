@@ -1,0 +1,43 @@
+.t3js-module-docheader {
+    background:linear-gradient(to bottom, #ededed , #f7f7f7);
+}
+div.icon-set ul {
+    margin-right: -5px;
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0
+}
+div.icon-set li {
+    background-color: rgba(240, 240, 240,.5);
+    float: left;
+    width: 20%;
+    border: 2px solid #fff;
+    padding: 20px 10px;
+    height: 140px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out;
+}
+div.icon-set li img[src*=".gif"] {
+    width:48px;
+    height:48px
+}
+div.icon-set li:hover {
+    background-color: rgba(255, 135, 0,.1);
+    box-shadow: 0 5px 15px rgba(255, 135, 0, 0.4);
+    cursor: pointer;
+}
+div.icon-set li p {
+    margin: 10px;
+    font-size:1.15em
+}
+div.icon-set li.icon-current {
+    background-color: rgba(255, 135, 0,.3);
+    box-shadow: 0 5px 15px rgba(255, 135, 0, 0.4);
+}
+
+div.cmspaca {
+    float:left;
+    clear:right;
+    margin:7px;
+}
+

@@ -1,0 +1,12 @@
+# Module configuration
+module.tx_rtpagestreeicons_web_RtPagesTreeIconsMod1 {
+    view {
+
+		templateRootPaths.0 = EXT:rt_pages_tree_icons/Resources/Private/Templates/
+		templateRootPaths.1 = {$module.tx_rtpagestreeicons_web_mod1.view.templateRootPath}
+		partialRootPaths.0 = EXT:rt_pages_tree_icons/Resources/Private/Partials/
+		partialRootPaths.1 = {$module.tx_rtpagestreeicons_web_mod1.view.partialRootPath}
+		layoutRootPaths.0 = EXT:rt_pages_tree_icons/Resources/Private/Layouts/
+		layoutRootPaths.1 = {$module.tx_rtpagestreeicons_web_mod1.view.layoutRootPath}
+	}
+}
