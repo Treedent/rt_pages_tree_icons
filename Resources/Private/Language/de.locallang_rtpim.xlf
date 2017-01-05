@@ -9,15 +9,15 @@
 			</trans-unit>
 			<trans-unit id="mlang_labels_tabdescr">
 				<source>Manage the page icons</source>
-				<target>Verwalten die Seitensymbole</target>
+				<target>Seitensymbole verwalten</target>
 			</trans-unit>
             <trans-unit id="module_title">
                 <source>Page icon changer</source>
-                <target>Seite Symbolwechsler</target>
+                <target>Seitensymbole ändern</target>
             </trans-unit>
             <trans-unit id="changePageIcon">
                 <source>Change this page icon</source>
-                <target>Veränderung diese seite symbol</target>
+                <target>Icon für diese Seite ändern</target>
             </trans-unit>
             <trans-unit id="defaultPageType">
                 <source>Default page type</source>
@@ -102,67 +102,67 @@
             </trans-unit>
             <trans-unit id="rfolderb">
                  <source>Rounded folder black</source>
-                 <target>Ordner runde schwarz</target>
+                 <target>Ordner abgerundet schwarz</target>
             </trans-unit>
             <trans-unit id="rfolderblt">
                  <source>Rounded folder blue light</source>
-                 <target>Ordner runde hellblau</target>
+                 <target>Ordner abgerundet hellblau</target>
             </trans-unit>
             <trans-unit id="rfolderbl">
                  <source>Rounded folder blue</source>
-                 <target>Ordner runde blau</target>
+                 <target>Ordner abgerundet blau</target>
             </trans-unit>
             <trans-unit id="rfoldergb">
                 <source>Rounded folder gray brighter</source>
-                <target>Ordner runde grau heller</target>
+                <target>Ordner abgerundet grau heller</target>
             </trans-unit>
             <trans-unit id="rfoldergd">
                 <source>Rounded folder gray dark</source>
-                <target>Ordner runde dunkelgrau</target>
+                <target>Ordner abgerundet dunkelgrau</target>
             </trans-unit>
             <trans-unit id="rfoldergl">
                 <source>Rounded folder gray light</source>
-                <target>Ordner runde hellgrau</target>
+                <target>Ordner abgerundet hellgrau</target>
             </trans-unit>
             <trans-unit id="rfolderg">
                 <source>Rounded folder gray</source>
-                <target>Ordner runde grau</target>
+                <target>Ordner abgerundet grau</target>
             </trans-unit>
             <trans-unit id="rfoldergrl">
                 <source>Rounded folder green light</source>
-                <target>Ordner runde hellgrün</target>
+                <target>Ordner abgerundet hellgrün</target>
             </trans-unit>
             <trans-unit id="rfoldergr">
                 <source>Rounded folder green</source>
-                <target>Ordner runde grün</target>
+                <target>Ordner abgerundet grün</target>
             </trans-unit>
             <trans-unit id="rfoldero">
                 <source>Rounded folder orange</source>
-                <target>Ordner runde orange</target>
+                <target>Ordner abgerundet orange</target>
             </trans-unit>
             <trans-unit id="rfolderp">
                  <source>Rounded folder purple</source>
-                 <target>Ordner runde lila</target>
+                 <target>Ordner abgerundet lila</target>
             </trans-unit>
             <trans-unit id="rfolderrl">
                  <source>Rounded folder red light</source>
-                 <target>Ordner runde hellrot</target>
+                 <target>Ordner abgerundet hellrot</target>
             </trans-unit>
             <trans-unit id="rfolderr">
                  <source>Rounded folder red</source>
-                 <target>Ordner runde rot</target>
+                 <target>Ordner abgerundet rot</target>
             </trans-unit>
             <trans-unit id="rfolderw">
                  <source>Rounded folder white</source>
-                 <target>Ordner runde weiß</target>
+                 <target>Ordner abgerundet weiß</target>
             </trans-unit>
             <trans-unit id="rfolderyl">
                  <source>Rounded folder yellow light</source>
-                 <target>Ordner runde hellgelb</target>
+                 <target>Ordner abgerundet hellgelb</target>
             </trans-unit>
             <trans-unit id="rfoldery">
                  <source>Rounded folder yellow</source>
-                 <target>Ordner runde gelb</target>
+                 <target>Ordner abgerundet gelb</target>
             </trans-unit>
 
             <trans-unit id="pageb">
@@ -240,7 +240,7 @@
             </trans-unit>
             <trans-unit id="appts">
                 <source>TYPOSCRIPT logo</source>
-                <target>TYPOSCRIPT logo</target>
+                <target>TYPOSCRIPT Logo</target>
             </trans-unit>
             <trans-unit id="apptemplates">
                 <source>Templates</source>
@@ -252,7 +252,7 @@
             </trans-unit>
             <trans-unit id="appgride">
                 <source>Grid elements</source>
-                <target>Grid element</target>
+                <target>Grid Elemente</target>
             </trans-unit>
             <trans-unit id="symbshortcut">
                 <source>Shortcut</source>
@@ -260,7 +260,7 @@
             </trans-unit>
             <trans-unit id="symbform">
                 <source>Form</source>
-                <target>Form</target>
+                <target>Formular</target>
             </trans-unit>
             <trans-unit id="symbdesktop">
                 <source>Desktop</source>
@@ -292,7 +292,7 @@
             </trans-unit>
             <trans-unit id="symbmail">
                 <source>Mail</source>
-                <target>e-Mail</target>
+                <target>E-Mail</target>
             </trans-unit>
             <trans-unit id="symbbooks">
                 <source>Books</source>
@@ -321,11 +321,11 @@
 
             <trans-unit id="symbarob">
                 <source>Arobase black</source>
-                <target>Arobases schwarz</target>
+                <target>at-Zeichen schwarz</target>
             </trans-unit>
             <trans-unit id="symbaroo">
                 <source>Arobase orange</source>
-                <target>Arobases orange</target>
+                <target>at-Zeichen orange</target>
             </trans-unit>
             <trans-unit id="symbastb">
                 <source>Asterisk black</source>
@@ -439,107 +439,107 @@
 
             <trans-unit id="alphabeta">
                 <source>A letter</source>
-                <target>Schreiben A</target>
+                <target>Buchstabe A</target>
             </trans-unit>
             <trans-unit id="alphabetb">
                  <source>B letter</source>
-                 <target>Schreiben B</target>
+                 <target>Buchstabe B</target>
              </trans-unit>
             <trans-unit id="alphabetc">
                  <source>C letter</source>
-                 <target>Schreiben C</target>
+                 <target>Buchstabe C</target>
              </trans-unit>
             <trans-unit id="alphabetd">
                  <source>D letter</source>
-                 <target>Schreiben D</target>
+                 <target>Buchstabe D</target>
              </trans-unit>
             <trans-unit id="alphabete">
                  <source>E letter</source>
-                 <target>Schreiben E</target>
+                 <target>Buchstabe E</target>
              </trans-unit>
             <trans-unit id="alphabetf">
                  <source>F letter</source>
-                 <target>Schreiben F</target>
+                 <target>Buchstabe F</target>
              </trans-unit>
             <trans-unit id="alphabetg">
                  <source>G letter</source>
-                 <target>Schreiben G</target>
+                 <target>Buchstabe G</target>
              </trans-unit>
             <trans-unit id="alphabeth">
                  <source>H letter</source>
-                 <target>Schreiben H</target>
+                 <target>Buchstabe H</target>
              </trans-unit>
             <trans-unit id="alphabeti">
                  <source>I letter</source>
-                 <target>Schreiben I</target>
+                 <target>Buchstabe I</target>
              </trans-unit>
             <trans-unit id="alphabetj">
                  <source>J letter</source>
-                 <target>Schreiben J</target>
+                 <target>Buchstabe J</target>
              </trans-unit>
             <trans-unit id="alphabetk">
                  <source>K letter</source>
-                 <target>Schreiben K</target>
+                 <target>Buchstabe K</target>
              </trans-unit>
             <trans-unit id="alphabetl">
                  <source>L letter</source>
-                 <target>Schreiben L</target>
+                 <target>Buchstabe L</target>
              </trans-unit>
             <trans-unit id="alphabetm">
                  <source>M letter</source>
-                 <target>Schreiben M</target>
+                 <target>Buchstabe M</target>
              </trans-unit>
             <trans-unit id="alphabetn">
                  <source>N letter</source>
-                 <target>Schreiben N</target>
+                 <target>Buchstabe N</target>
              </trans-unit>
             <trans-unit id="alphabeto">
                  <source>O letter</source>
-                 <target>Schreiben O</target>
+                 <target>Buchstabe O</target>
              </trans-unit>
             <trans-unit id="alphabetp">
                  <source>P letter</source>
-                 <target>Schreiben P</target>
+                 <target>Buchstabe P</target>
              </trans-unit>
             <trans-unit id="alphabetq">
                  <source>Q letter</source>
-                 <target>Schreiben Q</target>
+                 <target>Buchstabe Q</target>
              </trans-unit>
             <trans-unit id="alphabetr">
                  <source>R letter</source>
-                 <target>Schreiben R</target>
+                 <target>Buchstabe R</target>
              </trans-unit>
             <trans-unit id="alphabets">
                  <source>S letter</source>
-                 <target>Schreiben S</target>
+                 <target>Buchstabe S</target>
              </trans-unit>
             <trans-unit id="alphabett">
                  <source>T letter</source>
-                 <target>Schreiben T</target>
+                 <target>Buchstabe T</target>
              </trans-unit>
             <trans-unit id="alphabetu">
                  <source>U letter</source>
-                 <target>Schreiben U</target>
+                 <target>Buchstabe U</target>
              </trans-unit>
             <trans-unit id="alphabetv">
                  <source>V letter</source>
-                 <target>Schreiben V</target>
+                 <target>Buchstabe V</target>
              </trans-unit>
             <trans-unit id="alphabetw">
                  <source>W letter</source>
-                 <target>Schreiben W</target>
+                 <target>Buchstabe W</target>
              </trans-unit>
             <trans-unit id="alphabetx">
                  <source>X letter</source>
-                 <target>Schreiben X</target>
+                 <target>Buchstabe X</target>
              </trans-unit>
             <trans-unit id="alphabety">
                  <source>Y letter</source>
-                 <target>Schreiben Y</target>
+                 <target>Buchstabe Y</target>
              </trans-unit>
             <trans-unit id="alphabetz">
                  <source>Z letter</source>
-                 <target>Schreiben Z</target>
+                 <target>Buchstabe Z</target>
              </trans-unit>
             <trans-unit id="number0">
                <source>0 number</source>
@@ -547,39 +547,39 @@
             </trans-unit>
             <trans-unit id="number1">
                <source>1 number</source>
-               <target>abbildung 1</target>
+               <target>Ziffer 1</target>
             </trans-unit>
             <trans-unit id="number2">
                <source>2 number</source>
-               <target>abbildung 2</target>
+               <target>Ziffer 2</target>
             </trans-unit>
             <trans-unit id="number3">
                <source>3 number</source>
-               <target>abbildung 3</target>
+               <target>Ziffer 3</target>
             </trans-unit>
             <trans-unit id="number4">
                <source>4 number</source>
-               <target>abbildung 4</target>
+               <target>Ziffer 4</target>
             </trans-unit>
             <trans-unit id="number5">
                <source>5 number</source>
-               <target>abbildung 5</target>
+               <target>Ziffer 5</target>
             </trans-unit>
             <trans-unit id="number6">
                <source>6 number</source>
-               <target>abbildung 6</target>
+               <target>Ziffer 6</target>
             </trans-unit>
             <trans-unit id="number7">
                <source>7 number</source>
-               <target>abbildung 7</target>
+               <target>Ziffer 7</target>
             </trans-unit>
             <trans-unit id="number8">
                <source>8 number</source>
-               <target>abbildung 8</target>
+               <target>Ziffer 8</target>
             </trans-unit>
             <trans-unit id="number9">
                <source>9 number</source>
-               <target>abbildung 9</target>
+               <target>Ziffer 9</target>
             </trans-unit>
 		</body>
 	</file>
