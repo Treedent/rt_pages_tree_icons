@@ -1,13 +1,1 @@
-<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="16px" height="16px" viewBox="0 0 16 16" zoomAndPan="disable" preserveAspectRatio="xmaxYmax">
-<g transform="matrix(1.1210654,0,0,1.1210654,-0.9685232,-0.9685232)">
-<g id="g4137-5">
-<path d="M 1,1 15,1 15,15 1,15 Z" style="fill:#ffffff;stroke-linecap:square" />
-<path d="M 1,1 1,15 15,15 15,1 Z M 2,2 14,2 14,14 2,14 Z" style="fill:#ff8700;stroke-linecap:square" />
-</g>
-</g>
-<path d="m 2.394673,2.394673 11.210654,0 0,3.3631962 -11.210654,0 0,-3.3631962 z" style="fill:#ff8700" />
-<path d="m 2.394673,6.8789346 3.3631962,0 0,6.7263924 -3.3631962,0 0,-6.7263924 z" style="fill:#ff8700" />
-<path d="m 6.8789346,6.8789346 6.7263924,0 0,6.7263924 -6.7263924,0 0,-6.7263924 z" style="fill:#ffc857" />
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" zoomAndPan="disable" preserveAspectRatio="xmaxYmax"><path d="M.153.153h15.694v15.694H.153z" fill="#fff"/><path d="M.153.153v15.694h15.694V.153zm1.12 1.12h13.453v13.453H1.274z" fill="#ff8700"/><path d="M2.395 2.395h11.21v3.363H2.395V2.395zM2.395 6.88h3.363v6.725H2.395V6.88z" fill="#ff8700"/><path d="M6.88 6.88h6.725v6.725H6.88V6.88z" fill="#ffc857"/></svg>

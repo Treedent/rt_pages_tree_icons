@@ -1,8 +1,1 @@
-<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="16px" height="16px" viewBox="0 0 16 16" zoomAndPan="disable" preserveAspectRatio="xmaxYmax">
-<path d="M 0,0 16,0 16,16 0,16 Z" style="fill:#ff8700"/>
-<g transform="translate(-13.603201,-561.25671)">
-<path style="fill:#fff" d="m 18.653201,576.25671 0,-1.5 2.42,0 0,-10.92 -2.62,1.04 0,-1.62 2.42,-1 1.9,0 0,12.5 1.98,0 0,1.5 -6.1,0 z"/>
-</g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" zoomAndPan="disable" preserveAspectRatio="xmaxYmax"><path d="M0 0h16v16H0z" fill="#ff8700"/><path d="M5.05 15v-1.5h2.42V2.58L4.85 3.62V2l2.42-1h1.9v12.5h1.98V15h-6.1z" fill="#fff"/></svg>

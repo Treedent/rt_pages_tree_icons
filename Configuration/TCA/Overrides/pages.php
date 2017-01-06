@@ -2,7 +2,6 @@
 defined('TYPO3_MODE') or die();
 
 use \TYPO3\CMS\Extbase\Utility\LocalizationUtility;
-use \TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 /* * *************************************************************
  *  Copyright notice
@@ -99,6 +98,7 @@ $pageIcons = [
     [$langFile .'symbdesktop',          'symbdesktop',          'apps-pagetree-ux-desktop'],
     [$langFile .'symbtablet',           'symbtablet',           'apps-pagetree-ux-tablet'],
     [$langFile .'symbmobile',           'symbmobile',           'apps-pagetree-ux-mobile'],
+    [$langFile .'symbhome',             'symbhome',             'apps-pagetree-home'],
     [$langFile .'symbvideo',            'symbvideo',            'apps-pagetree-video'],
     [$langFile .'symbaudio',            'symbaudio',            'apps-pagetree-audio'],
     [$langFile .'symbcomments',         'symbcomments',         'apps-pagetree-comments'],
@@ -107,7 +107,11 @@ $pageIcons = [
     [$langFile .'symbbooks',            'symbbooks',            'apps-pagetree-books'],
     [$langFile .'symbjobs',             'symbjobs',             'apps-pagetree-jobs'],
     [$langFile .'symblegalnotice',      'symblegalnotice',      'apps-pagetree-legal-notice'],
-    [$langFile .'symbsitemap',            'symbsitemap',        'apps-pagetree-sitemap'],
+    [$langFile .'symbsitemap',          'symbsitemap',          'apps-pagetree-sitemap'],
+    [$langFile .'symbphone',            'symbphone',            'apps-pagetree-phone'],
+    [$langFile .'symblocation',         'symblocation',         'apps-pagetree-location'],
+    [$langFile .'symbuniversity',       'symbuniversity',       'apps-pagetree-university'],
+    [$langFile .'symbfaq',              'symbfaq',              'apps-pagetree-faq'],
     [$langFile .'apprssb',              'apprssb',              'apps-pagetree-rss-black'],
     [$langFile .'apprsso',              'apprsso',              'apps-pagetree-rss-orange'],
 

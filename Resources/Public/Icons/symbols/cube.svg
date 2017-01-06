@@ -1,8 +1,1 @@
-<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="16px" height="16px" viewBox="0 0 16 16" zoomAndPan="disable" preserveAspectRatio="xmaxYmax">
-<path style="fill:#666666" d="M 15.088973,2.7226163 8.3586881,0.79887584 8.0476104,0.7090339 7.7376557,0.79887584 1.0062484,2.7226163 0.18644068,2.9562054 l 0,10.3587756 0.81980772,0.23359 6.7314073,1.92374 0.3099547,0.08984 0.3099547,-0.08984 6.7325309,-1.92374 0.819807,-0.23359 0,-10.3587756" />
-<path style="fill:#aad400" d="M 8.0476104,1.8837173 13.702038,3.4986261 8.0476104,5.1449796 2.3707229,3.5053642" />
-<path style="fill:#ffc857" d="m 1.313957,4.373462 6.1698952,1.7811164 0,8.0722986 -6.1698952,-1.763148" />
-<path style="fill:#ff6777" d="m 8.6113686,14.226877 0,-8.0745446 6.1698954,-1.7923467 0,8.1037433" />
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" zoomAndPan="disable" preserveAspectRatio="xmaxYmax"><path d="M15.09 2.723L8.36.8 8.047.71l-.31.09-6.732 1.923-.82.233v10.36l.82.233 6.732 1.922.31.09.31-.09 6.732-1.923.82-.235V2.955" fill="#666"/><path d="M8.048 1.884L13.702 3.5 8.048 5.144 2.37 3.505" fill="#aad400"/><path d="M1.314 4.373l6.17 1.782v8.072l-6.17-1.763" fill="#ffc857"/><path d="M8.61 14.227V6.152l6.17-1.792v8.104" fill="#ff6777"/></svg>

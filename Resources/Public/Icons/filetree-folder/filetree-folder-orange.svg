@@ -1,7 +1,1 @@
-<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="16px" height="16px" viewBox="0 0 16 16" zoomAndPan="disable" preserveAspectRatio="xmaxYmax">
-<path fill="#FF8700" d="M16 4v10H0V2h7l1.33 2H16z"/><path opacity=".2" d="M16 5H8.33L7 7H0V4h16v1z"/>
-</svg>
-
-
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" zoomAndPan="disable" preserveAspectRatio="xmaxYmax"><path fill="#FF8700" d="M16 4v10H0V2h7l1.33 2H16z"/><path opacity=".2" d="M16 5H8.33L7 7H0V4h16v1z"/></svg>

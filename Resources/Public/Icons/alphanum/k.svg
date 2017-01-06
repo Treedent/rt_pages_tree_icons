@@ -1,12 +1,1 @@
-<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="16px" height="16px" viewBox="0 0 16 16" zoomAndPan="disable" preserveAspectRatio="xmaxYmax">
-<path
-     d="M 0,0 16,0 16,16 0,16 Z"
-     style="fill:#ff8700"
-     id="path4638" /><g
-
-     id="text4136-9-8"><path style="fill:#fff"
-       d="m 9.81,15 -3.12,-6.42 -0.72,1.2 0,5.22 -1.74,0 0,-14 1.74,0 0,6.14 3.74,-6.14 1.86,0 -3.8,6.12 4,7.88 -1.96,0 z"
-
-       id="path10088" /></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" zoomAndPan="disable" preserveAspectRatio="xmaxYmax"><path d="M0 0h16v16H0z" fill="#ff8700"/><path d="M9.81 15L6.69 8.58l-.72 1.2V15H4.23V1h1.74v6.14L9.71 1h1.86l-3.8 6.12 4 7.88H9.81z" fill="#fff"/></svg>

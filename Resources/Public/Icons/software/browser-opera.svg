@@ -1,18 +1,1 @@
-<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="16px" height="16px" viewBox="0 0 16 16" zoomAndPan="disable" preserveAspectRatio="xmaxYmax">
-<linearGradient x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,97.396584,-97.396584,0,51.620814,-92.610499)" spreadMethod="pad" id="gradiant1">
-<stop id="stop7" style="stop-color:#ff1b2d;stop-opacity:1" offset="0" />
-<stop id="stop9" style="stop-color:#ff1b2d;stop-opacity:1" offset="0.3" />
-<stop id="stop11" style="stop-color:#ff1b2d;stop-opacity:1" offset="0.61" />
-<stop id="stop13" style="stop-color:#a70014;stop-opacity:1" offset="1" />
-</linearGradient>
-<linearGradient x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,86.142511,-86.142511,0,76.85435,-86.869905)" spreadMethod="pad" id="gradiant2">
-<stop id="stop16" style="stop-color:#9c0000;stop-opacity:1" offset="0" />
-<stop id="stop18" style="stop-color:#ff4b4b;stop-opacity:1" offset="0.7" />
-<stop id="stop20" style="stop-color:#ff4b4b;stop-opacity:1" offset="1" />
-</linearGradient>
-<g transform="matrix(0.15568591,0,0,0.15568591,-1.3411546,14.85018)" id="g3356">
-<path d="m 60,-94.25 c -27.75,0 -50.25,22.5 -50.25,50.25 l 0,0 c 0,26.95 21.22,48.94 47.86,50.19 l 0,0 c 0.8,0.04 1.59,0.06 2.39,0.06 l 0,0 c 12.87,0 24.6,-4.84 33.49,-12.79 l 0,0 c -5.89,3.91 -12.78,6.15 -20.14,6.15 l 0,0 c -11.97,0 -22.68,-5.94 -29.89,-15.3 l 0,0 c -5.56,-6.56 -9.15,-16.25 -9.4,-27.13 l 0,0 c 0,-0.03 0,-2.34 0,-2.37 l 0,0 c 0.25,-10.88 3.84,-20.58 9.4,-27.13 l 0,0 c 7.21,-9.36 17.93,-15.3 29.89,-15.3 l 0,0 c 7.36,0 14.25,2.25 20.14,6.16 l 0,0 C 84.65,-89.37 72.98,-94.2 60.19,-94.25 l 0,0 c -0.06,0 -0.13,0 -0.19,0 z" id="path22" style="fill:url(#gradiant1)" /><path d="m 43.46,-72.32 c 4.61,-5.44 10.57,-8.73 17.07,-8.73 l 0,0 c 14.63,0 26.49,16.59 26.49,37.04 l 0,0 c 0,20.46 -11.86,37.04 -26.49,37.04 l 0,0 c -6.51,0 -12.46,-3.28 -17.07,-8.72 l 0,0 c 7.21,9.36 17.92,15.3 29.89,15.3 l 0,0 c 7.36,0 14.25,-2.25 20.14,-6.15 l 0,0 c 10.29,-9.2 16.76,-22.57 16.76,-37.46 l 0,0 c 0,-14.88 -6.47,-28.26 -16.76,-37.46 l 0,0 c -5.89,-3.91 -12.78,-6.15 -20.14,-6.15 l 0,0 c -11.97,0 -22.68,5.94 -29.89,15.3" id="path24" style="fill:url(#gradiant2)" />
-</g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" zoomAndPan="disable" preserveAspectRatio="xmaxYmax"><linearGradient x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 97.39658 -97.39658 0 51.62 -92.61)" id="a"><stop offset="0" stop-color="#ff1b2d"/><stop offset=".3" stop-color="#ff1b2d"/><stop offset=".61" stop-color="#ff1b2d"/><stop offset="1" stop-color="#a70014"/></linearGradient><linearGradient x2="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(90 81.862 -5.008) scale(86.1425)" id="b"><stop offset="0" stop-color="#9c0000"/><stop offset=".7" stop-color="#ff4b4b"/><stop offset="1" stop-color="#ff4b4b"/></linearGradient><path d="M60-94.25C32.25-94.25 9.75-71.75 9.75-44c0 26.95 21.22 48.94 47.86 50.19.8.04 1.59.06 2.39.06 12.87 0 24.6-4.84 33.49-12.79C87.6-2.63 80.71-.39 73.35-.39c-11.97 0-22.68-5.94-29.89-15.3-5.56-6.56-9.15-16.25-9.4-27.13v-2.37c.25-10.88 3.84-20.58 9.4-27.13 7.21-9.36 17.93-15.3 29.89-15.3 7.36 0 14.25 2.25 20.14 6.16-8.84-7.91-20.51-12.74-33.3-12.79H60z" fill="url(#a)" transform="translate(-1.34 14.85) scale(.1557)"/><path d="M43.46-72.32c4.61-5.44 10.57-8.73 17.07-8.73 14.63 0 26.49 16.59 26.49 37.04 0 20.46-11.86 37.04-26.49 37.04-6.51 0-12.46-3.28-17.07-8.72C50.67-6.33 61.38-.39 73.35-.39c7.36 0 14.25-2.25 20.14-6.15 10.29-9.2 16.76-22.57 16.76-37.46 0-14.88-6.47-28.26-16.76-37.46-5.89-3.91-12.78-6.15-20.14-6.15-11.97 0-22.68 5.94-29.89 15.3" fill="url(#b)" transform="translate(-1.34 14.85) scale(.1557)"/></svg>

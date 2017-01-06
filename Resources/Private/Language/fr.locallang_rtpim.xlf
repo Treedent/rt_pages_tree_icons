@@ -295,8 +295,8 @@
                 <target>e-Mail</target>
             </trans-unit>
             <trans-unit id="symbbooks">
-                <source>Books</source>
-                <target>Livres</target>
+                <source>Publications</source>
+                <target>Publications</target>
             </trans-unit>
             <trans-unit id="symbjobs">
                 <source>Jobs</source>
@@ -309,6 +309,26 @@
             <trans-unit id="symbsitemap">
                 <source>Sitemap</source>
                 <target>Plan du site</target>
+            </trans-unit>
+            <trans-unit id="symbhome">
+                <source>Home</source>
+                <target>Accueil</target>
+            </trans-unit>
+            <trans-unit id="symbphone">
+                <source>Phone</source>
+                <target>Téléphone</target>
+            </trans-unit>
+            <trans-unit id="symblocation">
+                <source>Location</source>
+                <target>Localisation</target>
+            </trans-unit>
+            <trans-unit id="symbuniversity">
+                <source>University</source>
+                <target>Université</target>
+            </trans-unit>
+            <trans-unit id="symbfaq">
+                <source>Faq</source>
+                <target>Faq</target>
             </trans-unit>
             <trans-unit id="apprssb">
                 <source>RSS feed black</source>

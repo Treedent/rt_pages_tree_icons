@@ -1,8 +1,1 @@
-<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="16px" height="16px" viewBox="0 0 16 16" zoomAndPan="disable" preserveAspectRatio="xmaxYmax">
-<path fill="#E8A33D" stroke="#b9b9b9" stroke-width="0" stroke-linejoin="round" d="M2 0v16h12V4l-4-4zm8 0z" />
-<path fill="#E8DD3D" opacity=".65"  stroke-width="0" stroke-linejoin="round" d="M10 3.98V0l4 4z"/>
-<path opacity=".15" stroke-width="0" stroke-linejoin="round" d="M13 5.024V10L9 5z"/>
-<path fill="#C1C1C1" d="M2 0v16h12V4h-.012l.004-.008L10.008.006 10 .014V0H2zm1 1h6v4h4v10H3V1zm7 .412L12.586 4H10V1.412z"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" zoomAndPan="disable" preserveAspectRatio="xmaxYmax"><path fill="#E8A33D" d="M2 0v16h12V4l-4-4zm8 0z"/><path fill="#E8DD3D" opacity=".65" d="M10 3.98V0l4 4z"/><path opacity=".15" d="M13 5.024V10L9 5z"/><path fill="#C1C1C1" d="M2 0v16h12V4h-.012l.004-.008L10.008.006 10 .014V0H2zm1 1h6v4h4v10H3V1zm7 .412L12.586 4H10V1.412z"/></svg>
