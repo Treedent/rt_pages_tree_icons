@@ -31,8 +31,7 @@ if (!defined('TYPO3_MODE')) {
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use CMSPACA\RtPagesTreeIcons\Hooks\ClickMenuAction;
 
-if ( TYPO3_MODE == 'BE') {
-    $extPath = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath( $_EXTKEY );
+if ( TYPO3_MODE == 'BE' ) {
 
     ExtensionManagementUtility::registerExtDirectComponent(
         'TYPO3.RtPagesTreeIcons.ClickmenuAction',
@@ -55,7 +54,7 @@ call_user_func(
                 'mod1',
                 '',
                 [
-                    'PageIcons' => 'list,changepageicon,editPageProperties,edit'
+                    'PageIcons' => 'list,changepageicon,editPageProperties'
                 ],
                 [
                     'access' => 'user,group',

@@ -3,9 +3,6 @@
 namespace CMSPACA\RtPagesTreeIcons\Hooks;
 
 use TYPO3\CMS\Backend\Tree\Pagetree\Commands;
-use \TYPO3\CMS\Backend\Utility\BackendUtility;
-//use \TYPO3\CMS\Extbase\Utility\DebuggerUtility;
-//use TYPO3\CMS\Backend\Tree\Pagetree\PagetreeNode;
 
 /* * *************************************************************
  *  Copyright notice
@@ -35,49 +32,51 @@ use \TYPO3\CMS\Backend\Utility\BackendUtility;
 
 class ClickMenuAction extends Commands {
 
-  /**
-   * Redirect to Page icon changer module
-   *
-   * @param \stdClass $nodeData
-   * @return string Error message for the BE user
-   */
-  public function loadsPageIconChanger( $nodeData ) {
+    /**
+    * Redirect to Page icon changer module
+    *
+    * @param \stdClass $nodeData
+    * @return string Error message for the BE user
+    */
+    public function loadsPageIconChanger( $nodeData ) {
 
-      try {
-        $returnValue = array(
-            'success'   =>  TRUE,
-            'pageId'    =>  $nodeData->id,
-            'message'   =>  'Launching Page Icon changer module'
-        );
+        try {
+            $returnValue = array(
+                'success'   =>  TRUE,
+                'pageId'    =>  $nodeData->id,
+                'message'   =>  'Launching Page Icon changer module'
+            );
 
-    } catch ( \Exception $e ) {
-      $returnValue = array(
-        'success' => FALSE,
-        'message' => $e->getMessage()
-      );
+        } catch ( \Exception $e ) {
+            $returnValue = array(
+                'success' => FALSE,
+                'message' => $e->getMessage()
+            );
+        }
+
+        return $returnValue;
     }
 
-    return $returnValue;
-  }
-
-  /**
+    /**
     * Add Page icon changer entry to TYPO3 page menu
     */
-  public static function addContextMenuItems() {
-    // Add items of the context menu to the default userTS configuration
-    $GLOBALS[ 'TYPO3_CONF_VARS' ][ 'BE' ][ 'defaultUserTSconfig' ] .= '
-        options.contextMenu.table.pages.items {
-            580 = DIVIDER
-            590 = ITEM
-            590 {
-                name = loadsPageIconChanger
-                label = LLL:EXT:rt_pages_tree_icons/Resources/Private/Language/locallang_rtpim.xlf:changePageIcon
-                iconName = actions-pagetree-change-page-icon
-                callbackAction = loadsPageIconChanger
-                #displayCondition = canShowHistory != 0
+    public static function addContextMenuItems() {
+
+        // Add items of the context menu to the default userTS configuration
+        $GLOBALS[ 'TYPO3_CONF_VARS' ][ 'BE' ][ 'defaultUserTSconfig' ] .= '
+            options.contextMenu.table.pages.items {
+                580 = DIVIDER
+                590 = ITEM
+                590 {
+                    name = loadsPageIconChanger
+                    label = LLL:EXT:rt_pages_tree_icons/Resources/Private/Language/locallang_rtpim.xlf:changePageIcon
+                    iconName = actions-pagetree-change-page-icon
+                    callbackAction = loadsPageIconChanger
+                    displayCondition = canChangePageTreeIcons == 1
+                }
+                600 = DIVIDER            
             }
-            600 = DIVIDER            
-        }
-    ';
-  }
+        ';
+
+    }
 }

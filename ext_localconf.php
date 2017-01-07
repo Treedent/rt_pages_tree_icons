@@ -8,7 +8,15 @@ use \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
 
 $boot = function () {
 
+
     if (TYPO3_MODE === 'BE') {
+
+        //Declare RTPim_PagetreeNode Xclass to permit access to module for Backend users.
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects']['TYPO3\\CMS\\Backend\\Tree\\Pagetree\\PagetreeNode'] = array(
+            'className' => 'CMSPACA\\RtPagesTreeIcons\\Xclass\\RTPim_PagetreeNode'
+        );
+
+        //SVG Icons files declarations
         $icons = [
             'actions-pagetree-change-page-icon'             =>          'palm-tree.svg',
             'apps-pagetree-filetree-folder-black'			=>			'filetree-folder/filetree-folder-black.svg',
