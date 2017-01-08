@@ -50,7 +50,7 @@ Pages Tree Icons - a more comprehensive TYPO3 page tree!
 	:maxdepth: 3
 	:titlesonly:
 
-	ScreenShot/Index
+	ScreenShots/Index
 	Configuration/Index
 	KnownProblems/Index
 	ToDoList/Index
