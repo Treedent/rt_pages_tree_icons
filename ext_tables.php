@@ -33,13 +33,15 @@ use CMSPACA\RtPagesTreeIcons\Hooks\ClickMenuAction;
 
 if ( TYPO3_MODE == 'BE' ) {
 
+
+
     ExtensionManagementUtility::registerExtDirectComponent(
         'TYPO3.RtPagesTreeIcons.ClickmenuAction',
         'CMSPACA\\RtPagesTreeIcons\\Hooks\\ClickMenuAction'
     );
 
     //Load JS File for page tree contextuel menu interactions.
-    $GLOBALS[ 'TBE_MODULES' ][ '_configuration' ][ $_EXTKEY ][ 'jsFiles' ][ 'TreeActions' ] = 'EXT:rt_pages_tree_icons/Resources/Public/Js/PagesTreeActions.js';
+    $GLOBALS['TYPO3_CONF_VARS']['typo3/backend.php']['additionalBackendItems'][] = ExtensionManagementUtility::extPath($_EXTKEY, 'Resources/Private/Php/RegisterPagesTreeActions.php');
     ClickMenuAction::addContextMenuItems();
 }
 

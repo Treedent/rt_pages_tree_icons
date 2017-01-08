@@ -24,7 +24,7 @@ Pages Tree Icons - more comprehensive TYPO3 page tree!
 
 	:Description:
 		You can now transform the TYPO3 Page TreeView with SVG icons.
-		Icons are all SVG 16px*16px
+		Icons are all optimized SVG sized to 16px*16px.
 
 	:Keywords:
 		TYPO3, Page tree, Icons, SVG
@@ -56,6 +56,7 @@ Pages Tree Icons - more comprehensive TYPO3 page tree!
 
 	Introduction/Index
 	Configuration/Index
+    Developer/Index
 	KnownProblems/Index
 	ToDoList/Index
 	ChangeLog/Index

@@ -251,6 +251,12 @@
             <trans-unit id="symblocation">
                 <source>Location</source>
             </trans-unit>
+            <trans-unit id="symbmeteo">
+                <source>Weather</source>
+            </trans-unit>
+            <trans-unit id="symbcredcard">
+                <source>Payment</source>
+            </trans-unit>
             <trans-unit id="symbuniversity">
                 <source>University</source>
             </trans-unit>

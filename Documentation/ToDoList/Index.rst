@@ -11,5 +11,6 @@
 To-Do list
 ==========
 
-Give a the ability to manage your own svg icons.
+Give a the ability to manage user's own svg icons.
+Provide Page Icon rendering for the front-end.
 

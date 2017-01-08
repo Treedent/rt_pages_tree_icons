@@ -21,7 +21,7 @@ This extension gives you the ability to change the TYPO3 pages tree icons
 
 .. important::
 
-   This extension only works with TYPO3 V7.6.X
+   This extension only works with TYPO3 from V7.6.X to V8.5.X
 
 
 .. _screenshots:

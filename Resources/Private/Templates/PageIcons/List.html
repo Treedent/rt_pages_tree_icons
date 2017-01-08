@@ -4,39 +4,39 @@
 
     <f:layout name="Default" />
 
-<f:section name="content">
-    <br />
-    <h1>
-        <f:translate key="LLL:EXT:rt_pages_tree_icons/Resources/Private/Language/locallang_rtpim.xlf:changePageIcon" />
-        &nbsp;:&nbsp;<core:icon identifier="{pageIcon}" size="large" />
-        &nbsp;<em>{pageTitle}</em>
-    </h1>
+    <f:section name="content">
+        <br />
+        <h1>
+            <f:translate key="LLL:EXT:rt_pages_tree_icons/Resources/Private/Language/locallang_rtpim.xlf:changePageIcon" />
+            &nbsp;:&nbsp;<core:icon identifier="{pageIcon}" size="large"/>
+            &nbsp;<em>{pageTitle}</em>
+        </h1>
 
-    <div class="icon-set clearfix">
-        <ul>
-            <f:for each="{icons}" as="icon">
-                <li data-icon="{icon.1}" class="icon-container text-center{f:if(condition: '{selectedIcon}=={icon.1}', then: ' icon-current', else: '')}">
-                    <f:if condition="{icon.3}=='gif'">
-                        <f:then>
-                            <img src="{icon.2}" alt="Naughty gif!">
-                        </f:then>
-                        <f:else>
-                            <core:icon identifier="{icon.2}" size="large" />
-                            <br />
-                        </f:else>
-                    </f:if>
-                    <p>{icon.0}</p>
-                </li>
-            </f:for>
-        </ul>
-    </div>
+        <div class="icon-set clearfix">
+            <ul>
+                <f:for each="{icons}" as="icon">
+                    <li data-icon="{icon.1}" class="icon-container text-center{f:if(condition: '{selectedIcon}=={icon.1}', then: ' icon-current', else: '')}">
+                        <f:if condition="{icon.3}=='gif'">
+                            <f:then>
+                                <img src="{icon.2}" alt="Naughty gif!">
+                            </f:then>
+                            <f:else>
+                                <core:icon identifier="{icon.2}" size="large" />
+                                <br />
+                            </f:else>
+                        </f:if>
+                        <p>{icon.0}</p>
+                    </li>
+                </f:for>
+            </ul>
+        </div>
 
-    <br />
-</f:section>
+        <br />
+    </f:section>
 
-<f:section name="content0">
-    <br />
-    <h1><img src="/typo3conf/ext/rt_pages_tree_icons/Resources/Public/Icons/larow.gif" alt="">&nbsp;<f:translate key="LLL:EXT:rt_pages_tree_icons/Resources/Private/Language/locallang_rtpim.xlf:selectapage" /></h1>
-</f:section>
+    <f:section name="content0">
+        <br />
+        <h1><img src="/typo3conf/ext/rt_pages_tree_icons/Resources/Public/Icons/larow.gif" alt="">&nbsp;<f:translate key="LLL:EXT:rt_pages_tree_icons/Resources/Private/Language/locallang_rtpim.xlf:selectapage" /></h1>
+    </f:section>
 
 </div>

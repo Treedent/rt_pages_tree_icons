@@ -322,6 +322,14 @@
                 <source>Location</source>
                 <target>Localisation</target>
             </trans-unit>
+            <trans-unit id="symbmeteo">
+                <source>Weather</source>
+                <target>Météo</target>
+            </trans-unit>
+            <trans-unit id="symbcredcard">
+                <source>Payment</source>
+                <target>Paiement</target>
+            </trans-unit>
             <trans-unit id="symbuniversity">
                 <source>University</source>
                 <target>Université</target>

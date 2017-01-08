@@ -36,6 +36,23 @@ $langFile = 'LLL:EXT:rt_pages_tree_icons/Resources/Private/Language/locallang_rt
 
 $pageIcons = [
 
+    [$langFile . 'pageb',               'pageb',                'apps-pagetree-page-black'],
+    [$langFile . 'pageblt',             'pageblt',              'apps-pagetree-page-blue-light'],
+    [$langFile . 'pagebl',              'pagebl',               'apps-pagetree-page-blue'],
+    [$langFile . 'pagegb',              'pagegb',               'apps-pagetree-page-gray-brighter'],
+    [$langFile . 'pagegd',              'pagegd',               'apps-pagetree-page-gray-dark'],
+    [$langFile . 'pagegl',              'pagegl',               'apps-pagetree-page-gray-light'],
+    [$langFile . 'pageg',               'pageg',                'apps-pagetree-page-gray'],
+    [$langFile . 'pagegrl',             'pagegrl',              'apps-pagetree-page-green-light'],
+    [$langFile . 'pagegr',              'pagegr',               'apps-pagetree-page-green'],
+    [$langFile . 'pageo',               'pageo',                'apps-pagetree-page-orange'],
+    [$langFile . 'pagep',               'pagep',                'apps-pagetree-page-purple'],
+    [$langFile . 'pagerl',              'pagerl',               'apps-pagetree-page-red-light'],
+    [$langFile . 'pager',               'pager',                'apps-pagetree-page-red'],
+    [$langFile . 'pagew',               'pagew',                'apps-pagetree-page-white'],
+    [$langFile . 'pageyl',              'pageyl',               'apps-pagetree-page-yellow-light'],
+    [$langFile . 'pagey',               'pagey',                'apps-pagetree-page-yellow'],
+
     [$langFile . 'folderb',             'folderb',              'apps-pagetree-filetree-folder-black'],
     [$langFile . 'folderblt',           'folderblt',            'apps-pagetree-filetree-folder-blue-light'],
     [$langFile . 'folderbl',            'folderbl',             'apps-pagetree-filetree-folder-blue'],
@@ -70,23 +87,6 @@ $pageIcons = [
     [$langFile . 'rfolderyl',           'rfolderyl',            'apps-pagetree-rounded-folder-yellow-light'],
     [$langFile . 'rfoldery',            'rfoldery',             'apps-pagetree-rounded-folder-yellow'],
 
-    [$langFile . 'pageb',               'pageb',                'apps-pagetree-page-black'],
-    [$langFile . 'pageblt',             'pageblt',              'apps-pagetree-page-blue-light'],
-    [$langFile . 'pagebl',              'pagebl',               'apps-pagetree-page-blue'],
-    [$langFile . 'pagegb',              'pagegb',               'apps-pagetree-page-gray-brighter'],
-    [$langFile . 'pagegd',              'pagegd',               'apps-pagetree-page-gray-dark'],
-    [$langFile . 'pagegl',              'pagegl',               'apps-pagetree-page-gray-light'],
-    [$langFile . 'pageg',               'pageg',                'apps-pagetree-page-gray'],
-    [$langFile . 'pagegrl',             'pagegrl',              'apps-pagetree-page-green-light'],
-    [$langFile . 'pagegr',              'pagegr',               'apps-pagetree-page-green'],
-    [$langFile . 'pageo',               'pageo',                'apps-pagetree-page-orange'],
-    [$langFile . 'pagep',               'pagep',                'apps-pagetree-page-purple'],
-    [$langFile . 'pagerl',              'pagerl',               'apps-pagetree-page-red-light'],
-    [$langFile . 'pager',               'pager',                'apps-pagetree-page-red'],
-    [$langFile . 'pagew',               'pagew',                'apps-pagetree-page-white'],
-    [$langFile . 'pageyl',              'pageyl',               'apps-pagetree-page-yellow-light'],
-    [$langFile . 'pagey',               'pagey',                'apps-pagetree-page-yellow'],
-
     [$langFile .'apptypo3b',            'apptypo3b',            'apps-pagetree-logo-typo3-black'],
     [$langFile .'apptypo3o',            'apptypo3o',            'apps-pagetree-logo-typo3-orange'],
     [$langFile .'appts',                'appts',                'apps-pagetree-typoscript-orange'],
@@ -110,6 +110,8 @@ $pageIcons = [
     [$langFile .'symbsitemap',          'symbsitemap',          'apps-pagetree-sitemap'],
     [$langFile .'symbphone',            'symbphone',            'apps-pagetree-phone'],
     [$langFile .'symblocation',         'symblocation',         'apps-pagetree-location'],
+    [$langFile .'symbmeteo',            'symbmeteo',            'apps-pagetree-meteo'],
+    [$langFile .'symbcredcard',         'symbcredcard',         'apps-pagetree-credit-card'],
     [$langFile .'symbuniversity',       'symbuniversity',       'apps-pagetree-university'],
     [$langFile .'symbfaq',              'symbfaq',              'apps-pagetree-faq'],
     [$langFile .'apprssb',              'apprssb',              'apps-pagetree-rss-black'],
@@ -196,7 +198,7 @@ $pageIcons = [
     [$langFile . 'number8',             'number8',              'apps-pagetree-alphanum-8'],
     [$langFile . 'number9',             'number9',              'apps-pagetree-alphanum-9'],
 
-    ['Page Icon Changer',                'symbcocotier',         'actions-pagetree-change-page-icon']
+    ['Page Icon Changer',               'symbcocotier',         'actions-pagetree-change-page-icon']
 
 ];
 $GLOBALS['TCA']['pages']['columns']['module']['config']['showIconTable'] = true;
