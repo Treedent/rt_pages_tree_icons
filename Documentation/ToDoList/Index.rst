@@ -1,8 +1,3 @@
-﻿.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: ../Includes.txt
 
 
@@ -11,6 +6,5 @@
 To-Do list
 ==========
 
-Give a the ability to manage user's own svg icons.
-Provide Page Icon rendering for the front-end.
-
+- Give the ability to manage user's own svg icons.
+- Provide Page Icon rendering viehelper for page title and sitemap in the front-end.

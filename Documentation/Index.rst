@@ -1,14 +1,10 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
 .. include:: Includes.txt
+
 
 .. _start:
 
 =============================================================
-Pages Tree Icons - more comprehensive TYPO3 page tree!
+Extension Name
 =============================================================
 
 .. only:: html
@@ -20,11 +16,10 @@ Pages Tree Icons - more comprehensive TYPO3 page tree!
 		|release|
 
 	:Language:
-		en / fr / de
+		en
 
 	:Description:
-		You can now transform the TYPO3 Page TreeView with SVG icons.
-		Icons are all optimized SVG sized to 16px*16px.
+		Manual covering TYPO3 extension rt_pages_tree_icons
 
 	:Keywords:
 		TYPO3, Page tree, Icons, SVG
@@ -39,14 +34,15 @@ Pages Tree Icons - more comprehensive TYPO3 page tree!
 		regis.tedone@gmail.com
 
 	:License:
-		This document is published under the Open Content License
-		available from http://www.opencontent.org/opl.shtml
+		This document is published under the Open Publication License
+		available from http://www.opencontent.org/openpub/
 
 	:Rendered:
 		|today|
 
 	The content of this document is related to TYPO3,
-	a GNU/GPL CMS/Framework available from `www.typo3.org <http://www.typo3.org/>`_.
+	a GNU/GPL CMS/Framework available from `www.typo3.org <https://typo3.org/>`__.
+
 
 	**Table of Contents**
 
@@ -54,9 +50,8 @@ Pages Tree Icons - more comprehensive TYPO3 page tree!
 	:maxdepth: 3
 	:titlesonly:
 
-	Introduction/Index
+	ScreenShot/Index
 	Configuration/Index
-    Developer/Index
 	KnownProblems/Index
 	ToDoList/Index
 	ChangeLog/Index
