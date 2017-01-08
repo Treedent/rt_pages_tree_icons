@@ -6,6 +6,8 @@
 ChangeLog
 =========
 
+V1.2.1  Documentation remastered.
+
 V1.2.0  Compatibility with TYPO3 from V7.2.X to V8.5.X.
         Access rights Backend Users Bug correction.
         All svg icons have been optimized for loading performance.
