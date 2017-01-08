@@ -4,7 +4,7 @@
 .. _start:
 
 =============================================================
-Extension Name
+Pages Tree Icons - a more comprehensive TYPO3 page tree!
 =============================================================
 
 .. only:: html
