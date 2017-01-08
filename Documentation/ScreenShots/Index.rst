@@ -30,16 +30,17 @@ This extension provides a new web module to change SVG icon per page.
    :width: 1600px
    :alt: Page icon changer web module
 
-      Page icon changer web module in action.
+    Page icon changer web module in action.
 
-      You can change page icon in a few clicks.
+    You can change page icon in a few clicks.
 
 
 
-   This new web module is also accessible via the Pages treeview contextual menu.
+
+This new web module is also accessible via the Pages treeview contextual menu.
 
 .. figure:: ../Images/rtpim_menu.png
    :width: 369px
    :alt: Page icon changer web module access menu
 
-          Page icon changer web module access from contextual menu.
+    Page icon changer web module access from contextual menu.
