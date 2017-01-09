@@ -27,22 +27,16 @@ if (!defined('TYPO3_MODE')) {
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use CMSPACA\RtPagesTreeIcons\Hooks\ClickMenuAction;
-
 if ( TYPO3_MODE == 'BE' ) {
 
-
-
-    ExtensionManagementUtility::registerExtDirectComponent(
+    TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerExtDirectComponent(
         'TYPO3.RtPagesTreeIcons.ClickmenuAction',
         'CMSPACA\\RtPagesTreeIcons\\Hooks\\ClickMenuAction'
     );
 
     //Load JS File for page tree contextuel menu interactions.
-    $GLOBALS['TYPO3_CONF_VARS']['typo3/backend.php']['additionalBackendItems'][] = ExtensionManagementUtility::extPath($_EXTKEY, 'Resources/Private/Php/RegisterPagesTreeActions.php');
-    ClickMenuAction::addContextMenuItems();
+    $GLOBALS['TYPO3_CONF_VARS']['typo3/backend.php']['additionalBackendItems'][] = TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY, 'Resources/Private/Php/RegisterPagesTreeActions.php');
+    CMSPACA\RtPagesTreeIcons\Hooks\ClickMenuAction::addContextMenuItems();
 }
 
 call_user_func(

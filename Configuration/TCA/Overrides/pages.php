@@ -1,8 +1,6 @@
 <?php
 defined('TYPO3_MODE') or die();
 
-use \TYPO3\CMS\Extbase\Utility\LocalizationUtility;
-
 /* * *************************************************************
  *  Copyright notice
  *
