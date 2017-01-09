@@ -2,8 +2,6 @@
 
 namespace CMSPACA\RtPagesTreeIcons\Hooks;
 
-use TYPO3\CMS\Backend\Tree\Pagetree\Commands;
-
 /* * *************************************************************
  *  Copyright notice
  *
@@ -30,7 +28,7 @@ use TYPO3\CMS\Backend\Tree\Pagetree\Commands;
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
 
-class ClickMenuAction extends Commands {
+class ClickMenuAction extends \TYPO3\CMS\Backend\Tree\Pagetree\Commands {
 
     /**
     * Redirect to Page icon changer module
