@@ -197,6 +197,12 @@
             <trans-unit id="symbshortcut">
                 <source>Shortcut</source>
             </trans-unit>
+            <trans-unit id="symblandpage">
+                <source>Landing page</source>
+            </trans-unit>
+            <trans-unit id="symbdownload">
+                <source>Downloads</source>
+            </trans-unit>
             <trans-unit id="symbform">
                 <source>Form</source>
             </trans-unit>
@@ -214,6 +220,9 @@
             </trans-unit>
             <trans-unit id="symbaudio">
                 <source>Audio</source>
+            </trans-unit>
+            <trans-unit id="symbcamera">
+                <source>Photos</source>
             </trans-unit>
             <trans-unit id="symbcomments">
                 <source>Comments</source>
@@ -236,6 +245,9 @@
             <trans-unit id="symbsitemap">
                 <source>Sitemap</source>
             </trans-unit>
+            <trans-unit id="symbagenda">
+                <source>Events</source>
+            </trans-unit>
             <trans-unit id="apprssb">
                 <source>RSS feed black</source>
             </trans-unit>
@@ -250,6 +262,9 @@
             </trans-unit>
             <trans-unit id="symblocation">
                 <source>Location</source>
+            </trans-unit>
+            <trans-unit id="symbcloud">
+                <source>Cloud</source>
             </trans-unit>
             <trans-unit id="symbmeteo">
                 <source>Weather</source>

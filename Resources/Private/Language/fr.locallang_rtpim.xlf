@@ -258,6 +258,14 @@
                 <source>Shortcut</source>
                 <target>Raccourci</target>
             </trans-unit>
+            <trans-unit id="symblandpage">
+                <source>Landing page</source>
+                <target>Landing page</target>
+            </trans-unit>
+            <trans-unit id="symbdownload">
+                <source>Downloads</source>
+                <target>Téléchargements</target>
+            </trans-unit>
             <trans-unit id="symbform">
                 <source>Form</source>
                 <target>Formulaire</target>
@@ -281,6 +289,10 @@
             <trans-unit id="symbaudio">
                 <source>Audio</source>
                 <target>Audio</target>
+            </trans-unit>
+            <trans-unit id="symbcamera">
+                <source>Photos</source>
+                <target>Photos</target>
             </trans-unit>
             <trans-unit id="symbcomments">
                 <source>Comments</source>
@@ -310,6 +322,10 @@
                 <source>Sitemap</source>
                 <target>Plan du site</target>
             </trans-unit>
+            <trans-unit id="symbagenda">
+                <source>Events</source>
+                <target>Agenda</target>
+            </trans-unit>
             <trans-unit id="symbhome">
                 <source>Home</source>
                 <target>Accueil</target>
@@ -321,6 +337,10 @@
             <trans-unit id="symblocation">
                 <source>Location</source>
                 <target>Localisation</target>
+            </trans-unit>
+            <trans-unit id="symbcloud">
+                <source>Cloud</source>
+                <target>Cloud</target>
             </trans-unit>
             <trans-unit id="symbmeteo">
                 <source>Weather</source>
