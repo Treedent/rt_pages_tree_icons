@@ -6,6 +6,9 @@
 ChangeLog
 =========
 
+V1.2.2  Minor Optimisations update (TCA). Thanks to Josef Glatz.
+        Few icons added.
+
 V1.2.1  Documentation remastered.
 
 V1.2.0  Compatibility with TYPO3 from V7.2.X to V8.5.X.
@@ -13,7 +16,7 @@ V1.2.0  Compatibility with TYPO3 from V7.2.X to V8.5.X.
         All svg icons have been optimized for loading performance.
         Few icons added.
 
-V1.1.0  German documentation updated.
+V1.1.0  German documentation updated. Thanks to Olaf Döring.
 
 V1.0.3  German documentation and few icons added.
 
