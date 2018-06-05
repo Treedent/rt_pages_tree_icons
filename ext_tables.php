@@ -6,7 +6,7 @@ if (!defined('TYPO3_MODE')) {
  *
  *  Copyright notice
  *
- *  (c) 2017 Regis TEDONE <regis.tedone@gmail.com>, CMS-PACA
+ *  (c) 2018 Regis TEDONE <regis.tedone@gmail.com>, CMS-PACA
  *
  *  All rights reserved
  *
@@ -26,19 +26,6 @@ if (!defined('TYPO3_MODE')) {
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
-if ( TYPO3_MODE == 'BE' ) {
-
-    TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerExtDirectComponent(
-        'TYPO3.RtPagesTreeIcons.ClickmenuAction',
-        'CMSPACA\\RtPagesTreeIcons\\Hooks\\ClickMenuAction'
-    );
-
-    //Load JS File for page tree contextuel menu interactions.
-    $GLOBALS['TYPO3_CONF_VARS']['typo3/backend.php']['additionalBackendItems'][] = TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY, 'Resources/Private/Php/RegisterPagesTreeActions.php');
-    CMSPACA\RtPagesTreeIcons\Hooks\ClickMenuAction::addContextMenuItems();
-}
-
 call_user_func(
     function($extKey) {
 
@@ -60,8 +47,23 @@ call_user_func(
             );
 
         }
-        //Load Extension Typoscipt Configuration
+        // Load Extension Typoscipt Configuration
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($extKey, 'Configuration/TypoScript', 'rt_pages_tree_icons');
+
+		// Login style
+	    $extConf = '';
+	    if(version_compare(TYPO3_version, '9.0', '<')) {
+		    $extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['rt_pages_tree_icons']);
+	    } elseif(version_compare(TYPO3_version, '8.0', '>')) {
+		    $extConf = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance( \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class )->get( 'rt_pages_tree_icons' );
+	    }
+
+        if($extConf['backLoginFormTransparent']==1) {
+        	$transparency = !empty($extConf['backLoginFormTransparency']) ? $extConf['backLoginFormTransparency'] : '0.4';
+	        $GLOBALS['TBE_STYLES']['inDocStyles_TBEstyle'] = '
+	            body .panel, body .panel-footer { background-color: rgba(255, 255, 255, '.$transparency.'); padding:15px; }
+	        ';
+        }
     },
     $_EXTKEY
 );

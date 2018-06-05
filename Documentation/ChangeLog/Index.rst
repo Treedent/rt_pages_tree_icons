@@ -6,6 +6,13 @@
 ChangeLog
 =========
 
+V3.0.1  Compatibility with TYPO3 from 7.6.X to V9.2.X
+Shortcut page icon automatic replacement.
+Few icons added.
+
+V2.0.1  Compatibility With TYPO3 V8.7.X
+Few icons added.
+
 V1.2.2  Minor Optimisations update (TCA). Thanks to Josef Glatz.
 Few icons added.
 

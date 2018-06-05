@@ -1,15 +1,15 @@
 <?php
 namespace CMSPACA\RtPagesTreeIcons\Controller;
 
-use \TYPO3\CMS\Extbase\Utility\LocalizationUtility;
-use \TYPO3\CMS\Core\Utility\GeneralUtility;
-use \TYPO3\CMS\Backend\Utility\BackendUtility;
+use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Backend\Utility\BackendUtility;
 
 /***************************************************************
  *
  *  Copyright notice
  *
- *  (c) 2017 Regis TEDONE <regis.tedone@gmail.com>, CMS-PACA
+ *  (c) 2018 Regis TEDONE <regis.tedone@gmail.com>, CMS-PACA
  *
  *  All rights reserved
  *
@@ -48,6 +48,8 @@ class PageIconsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
         if($pageId==0 || $pageId==null) {
             $page0 = true;
         }
+
+	    $pageIconClass = '';
 
         //Get page Icon
         $pageIconName = $this->getPageIcon($pageId);
@@ -101,15 +103,11 @@ class PageIconsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
                 break;
         }
 
-
-
-
         //Set default icon
         $default_label = LocalizationUtility::translate('LLL:EXT:rt_pages_tree_icons/Resources/Private/Language/locallang_rtpim.xlf:defaultPageType', 'rt_pages_tree_icons');
         $icons[0] = [ $default_label, '', $defaultPageIconClass, 'svg'];
 
         $selectedIcon = '';
-
 
         foreach($GLOBALS['TCA']['pages']['columns']['module']['config']['items'] as $declared_icons) {
 
@@ -124,13 +122,17 @@ class PageIconsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
 
                 if($declared_icons[1]==$pageIconName) {
                     $pageIconClass = $declared_icons[2];
-                    $selectedIcon = $pageIconName;
+	                if(substr($pageIconName,-2)=='-s') {
+		                $selectedIcon = substr($pageIconName,0,-2);
+	                } else {
+                        $selectedIcon = $pageIconName;
+	                }
                 }
             } else {
                 $pageIconClass = $defaultPageIconClass;
             }
-            //Remove empty icons
-            if(empty($declared_icons[0])) {
+            //Remove empty icons or Shortcut Icons
+            if(empty($declared_icons[0]) || substr($declared_icons[1],-2)=='-s') {
                 continue;
             }
             //Remove gifs/png from your TYPO3 extensions, switch to SVG, please!
@@ -166,21 +168,43 @@ class PageIconsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
      */
     public function changepageiconAction() {
 
-        global $TYPO3_DB;
+	    if(version_compare(TYPO3_version, '8.0', '<')) {
+    	    global $TYPO3_DB;
+	    } elseif(version_compare(TYPO3_version, '8.0', '>=')) {
+		    $pagesQueryBuilder =  GeneralUtility::makeInstance(\TYPO3\CMS\Core\Database\ConnectionPool::class)->getQueryBuilderForTable('pages');
+	    }
 
         //Retrieve vars
         $postVars = GeneralUtility::_POST('tx_rtpagestreeicons_web_rtpagestreeiconsmod1');
         $newIcon = $postVars['newIcon'];
+
+	    //\TYPO3\CMS\Core\Utility\DebugUtility::debug($newIcon);
+
         $getVars = GeneralUtility::_GET('tx_rtpagestreeicons_web_rtpagestreeiconsmod1');
         $pageId = intval($getVars['pageId']);
 
+	    $pageType = $this->getPageType($pageId);
+	    if($pageType == '4' && substr($newIcon,0,4)=='page') {
+		    $newIcon.= '-s';
+	    }
+
         //Update page icon in database
         $where_clause_page = "`uid`='" . $pageId . "'";
-        $pages_fields_update = array(
+        $pages_fields_update = [
             'tstamp'=>time(),
             'module' =>$newIcon
-        );
-        $page_update = $TYPO3_DB->exec_UPDATEquery('pages', $where_clause_page, $pages_fields_update);
+        ];
+
+	    if(version_compare(TYPO3_version, '8.0', '<')) {
+		    $page_update = $TYPO3_DB->exec_UPDATEquery('pages', $where_clause_page, $pages_fields_update);
+	    } elseif(version_compare(TYPO3_version, '8.0', '>=')) {
+		    $page_update = $pagesQueryBuilder
+			    ->update('pages')
+			    ->where($pagesQueryBuilder->expr()->eq('uid', $pagesQueryBuilder->createNamedParameter($pageId, \PDO::PARAM_INT)))
+				->set('tstamp',time())
+			    ->set('module',$newIcon)
+			    ->execute();
+	    }
 
         //Reload the page tree
         if($page_update) {

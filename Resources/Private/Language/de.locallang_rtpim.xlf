@@ -35,7 +35,18 @@
                 <source>Edit this page properties</source>
                 <target>Seiteneigenschaften bearbeiten</target>
             </trans-unit>
-
+            <trans-unit id="diplayiconsinbehaviourtab">
+                <source>Display icons in behaviour tab when editing page properties (Need to clear system cache)</source>
+                <source>Anzeigen von symbole auf der registerkarte verhalten beim bearbeiten von seiteneigenschaften (Notwendigkeit, System-Cache zu löschen)</source>
+            </trans-unit>
+            <trans-unit id="backLoginFormTransparent">
+                <source>Transparent background value for TYPO3 backend login form (Need to clear system cache)</source>
+                <target>Transparenter Hintergrundwert für das TYPO3 Backend-Login-Formular (Notwendigkeit, System-Cache zu löschen)</target>
+            </trans-unit>
+            <trans-unit id="backLoginFormTransparency">
+                <source>Transparency value for TYPO3 background backend login form (Need to clear system cache)</source>
+                <target>Transparenzwert für TYPO3 Backend-Login-Formular (Notwendigkeit, System-Cache zu löschen)</target>
+            </trans-unit>
             <trans-unit id="folderb">
                 <source>Folder black</source>
                 <target>Ordner schwarz</target>
@@ -47,6 +58,10 @@
             <trans-unit id="folderbl">
                 <source>Folder blue</source>
                 <target>Ordner blau</target>
+            </trans-unit>
+            <trans-unit id="folderblf">
+                <source>Folder blue fluo</source>
+                <target>Ordner blau fluo</target>
             </trans-unit>
             <trans-unit id="foldergb">
                 <source>Folder gray brighter</source>
@@ -72,9 +87,17 @@
                 <source>Folder green</source>
                 <target>Ordner hellgrün</target>
             </trans-unit>
+            <trans-unit id="foldergrf">
+                <source>Folder green fluo</source>
+                <target>Ordner hellgrün fluo</target>
+            </trans-unit>
             <trans-unit id="foldero">
                 <source>Folder orange</source>
                 <target>Ordner orange</target>
+            </trans-unit>
+            <trans-unit id="folderof">
+                <source>Folder orange fluo</source>
+                <target>Ordner orange fluo</target>
             </trans-unit>
             <trans-unit id="folderp">
                 <source>Folder purple</source>
@@ -88,6 +111,10 @@
                 <source>Folder red</source>
                 <target>Ordner rot</target>
             </trans-unit>
+            <trans-unit id="folderrf">
+                <source>Folder red fluo</source>
+                <target>Ordner rot fluo</target>
+            </trans-unit>
             <trans-unit id="folderw">
                 <source>Folder white</source>
                 <target>Ordner weiß</target>
@@ -100,6 +127,10 @@
                 <source>Folder yellow</source>
                 <target>Ordner gelb</target>
             </trans-unit>
+            <trans-unit id="folderyf">
+                <source>Folder yellow fluo</source>
+                <target>Ordner gelb fluo</target>
+            </trans-unit>
             <trans-unit id="rfolderb">
                  <source>Rounded folder black</source>
                  <target>Ordner abgerundet schwarz</target>
@@ -111,6 +142,10 @@
             <trans-unit id="rfolderbl">
                  <source>Rounded folder blue</source>
                  <target>Ordner abgerundet blau</target>
+            </trans-unit>
+            <trans-unit id="rfolderblf">
+                <source>Rounded folder blue fluo</source>
+                <target>Ordner abgerundet blau fluo</target>
             </trans-unit>
             <trans-unit id="rfoldergb">
                 <source>Rounded folder gray brighter</source>
@@ -136,9 +171,17 @@
                 <source>Rounded folder green</source>
                 <target>Ordner abgerundet grün</target>
             </trans-unit>
+            <trans-unit id="rfoldergrf">
+                <source>Rounded folder green fluo</source>
+                <target>Ordner abgerundet grün fluo</target>
+            </trans-unit>
             <trans-unit id="rfoldero">
                 <source>Rounded folder orange</source>
                 <target>Ordner abgerundet orange</target>
+            </trans-unit>
+            <trans-unit id="rfolderof">
+                <source>Rounded folder orange fluo</source>
+                <target>Ordner abgerundet orange fluo</target>
             </trans-unit>
             <trans-unit id="rfolderp">
                  <source>Rounded folder purple</source>
@@ -152,6 +195,10 @@
                  <source>Rounded folder red</source>
                  <target>Ordner abgerundet rot</target>
             </trans-unit>
+            <trans-unit id="rfolderrf">
+                <source>Rounded folder red fluo</source>
+                <target>Ordner abgerundet rot fluo</target>
+            </trans-unit>
             <trans-unit id="rfolderw">
                  <source>Rounded folder white</source>
                  <target>Ordner abgerundet weiß</target>
@@ -164,7 +211,10 @@
                  <source>Rounded folder yellow</source>
                  <target>Ordner abgerundet gelb</target>
             </trans-unit>
-
+            <trans-unit id="rfolderyf">
+                <source>Rounded folder yellow fluo</source>
+                <target>Ordner abgerundet gelb fluo</target>
+            </trans-unit>
             <trans-unit id="pageb">
                 <source>Page black</source>
                 <target>Seite schwarz</target>
@@ -176,6 +226,10 @@
             <trans-unit id="pagebl">
                 <source>Page blue</source>
                 <target>Seite blau</target>
+            </trans-unit>
+            <trans-unit id="pageblf">
+                <source>Page blue fluo</source>
+                <target>Seite blau fluo</target>
             </trans-unit>
             <trans-unit id="pagegb">
                 <source>Page gray brighter</source>
@@ -201,9 +255,17 @@
                 <source>Page green</source>
                 <target>Seite grün</target>
             </trans-unit>
+            <trans-unit id="pagegrf">
+                <source>Page green fluo</source>
+                <target>Seite grün fluo</target>
+            </trans-unit>
             <trans-unit id="pageo">
                 <source>Page orange</source>
                 <target>Seite orange</target>
+            </trans-unit>
+            <trans-unit id="pageof">
+                <source>Page orange fluo</source>
+                <target>Seite orange fluo</target>
             </trans-unit>
             <trans-unit id="pagep">
                 <source>Page purple</source>
@@ -217,6 +279,10 @@
                 <source>Page red</source>
                 <target>Seite rot</target>
             </trans-unit>
+            <trans-unit id="pagerf">
+                <source>Page red fluo</source>
+                <target>Seite rot fluo</target>
+            </trans-unit>
             <trans-unit id="pagew">
                 <source>Page white</source>
                 <target>Seite weiß</target>
@@ -229,7 +295,10 @@
                 <source>Page yellow</source>
                 <target>Seite gelb</target>
             </trans-unit>
-
+            <trans-unit id="pageyf">
+                <source>Page yellow fluo</source>
+                <target>Seite gelb fluo</target>
+            </trans-unit>
             <trans-unit id="apptypo3b">
                 <source>TYPO3 logo black</source>
                 <target>TYPO3 logo schwarz</target>
@@ -366,7 +435,6 @@
                 <source>RSS feed orange</source>
                 <target>RSS Feed orange</target>
             </trans-unit>
-
             <trans-unit id="symbarob">
                 <source>Arobase black</source>
                 <target>at-Zeichen schwarz</target>
@@ -415,7 +483,6 @@
                 <source>Wrench orange</source>
                 <target>Schraubenschlüssel orange</target>
             </trans-unit>
-
             <trans-unit id="symbcube">
                 <source>Cube</source>
                 <target>Würfel</target>
@@ -484,7 +551,6 @@
                 <source>Browser Edge</source>
                 <target>Browser Edge</target>
             </trans-unit>
-
             <trans-unit id="alphabeta">
                 <source>A letter</source>
                 <target>Buchstabe A</target>

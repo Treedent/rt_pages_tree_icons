@@ -1,0 +1,8 @@
+# cat=basic/enable/10; type=boolean; label=LLL:EXT:rt_pages_tree_icons/Resources/Private/Language/locallang_rtpim.xlf:diplayiconsinbehaviourtab
+diplayIconsInBehaviourTab = 1
+
+# cat=basic/enable/20; type=boolean; label=LLL:EXT:rt_pages_tree_icons/Resources/Private/Language/locallang_rtpim.xlf:backLoginFormTransparent
+backLoginFormTransparent = 1
+
+# cat=basic/enable/30; type=options[10%=0.1,20%=0.2,30%=0.3,40%=0.4,50%=0.5,60%=0.6,70%=0.7,80%=0.8,90%=0.9]; label=LLL:EXT:rt_pages_tree_icons/Resources/Private/Language/locallang_rtpim.xlf:backLoginFormTransparency
+backLoginFormTransparency = 0.4

@@ -4,7 +4,7 @@
  *
  *  Copyright notice
  *
- *  (c) 2017 Regis TEDONE <regis.tedone@gmail.com>, CMS-PACA
+ *  (c) 2018 Regis TEDONE <regis.tedone@gmail.com>, CMS-PACA
  *
  *  All rights reserved
  *
@@ -25,7 +25,7 @@
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-$EM_CONF[$_EXTKEY] = array(
+$EM_CONF[$_EXTKEY] = [
 	'title' => 'Pages Tree Icons',
 	'description' => 'You can now change the TYPO3 Page TreeView with SVG icons.',
 	'category' => 'be',
@@ -35,16 +35,11 @@ $EM_CONF[$_EXTKEY] = array(
 	'internal' => '',
 	'uploadfolder' => '0',
 	'createDirs' => '',
-	'clearCacheOnLoad' => 0,
-	'version' => '1.2.2',
-	'constraints' => array(
-		'depends' => array(
-			'typo3' => '7.6.0-8.5.99',
-		),
-		'conflicts' => array(
-            'tsconf' => ''
-        ),
-		'suggests' => array(
-		),
-	),
-);
+	'clearCacheOnLoad' => 1,
+	'version' => '3.0.1',
+	'constraints' => [
+		'depends' => [ 'typo3' => '7.6.0-9.2.99' ],
+		'conflicts' => [ 'tsconf' => '' ],
+		'suggests' => [],
+	],
+];

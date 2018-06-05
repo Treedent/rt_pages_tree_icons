@@ -4,7 +4,7 @@ defined('TYPO3_MODE') or die();
 /* * *************************************************************
  *  Copyright notice
  *
- *  (c) 2017 Regis TEDONE <regis.tedone@gmail.com>
+ *  (c) 2018 Regis TEDONE <regis.tedone@gmail.com>
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -30,60 +30,97 @@ defined('TYPO3_MODE') or die();
 /*******************************************/
 /******** Override Page Tree Icons ********/
 /*****************************************/
+
 $langFile = 'LLL:EXT:rt_pages_tree_icons/Resources/Private/Language/locallang_rtpim.xlf:';
 
 $pageIcons = [
 
     [$langFile . 'pageb',               'pageb',                'apps-pagetree-page-black'],
+	['',                                'pageb-s',              'apps-pagetree-page-black-s'],
     [$langFile . 'pageblt',             'pageblt',              'apps-pagetree-page-blue-light'],
+	['',                                'pageblt-s',            'apps-pagetree-page-blue-light-s'],
     [$langFile . 'pagebl',              'pagebl',               'apps-pagetree-page-blue'],
+	['',                                'pagebl-s',             'apps-pagetree-page-blue-s'],
+	[$langFile . 'pageblf',             'pageblf',              'apps-pagetree-page-blue-fluo'],
+	['',                                'pageblf-s',            'apps-pagetree-page-blue-fluo-s'],
     [$langFile . 'pagegb',              'pagegb',               'apps-pagetree-page-gray-brighter'],
+	['',                                'pagegb-s',             'apps-pagetree-page-gray-brighter-s'],
     [$langFile . 'pagegd',              'pagegd',               'apps-pagetree-page-gray-dark'],
-    [$langFile . 'pagegl',              'pagegl',               'apps-pagetree-page-gray-light'],
+	['',                                'pagegd-s',             'apps-pagetree-page-gray-dark-s'],
+	[$langFile . 'pagegl',              'pagegl',               'apps-pagetree-page-gray-light'],
+	['',                                'pagegl-s',             'apps-pagetree-page-gray-light-s'],
     [$langFile . 'pageg',               'pageg',                'apps-pagetree-page-gray'],
+	['',                                'pageg-s',              'apps-pagetree-page-gray-s'],
     [$langFile . 'pagegrl',             'pagegrl',              'apps-pagetree-page-green-light'],
+	['',                                'pagegrl-s',            'apps-pagetree-page-green-light-s'],
     [$langFile . 'pagegr',              'pagegr',               'apps-pagetree-page-green'],
+	['',                                'pagegr-s',             'apps-pagetree-page-green-s'],
+	[$langFile . 'pagegrf',             'pagegrf',              'apps-pagetree-page-green-fluo'],
+	['',                                'pagegrf-s',            'apps-pagetree-page-green-fluo-s'],
     [$langFile . 'pageo',               'pageo',                'apps-pagetree-page-orange'],
+	['',                                'pageo-s',              'apps-pagetree-page-orange-s'],
+	[$langFile . 'pageof',              'pageof',               'apps-pagetree-page-orange-fluo'],
+	['',                                'pageof-s',             'apps-pagetree-page-orange-fluo-s'],
     [$langFile . 'pagep',               'pagep',                'apps-pagetree-page-purple'],
-    [$langFile . 'pagerl',              'pagerl',               'apps-pagetree-page-red-light'],
+	['',                                'pagep-s',              'apps-pagetree-page-purple-s'],
+	[$langFile . 'pagerl',              'pagerl',               'apps-pagetree-page-red-light'],
+	['',                                'pagerl-s',             'apps-pagetree-page-red-light-s'],
     [$langFile . 'pager',               'pager',                'apps-pagetree-page-red'],
-    [$langFile . 'pagew',               'pagew',                'apps-pagetree-page-white'],
+	['',                                'pager-s',              'apps-pagetree-page-red-s'],
+	[$langFile . 'pagerf',              'pagerf',               'apps-pagetree-page-red-fluo'],
+	['',                                'pagerf-s',             'apps-pagetree-page-red-fluo-s'],
+	[$langFile . 'pagew',               'pagew',                'apps-pagetree-page-white'],
+	['',                                'pagew-s',              'apps-pagetree-page-white-s'],
     [$langFile . 'pageyl',              'pageyl',               'apps-pagetree-page-yellow-light'],
+	['',                                'pageyl-s',             'apps-pagetree-page-yellow-light-s'],
     [$langFile . 'pagey',               'pagey',                'apps-pagetree-page-yellow'],
+	['',                                'pagey-s',              'apps-pagetree-page-yellow-s'],
+	[$langFile . 'pageyf',              'pageyf',               'apps-pagetree-page-yellow-fluo'],
+	['',                                'pageyf-s',              'apps-pagetree-page-yellow-fluo-s'],
 
     [$langFile . 'folderb',             'folderb',              'apps-pagetree-filetree-folder-black'],
     [$langFile . 'folderblt',           'folderblt',            'apps-pagetree-filetree-folder-blue-light'],
     [$langFile . 'folderbl',            'folderbl',             'apps-pagetree-filetree-folder-blue'],
+	[$langFile . 'folderblf',           'folderblf',            'apps-pagetree-filetree-folder-blue-fluo'],
     [$langFile . 'foldergb',            'foldergb',             'apps-pagetree-filetree-folder-gray-brighter'],
     [$langFile . 'foldergd',            'foldergd',             'apps-pagetree-filetree-folder-gray-dark'],
     [$langFile . 'foldergl',            'foldergl',             'apps-pagetree-filetree-folder-gray-light'],
     [$langFile . 'folderg',             'folderg',              'apps-pagetree-filetree-folder-gray'],
     [$langFile . 'foldergrl',           'foldergrl',            'apps-pagetree-filetree-folder-green-light'],
     [$langFile . 'foldergr',            'foldergr',             'apps-pagetree-filetree-folder-green'],
+	[$langFile . 'foldergrf',           'foldergrf',            'apps-pagetree-filetree-folder-green-fluo'],
     [$langFile . 'foldero',             'foldero',              'apps-pagetree-filetree-folder-orange'],
+	[$langFile . 'folderof',            'folderof',             'apps-pagetree-filetree-folder-orange-fluo'],
     [$langFile . 'folderp',             'folderp',              'apps-pagetree-filetree-folder-purple'],
     [$langFile . 'folderrl',            'folderrl',             'apps-pagetree-filetree-folder-red-light'],
     [$langFile . 'folderr',             'folderr',              'apps-pagetree-filetree-folder-red'],
+	[$langFile . 'folderrf',            'folderrf',             'apps-pagetree-filetree-folder-red-fluo'],
     [$langFile . 'folderw',             'folderw',              'apps-pagetree-filetree-folder-white'],
     [$langFile . 'folderyl',            'folderyl',             'apps-pagetree-filetree-folder-yellow-light'],
     [$langFile . 'foldery',             'foldery',              'apps-pagetree-filetree-folder-yellow'],
+	[$langFile . 'folderyf',            'folderyf',             'apps-pagetree-filetree-folder-yellow-fluo'],
 
     [$langFile . 'rfolderb',            'rfolderb',             'apps-pagetree-rounded-folder-black'],
     [$langFile . 'rfolderblt',          'rfolderblt',           'apps-pagetree-rounded-folder-blue-light'],
     [$langFile . 'rfolderbl',           'rfolderbl',            'apps-pagetree-rounded-folder-blue'],
+	[$langFile . 'rfolderblf',          'rfolderblf',           'apps-pagetree-rounded-folder-blue-fluo'],
     [$langFile . 'rfoldergb',           'rfoldergb',            'apps-pagetree-rounded-folder-gray-brighter'],
     [$langFile . 'rfoldergd',           'rfoldergd',            'apps-pagetree-rounded-folder-gray-dark'],
     [$langFile . 'rfoldergl',           'rfoldergl',            'apps-pagetree-rounded-folder-gray-light'],
     [$langFile . 'rfolderg',            'rfolderg',             'apps-pagetree-rounded-folder-gray'],
     [$langFile . 'rfoldergrl',          'rfoldergrl',           'apps-pagetree-rounded-folder-green-light'],
     [$langFile . 'rfoldergr',           'rfoldergr',            'apps-pagetree-rounded-folder-green'],
+	[$langFile . 'rfoldergrf',          'rfoldergrf',           'apps-pagetree-rounded-folder-green-fluo'],
     [$langFile . 'rfoldero',            'rfoldero',             'apps-pagetree-rounded-folder-orange'],
+	[$langFile . 'rfolderof',           'rfolderof',            'apps-pagetree-rounded-folder-orange-fluo'],
     [$langFile . 'rfolderp',            'rfolderp',             'apps-pagetree-rounded-folder-purple'],
     [$langFile . 'rfolderrl',           'rfolderrl',            'apps-pagetree-rounded-folder-red-light'],
     [$langFile . 'rfolderr',            'rfolderr',             'apps-pagetree-rounded-folder-red'],
+	[$langFile . 'rfolderrf',           'rfolderrf',            'apps-pagetree-rounded-folder-red-fluo'],
     [$langFile . 'rfolderw',            'rfolderw',             'apps-pagetree-rounded-folder-white'],
     [$langFile . 'rfolderyl',           'rfolderyl',            'apps-pagetree-rounded-folder-yellow-light'],
     [$langFile . 'rfoldery',            'rfoldery',             'apps-pagetree-rounded-folder-yellow'],
+	[$langFile . 'rfolderyf',           'rfolderyf',            'apps-pagetree-rounded-folder-yellow-fluo'],
 
     [$langFile .'apptypo3b',            'apptypo3b',            'apps-pagetree-logo-typo3-black'],
     [$langFile .'apptypo3o',            'apptypo3o',            'apps-pagetree-logo-typo3-orange'],
@@ -158,6 +195,7 @@ $pageIcons = [
     ['Git branch',                      'appgitbranch',         'apps-pagetree-git-branch'],
     ['Git merge',                       'appgitmerge',          'apps-pagetree-git-merge'],
     ['PHP',                             'appphp',               'apps-pagetree-php'],
+	['Blogger',                         'appblogger',           'apps-pagetree-blogger'],
     ['Facebook',                        'socialfb',             'apps-pagetree-social-facebook'],
     ['Twitter',                         'apptw',                'apps-pagetree-social-twitter'],
     ['Google +',                        'appgp',                'apps-pagetree-social-google-plus'],
@@ -204,7 +242,18 @@ $pageIcons = [
     ['Page Icon Changer',               'symbcocotier',         'actions-pagetree-change-page-icon']
 
 ];
-$GLOBALS['TCA']['pages']['columns']['module']['config']['showIconTable'] = true;
+
+$diplayIconsInBehaviourTab = 0;
+$extConf = '';
+if(version_compare(TYPO3_version, '9.0', '<')) {
+	$extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['rt_pages_tree_icons']);
+} elseif(version_compare(TYPO3_version, '8.0', '>')) {
+	$extConf = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance( \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class )->get( 'rt_pages_tree_icons' );
+}
+$diplayIconsInBehaviourTab = $extConf['diplayIconsInBehaviourTab'];
+//\TYPO3\CMS\Core\Utility\DebugUtility::debug($diplayIconsInBehaviourTab);
+$GLOBALS['TCA']['pages']['columns']['module']['config']['fieldWizard']['selectIcons']['disabled'] = !$diplayIconsInBehaviourTab;
+
 foreach($pageIcons as $iconsParams) {
     $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = $iconsParams;
     $GLOBALS['TCA']['pages']['ctrl']['typeicon_classes']['contains-'.$iconsParams[1]] = $iconsParams[2];

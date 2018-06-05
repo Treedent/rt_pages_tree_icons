@@ -2,7 +2,7 @@
  *
  *  Copyright notice
  *
- *  (c) 2017 Regis TEDONE <regis.tedone@gmail.com>, CMS-PACA
+ *  (c) 2018 Regis TEDONE <regis.tedone@gmail.com>, CMS-PACA
  *
  *  All rights reserved
  *
@@ -22,6 +22,13 @@
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+
+if(!TYPO3.jQuery) {
+    TYPO3.jQuery = jQuery.noConflict(true);
+    if (typeof $ === 'undefined' || $ === null) {
+        let $ = TYPO3.jQuery;
+    }
+}
 
 define('CMSPACA/RtPagesTreeIcons/pageIconChanger', ['jquery'], function($) {
     TYPO3.jQuery('li.icon-container').on('click', function() {
