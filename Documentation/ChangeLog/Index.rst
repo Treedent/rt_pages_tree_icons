@@ -6,6 +6,9 @@
 ChangeLog
 =========
 
+V3.0.2  Documentation update.
+Few icons added.
+
 V3.0.1  Compatibility with TYPO3 from 7.6.X to V9.2.X
 Shortcut page icon automatic replacement.
 Few icons added.

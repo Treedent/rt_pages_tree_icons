@@ -25,7 +25,7 @@ Pages Tree Icons - a more comprehensive TYPO3 page tree!
 		TYPO3, Page tree, Icons, SVG
 
 	:Copyright:
-		2017
+		2018
 
 	:Author:
 		Regis TEDONE

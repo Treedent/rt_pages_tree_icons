@@ -184,7 +184,7 @@ class PageIconsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
         $pageId = intval($getVars['pageId']);
 
 	    $pageType = $this->getPageType($pageId);
-	    if($pageType == '4' && substr($newIcon,0,4)=='page') {
+	    if($pageType == '4' && substr($newIcon,0,4)=='page' || $pageType == '4' && substr($newIcon,0,9)=='symbearth') {
 		    $newIcon.= '-s';
 	    }
 

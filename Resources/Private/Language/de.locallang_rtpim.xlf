@@ -299,6 +299,98 @@
                 <source>Page yellow fluo</source>
                 <target>Seite gelb fluo</target>
             </trans-unit>
+            <trans-unit id="pageb-s">
+                <source>Page shortcut black</source>
+                <target>Seite verweis schwarz</target>
+            </trans-unit>
+            <trans-unit id="pageblt-s">
+                <source>Page shortcut blue light</source>
+                <target>Seite verweis hellblau</target>
+            </trans-unit>
+            <trans-unit id="pagebl-s">
+                <source>Page shortcut blue</source>
+                <target>Seite verweis blau</target>
+            </trans-unit>
+            <trans-unit id="pageblf-s">
+                <source>Page shortcut blue fluo</source>
+                <target>Seite verweis blau fluo</target>
+            </trans-unit>
+            <trans-unit id="pagegb-s">
+                <source>Page shortcut gray brighter</source>
+                <target>Seite verweis grau heller</target>
+            </trans-unit>
+            <trans-unit id="pagegd-s">
+                <source>Page shortcut gray dark</source>
+                <target>Seite verweis dunkelgrau</target>
+            </trans-unit>
+            <trans-unit id="pagegl-s">
+                <source>Page shortcut gray light</source>
+                <target>Seite verweis hellgrau</target>
+            </trans-unit>
+            <trans-unit id="pageg-s">
+                <source>Page shortcut gray</source>
+                <target>Seite verweis grau</target>
+            </trans-unit>
+            <trans-unit id="pagegrl-s">
+                <source>Page shortcut green light</source>
+                <target>Seite verweis hellgrün</target>
+            </trans-unit>
+            <trans-unit id="pagegr-s">
+                <source>Page shortcut green</source>
+                <target>Seite verweis grün</target>
+            </trans-unit>
+            <trans-unit id="pagegrf-s">
+                <source>Page shortcut green fluo</source>
+                <target>Seite verweis grün fluo</target>
+            </trans-unit>
+            <trans-unit id="pageo-s">
+                <source>Page shortcut orange</source>
+                <target>Seite verweis orange</target>
+            </trans-unit>
+            <trans-unit id="pageof-s">
+                <source>Page shortcut orange fluo</source>
+                <target>Seite verweis orange fluo</target>
+            </trans-unit>
+            <trans-unit id="pagep-s">
+                <source>Page shortcut purple</source>
+                <target>Seite verweis lila</target>
+            </trans-unit>
+            <trans-unit id="pagerl-s">
+                <source>Page shortcut red light</source>
+                <target>Seite verweis hellrot</target>
+            </trans-unit>
+            <trans-unit id="pager-s">
+                <source>Page shortcut red</source>
+                <target>Seite verweis rot</target>
+            </trans-unit>
+            <trans-unit id="pagerf-s">
+                <source>Page shortcut red fluo</source>
+                <target>Seite verweis rot fluo</target>
+            </trans-unit>
+            <trans-unit id="pagew-s">
+                <source>Page shortcut white</source>
+                <target>Seite verweis weiß</target>
+            </trans-unit>
+            <trans-unit id="pageyl-s">
+                <source>Page shortcut yellow light</source>
+                <target>Seite verweis hellgelb</target>
+            </trans-unit>
+            <trans-unit id="pagey-s">
+                <source>Page shortcut yellow</source>
+                <target>Seite verweis gelb</target>
+            </trans-unit>
+            <trans-unit id="pageyf-s">
+                <source>Page shortcut yellow fluo</source>
+                <target>Seite verweis gelb fluo</target>
+            </trans-unit>
+            <trans-unit id="pagegdpr">
+                <source>Page GDPR</source>
+                <target>Seite DSGVO</target>
+            </trans-unit>
+            <trans-unit id="pagegdpr-s">
+                <source>Page shortcut GDPR</source>
+                <target>Seite verweis DSGVO</target>
+            </trans-unit>
             <trans-unit id="apptypo3b">
                 <source>TYPO3 logo black</source>
                 <target>TYPO3 logo schwarz</target>
@@ -310,6 +402,14 @@
             <trans-unit id="appts">
                 <source>TYPOSCRIPT logo</source>
                 <target>TYPOSCRIPT Logo</target>
+            </trans-unit>
+            <trans-unit id="appdev">
+                <source>Development</source>
+                <target>Entwicklung</target>
+            </trans-unit>
+            <trans-unit id="app404">
+                <source>404 error page</source>
+                <target>404 Fehlerseite</target>
             </trans-unit>
             <trans-unit id="apptemplates">
                 <source>Templates</source>
@@ -330,6 +430,10 @@
             <trans-unit id="symblandpage">
                 <source>Landing page</source>
                 <target>Zielseite</target>
+            </trans-unit>
+            <trans-unit id="apppresentation">
+                <source>Presentation</source>
+                <target>Präsentation</target>
             </trans-unit>
             <trans-unit id="symbdownload">
                 <source>Downloads</source>
@@ -419,13 +523,29 @@
                 <source>Payment</source>
                 <target>Zahlungen</target>
             </trans-unit>
+            <trans-unit id="symbshopcart">
+                <source>Shopping cart</source>
+                <target>WarenKorb</target>
+            </trans-unit>
             <trans-unit id="symbuniversity">
                 <source>University</source>
                 <target>Universität</target>
             </trans-unit>
+            <trans-unit id="symbbrainstorm">
+                <source>Brainstorming</source>
+                <target>Brainstorming</target>
+            </trans-unit>
             <trans-unit id="symbfaq">
                 <source>Faq</source>
                 <target>Faq</target>
+            </trans-unit>
+            <trans-unit id="symbtestimonial">
+                <source>Testimonials</source>
+                <target>Referenzen</target>
+            </trans-unit>
+            <trans-unit id="symbannouncement">
+                <source>Announcements</source>
+                <target>Ankündigungen</target>
             </trans-unit>
             <trans-unit id="apprssb">
                 <source>RSS feed black</source>
@@ -434,6 +554,10 @@
             <trans-unit id="apprsso">
                 <source>RSS feed orange</source>
                 <target>RSS Feed orange</target>
+            </trans-unit>
+            <trans-unit id="symbchart">
+                <source>Charts</source>
+                <target>Diagramme</target>
             </trans-unit>
             <trans-unit id="symbarob">
                 <source>Arobase black</source>
@@ -487,6 +611,22 @@
                 <source>Cube</source>
                 <target>Würfel</target>
             </trans-unit>
+            <trans-unit id="symbproduct">
+                <source>Product</source>
+                <target>Produkt</target>
+            </trans-unit>
+            <trans-unit id="symbdelivery">
+                <source>Delivery</source>
+                <target>Lieferung</target>
+            </trans-unit>
+            <trans-unit id="symbgift">
+                <source>Gifts</source>
+                <target>Geschenke</target>
+            </trans-unit>
+            <trans-unit id="symbart">
+                <source>Arts</source>
+                <target>Kunst</target>
+            </trans-unit>
             <trans-unit id="symbdb">
                 <source>Database</source>
                 <target>Datenbank</target>
@@ -514,6 +654,14 @@
             <trans-unit id="symbearth">
                 <source>Earth</source>
                 <target>Erde</target>
+            </trans-unit>
+            <trans-unit id="symbearth-s">
+                <source>Earth shortcut</source>
+                <target>Erde Verknüpfung</target>
+            </trans-unit>
+            <trans-unit id="symblive">
+                <source>Live</source>
+                <target>Live</target>
             </trans-unit>
             <trans-unit id="syslinux">
                 <source>System Linux</source>
