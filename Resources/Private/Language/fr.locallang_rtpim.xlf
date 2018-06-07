@@ -103,6 +103,10 @@
                 <source>Folder purple</source>
                 <target>Dossier violet</target>
             </trans-unit>
+            <trans-unit id="folderr">
+                <source>Folder red</source>
+                <target>Dossier rouge</target>
+            </trans-unit>
             <trans-unit id="folderrl">
                 <source>Folder red light</source>
                 <target>Dossier rouge clair</target>

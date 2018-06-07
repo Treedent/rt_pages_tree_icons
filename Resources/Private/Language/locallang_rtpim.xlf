@@ -78,6 +78,9 @@
             <trans-unit id="folderp">
                 <source>Folder purple</source>
             </trans-unit>
+            <trans-unit id="folderr">
+                <source>Folder red</source>
+            </trans-unit>
             <trans-unit id="folderrl">
                 <source>Folder red light</source>
             </trans-unit>

@@ -30,15 +30,16 @@ This extension provides a new web module to change SVG icon per page.
    :width: 1333px
    :alt: Page icon changer web module
 
-    Page icon changer web module in action.
+
+Page icon changer web module in action.
 You can change page icon in a few clicks.
 
 
-.. figure:: ../Images/rtpim.png
-   :width: 1333px
+.. figure:: ../Images/page_behaviour.png
+   :width: 594px
    :alt: Behavior Tab when editing page properties.
 
-    Behavior Tab when editing page properties.
+Behavior Tab when editing page properties.
 
 
 This extension give the ability to change the background backend login transprency.
