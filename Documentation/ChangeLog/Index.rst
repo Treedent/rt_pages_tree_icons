@@ -6,6 +6,10 @@
 ChangeLog
 =========
 
+V3.1.0  Compatibility for TYPO3 V9.3.X
+Documentation update.
+Few icons added.
+
 V3.0.2  Documentation update.
 Few icons added.
 

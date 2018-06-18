@@ -623,6 +623,18 @@
                 <source>Gifts</source>
                 <target>Geschenke</target>
             </trans-unit>
+            <trans-unit id="symbheartb">
+                <source>Heart black</source>
+                <target>Herz schwarz</target>
+            </trans-unit>
+            <trans-unit id="symbheartr">
+                <source>Heart red</source>
+                <target>Herz rot</target>
+            </trans-unit>
+            <trans-unit id="symbarchive">
+                <source>Archives</source>
+                <target>Archiv</target>
+            </trans-unit>
             <trans-unit id="symbart">
                 <source>Arts</source>
                 <target>Kunst</target>
@@ -658,6 +670,18 @@
             <trans-unit id="symbearth-s">
                 <source>Earth shortcut</source>
                 <target>Erde Verknüpfung</target>
+            </trans-unit>
+            <trans-unit id="symbbookmark">
+                <source>Bookmarks</source>
+                <target>Lesezeichen</target>
+            </trans-unit>
+            <trans-unit id="symblink">
+                <source>Links</source>
+                <target>Links</target>
+            </trans-unit>
+            <trans-unit id="symblogin">
+                <source>Login</source>
+                <target>Einloggen</target>
             </trans-unit>
             <trans-unit id="symblive">
                 <source>Live</source>

@@ -468,6 +468,15 @@
             <trans-unit id="symbgift">
                 <source>Gifts</source>
             </trans-unit>
+            <trans-unit id="symbheartb">
+                <source>Heart black</source>
+            </trans-unit>
+            <trans-unit id="symbheartr">
+                <source>Heart red</source>
+            </trans-unit>
+            <trans-unit id="symbarchive">
+                <source>Archives</source>
+            </trans-unit>
             <trans-unit id="symbart">
                 <source>Arts</source>
             </trans-unit>
@@ -494,6 +503,15 @@
             </trans-unit>
             <trans-unit id="symbearth-s">
                 <source>Earth shortcut</source>
+            </trans-unit>
+            <trans-unit id="symbbookmark">
+                <source>Bookmarks</source>
+            </trans-unit>
+            <trans-unit id="symblink">
+                <source>Links</source>
+            </trans-unit>
+            <trans-unit id="symblogin">
+                <source>Login</source>
             </trans-unit>
             <trans-unit id="symblive">
                 <source>Live</source>

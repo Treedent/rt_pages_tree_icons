@@ -184,6 +184,9 @@ $pageIcons = [
 	[$langFile .'symbproduct',          'symbproduct',          'apps-pagetree-product'],
 	[$langFile .'symbdelivery',         'symbdelivery',         'apps-pagetree-delivery'],
 	[$langFile .'symbgift',             'symbgift',             'apps-pagetree-gift'],
+	[$langFile .'symbheartb',           'symbheartb',           'apps-pagetree-heart-b'],
+	[$langFile .'symbheartr',           'symbheartr',           'apps-pagetree-heart-r'],
+	[$langFile .'symbarchive',          'symbarchive',          'apps-pagetree-archive'],
 	[$langFile .'symbart',              'symbart',              'apps-pagetree-art'],
     [$langFile .'symbdb',               'symbdb',               'apps-pagetree-database'],
     [$langFile .'symblightbulb',        'symblightbulb',        'apps-pagetree-lightbulb'],
@@ -193,10 +196,13 @@ $pageIcons = [
     [$langFile .'symbuser',             'symbuser',             'apps-pagetree-user'],
     [$langFile .'symbearth',            'symbearth',            'apps-pagetree-earth'],
 	[$langFile .'symbearth-s',          'symbearth-s',          'apps-pagetree-earth-s'],
+	[$langFile .'symbbookmark',         'symbbookmark',         'apps-pagetree-bookmark'],
+	[$langFile .'symblink',             'symblink',             'apps-pagetree-link'],
+	[$langFile .'symblogin',            'symblogin',            'apps-pagetree-login'],
 	[$langFile .'symblive',             'symblive',             'apps-pagetree-live'],
     [$langFile .'syslinux',             'syslinux',             'apps-pagetree-linux-black'],
     [$langFile .'sysandroid',           'sysandroid',           'apps-pagetree-android-black'],
-    [$langFile .'sysapple ',            'sysapple',             'apps-pagetree-apple-black'],
+    [$langFile .'sysapple',             'sysapple',             'apps-pagetree-apple-black'],
     [$langFile .'syswindows',           'syswindows',           'apps-pagetree-windows-black'],
     [$langFile .'browserchrome',        'browserchrome',        'apps-pagetree-browser-chrome'],
     [$langFile .'browserfirefox',       'browserfirefox',       'apps-pagetree-browser-firefox'],
@@ -266,7 +272,7 @@ $diplayIconsInBehaviourTab = 0;
 $extConf = '';
 if(version_compare(TYPO3_version, '9.0', '<')) {
 	$extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['rt_pages_tree_icons']);
-} elseif(version_compare(TYPO3_version, '8.0', '>')) {
+} elseif(version_compare(TYPO3_version, '9.0', '>=')) {
 	$extConf = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance( \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class )->get( 'rt_pages_tree_icons' );
 }
 $diplayIconsInBehaviourTab = $extConf['diplayIconsInBehaviourTab'];

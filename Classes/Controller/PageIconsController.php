@@ -221,15 +221,14 @@ class PageIconsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
 
          $pageId = $this->request->getArgument('pageId');
 
-         $sReturnUrl = BackendUtility::getModuleUrl("web_RtPagesTreeIconsMod1", [
-             'id' => $pageId
-         ]);
-
-         $urlEditPage = BackendUtility::getModuleUrl('record_edit', [
-             'edit[pages][' . $pageId . ']' => 'edit',
-             'pageId' => $pageId,
-             'returnUrl' => $sReturnUrl
-         ]);
+	     /** @var \TYPO3\CMS\Backend\Routing\UriBuilder $uriBuilder */
+	     $uriBuilder = GeneralUtility::makeInstance(\TYPO3\CMS\Backend\Routing\UriBuilder::class);
+	     $sReturnUrl = (string)$uriBuilder->buildUriFromRoute('web_RtPagesTreeIconsMod1', [ 'id' => $pageId ]);
+	     $urlEditPage = (string)$uriBuilder->buildUriFromRoute('record_edit', [
+		     'edit[pages][' . $pageId . ']' => 'edit',
+		     'pageId' => $pageId,
+		     'returnUrl' => $sReturnUrl
+	     ]);
          $this->response->setStatus(303);
          $this->response->setHeader('Location', $urlEditPage);
      }
@@ -241,7 +240,7 @@ class PageIconsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
      */
 
     protected function getPageIcon($pageId) {
-        $tce = GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\DataHandling\\DataHandler');
+        $tce = GeneralUtility::makeInstance(\TYPO3\CMS\Core\DataHandling\DataHandler::class);
         $pageIcon = $tce->pageInfo($pageId,'module');
         return $pageIcon;
     }
@@ -253,7 +252,7 @@ class PageIconsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
      */
 
     protected function getPageType($pageId) {
-        $tce = GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\DataHandling\\DataHandler');
+        $tce = GeneralUtility::makeInstance(\TYPO3\CMS\Core\DataHandling\DataHandler::class);
         $pageType = $tce->pageInfo($pageId,'doktype');
         return $pageType;
     }
@@ -265,7 +264,7 @@ class PageIconsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
      */
 
     protected function isSiteRoot($pageId) {
-        $tce = GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\DataHandling\\DataHandler');
+        $tce = GeneralUtility::makeInstance(\TYPO3\CMS\Core\DataHandling\DataHandler::class);
         $isSiteRoot = $tce->pageInfo($pageId,'is_siteroot');
         return $isSiteRoot;
     }
@@ -277,7 +276,7 @@ class PageIconsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
      */
 
     protected function isNavHide($pageId) {
-        $tce = GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\DataHandling\\DataHandler');
+        $tce = GeneralUtility::makeInstance(\TYPO3\CMS\Core\DataHandling\DataHandler::class);
         $isNavHide = $tce->pageInfo($pageId,'nav_hide');
         return $isNavHide;
     }
@@ -289,7 +288,7 @@ class PageIconsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
      */
 
     protected function getPageTitle($pageId) {
-        $tce = GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\DataHandling\\DataHandler');
+        $tce = GeneralUtility::makeInstance(\TYPO3\CMS\Core\DataHandling\DataHandler::class);
         $pageTitle = $tce->pageInfo($pageId,'title');
         return $pageTitle;
     }

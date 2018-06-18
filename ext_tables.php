@@ -54,7 +54,7 @@ call_user_func(
 	    $extConf = '';
 	    if(version_compare(TYPO3_version, '9.0', '<')) {
 		    $extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['rt_pages_tree_icons']);
-	    } elseif(version_compare(TYPO3_version, '8.0', '>')) {
+	    } elseif(version_compare(TYPO3_version, '9.0', '>=')) {
 		    $extConf = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance( \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class )->get( 'rt_pages_tree_icons' );
 	    }
 
