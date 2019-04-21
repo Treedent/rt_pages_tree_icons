@@ -6,7 +6,7 @@ if (!defined('TYPO3_MODE')) {
  *
  *  Copyright notice
  *
- *  (c) 2018 Regis TEDONE <regis.tedone@gmail.com>, CMS-PACA
+ *  (c) 2019 Regis TEDONE <regis.tedone@gmail.com>, CMS-PACA
  *
  *  All rights reserved
  *
@@ -26,12 +26,16 @@ if (!defined('TYPO3_MODE')) {
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
+use CMSPACA\RtPagesTreeIcons\Utility\RtBackendUtility;
+
 call_user_func(
     function($extKey) {
 
         if (TYPO3_MODE === 'BE') {
 
-            \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
+            ExtensionUtility::registerModule(
                 'CMSPACA.' . $extKey,
                 'web',
                 'mod1',
@@ -42,27 +46,25 @@ call_user_func(
                 [
                     'access' => 'user,group',
                     'icon'   => 'EXT:' . $extKey . '/Resources/Public/Icons/palm-tree-BE.svg',
-                    'labels' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang_rtpim.xlf',
+                    'labels' => 'LLL:EXT:' . $extKey . '/Resources/Private/Language/locallang.xlf',
                 ]
             );
 
-        }
-        // Load Extension Typoscipt Configuration
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($extKey, 'Configuration/TypoScript', 'rt_pages_tree_icons');
+	        // Get extension configuration
+            $extConf = RtBackendUtility::getExtensionConfiguration('rt_pages_tree_icons');
 
-		// Login style
-	    $extConf = '';
-	    if(version_compare(TYPO3_version, '9.0', '<')) {
-		    $extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['rt_pages_tree_icons']);
-	    } elseif(version_compare(TYPO3_version, '9.0', '>=')) {
-		    $extConf = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance( \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class )->get( 'rt_pages_tree_icons' );
-	    }
+	        // Backend login form opacity style
+	        if($extConf['backLoginFormTransparent']=='1') {
+		        $opacity = !empty($extConf['backLoginFormTransparency']) ? $extConf['backLoginFormTransparency'] : '0.5';
+		        $GLOBALS['TBE_STYLES']['inDocStyles_TBEstyle'] = '
+					body .panel, body .panel-footer { background-color: rgba(255, 255, 255, '.$opacity.'); padding:15px; }
+				';
+	        }
 
-        if($extConf['backLoginFormTransparent']==1) {
-        	$transparency = !empty($extConf['backLoginFormTransparency']) ? $extConf['backLoginFormTransparency'] : '0.4';
-	        $GLOBALS['TBE_STYLES']['inDocStyles_TBEstyle'] = '
-	            body .panel, body .panel-footer { background-color: rgba(255, 255, 255, '.$transparency.'); padding:15px; }
-	        ';
+	        // Backend login background image
+            if($extConf['backLoginRandomImage']=='1') {
+		        $GLOBALS['TBE_STYLES']['stylesheet'] = '/typo3conf/ext/rt_pages_tree_icons/Resources/Public/Css/Bestyle.css';
+	        }
         }
     },
     $_EXTKEY

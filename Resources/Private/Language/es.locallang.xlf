@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="es" datatype="plaintext" original="messages" date="2019-04-20T18:36:40Z" product-name="rtPageTreeIcons">
+		<header/>
+		<body>
+			<trans-unit id="mlang_tabs_tab">
+				<source>Pages icons</source>
+				<target>Iconos de páginas</target>
+			</trans-unit>
+			<trans-unit id="mlang_labels_tabdescr">
+				<source>Manage the page icons</source>
+				<target>Administrar los iconos de la página</target>
+			</trans-unit>
+            <trans-unit id="module_title">
+                <source>Page icon changer</source>
+                <target>Cambiador de iconos de página</target>
+            </trans-unit>
+            <trans-unit id="changePageIcon">
+                <source>Change this page icon</source>
+                <target>Cambiar el icono de esta página</target>
+            </trans-unit>
+            <trans-unit id="defaultPageType">
+                <source>Default page type icon</source>
+                <target>Icono de página predeterminado</target>
+            </trans-unit>
+            <trans-unit id="selectapage">
+                <source>Please select a page in the page tree!</source>
+                <target>Por favor, seleccione una página en el árbol de páginas!</target>
+            </trans-unit>
+            <trans-unit id="save_label">
+                <source>Save</source>
+                <target>Salvar</target>
+            </trans-unit>
+            <trans-unit id="diplayiconsinbehaviourtab">
+                <source>Display icons in behaviour tab:Enable changing page tree icons when editing page properties (Need to flush system cache).</source>
+                <target>Mostrar iconos en la pestaña de comportamiento: habilite los iconos de árbol de página cambiantes al editar las propiedades de la página (Necesidad de vaciar la caché del sistema)</target>
+            </trans-unit>
+            <trans-unit id="backLoginFormTransparent">
+                <source>Login form background opacity:Enable changing opacity of the TYPO3 backend login form background (Need to flush system cache).</source>
+                <target>Opacidad de fondo de formulario de inicio de sesión: habilite la opacidad cambiante del fondo de formulario de inicio de sesión de fondo de TYPO3 (Necesidad de vaciar la caché del sistema).</target>
+            </trans-unit>
+            <trans-unit id="backLoginFormTransparency">
+                <source>Opacity value:Change the opacity value of the TYPO3 backend login form background (Need to flush system cache).</source>
+                <target>Opacidad de fondo de formulario de inicio de sesión: habilite la opacidad cambiante del fondo de formulario de inicio de sesión de fondo de TYPO3 (Necesidad de vaciar la caché del sistema).</target>
+            </trans-unit>
+            <trans-unit id="backLoginRandomImage">
+                <source>Backend login random background images:Use random images from Unsplash [https://source.unsplash.com/random] for backend login background.</source>
+                <target>Imágenes de fondo aleatorias de inicio de sesión de backend: use imágenes aleatorias de Unsplash [https://source.unsplash.com/random] para el fondo de inicio de sesión de backend.</target>
+            </trans-unit>
+            <trans-unit id="category.typo3Embedded">
+                <source>TYPO3 Embedded</source>
+                <target>TYPO3 incrustado</target>
+            </trans-unit>
+            <trans-unit id="category.pages">
+                <source>Pages</source>
+                <target>Páginas</target>
+            </trans-unit>
+            <trans-unit id="category.folders">
+                <source>Folders</source>
+                <target>Carpetas</target>
+            </trans-unit>
+            <trans-unit id="category.symbols">
+                <source>Symbols</source>
+                <target>Simbolos</target>
+            </trans-unit>
+            <trans-unit id="category.applications">
+                <source>Applications</source>
+                <target>Aplicaciones</target>
+            </trans-unit>
+            <trans-unit id="category.alphanum">
+                <source>Letters &amp; Numbers</source>
+                <target>Letras y numeros</target>
+            </trans-unit>
+            <trans-unit id="folderb">
+                <source>Folder black</source>
+                <target>Carpeta negra</target>
+            </trans-unit>
+            <trans-unit id="folderm">
+                <source>Folder brown</source>
+                <target>Carpeta marrón</target>
+            </trans-unit>
+            <trans-unit id="folderblt">
+                <source>Folder blue light</source>
+                <target>Carpeta luz azul</target>
+            </trans-unit>
+            <trans-unit id="folderbl">
+                <source>Folder blue</source>
+                <target>Carpeta azul</target>
+            </trans-unit>
+            <trans-unit id="folderblf">
+                <source>Folder blue fluo</source>
+                <target>Carpeta fluo azul</target>
+            </trans-unit>
+            <trans-unit id="foldergb">
+                <source>Folder gray brighter</source>
+                <target>Carpeta gris más brillante</target>
+            </trans-unit>
+            <trans-unit id="foldergd">
+                <source>Folder gray dark</source>
+                <target>Carpeta gris oscuro</target>
+            </trans-unit>
+            <trans-unit id="foldergl">
+                <source>Folder gray light</source>
+                <target>Carpeta luz gris</target>
+            </trans-unit>
+            <trans-unit id="folderg">
+                <source>Folder gray</source>
+                <target>Carpeta gris</target>
+            </trans-unit>
+            <trans-unit id="foldergrl">
+                <source>Folder green light</source>
+                <target>Carpeta </target>
+            </trans-unit>
+            <trans-unit id="foldergr">
+                <source>Folder green</source>
+                <target>Carpeta verde</target>
+            </trans-unit>
+            <trans-unit id="foldergrf">
+                <source>Folder green fluo</source>
+                <target>Carpeta fluo verde</target>
+            </trans-unit>
+            <trans-unit id="foldero">
+                <source>Folder orange</source>
+                <target>Carpeta naranja</target>
+            </trans-unit>
+            <trans-unit id="folderof">
+                <source>Folder orange fluo</source>
+                <target>Carpeta fluo naranja</target>
+            </trans-unit>
+            <trans-unit id="folderp">
+                <source>Folder purple</source>
+                <target>Carpeta púrpura</target>
+            </trans-unit>
+            <trans-unit id="folderf">
+                <source>Folder fuchsia</source>
+                <target>Carpeta fucsia</target>
+            </trans-unit>
+            <trans-unit id="folderr">
+                <source>Folder red</source>
+                <target>Carpeta roja</target>
+            </trans-unit>
+            <trans-unit id="folderrl">
+                <source>Folder red light</source>
+                <target>Carpeta luz roja</target>
+            </trans-unit>
+            <trans-unit id="folderrf">
+                <source>Folder red fluo</source>
+                <target>Carpeta fluo roja</target>
+            </trans-unit>
+            <trans-unit id="folderw">
+                <source>Folder white</source>
+                <target>Carpeta blanca</target>
+            </trans-unit>
+            <trans-unit id="folderyl">
+                <source>Folder yellow light</source>
+                <target>Carpeta luz amarilla</target>
+            </trans-unit>
+            <trans-unit id="foldery">
+                <source>Folder yellow</source>
+                <target>Carpeta amarilla</target>
+            </trans-unit>
+            <trans-unit id="folderyf">
+                <source>Folder yellow fluo</source>
+                <target>Carpeta fluo amarilla</target>
+            </trans-unit>
+            <trans-unit id="rfolderb">
+                 <source>Rounded folder black</source>
+                 <target>Carpeta redondeada negra</target>
+            </trans-unit>
+            <trans-unit id="rfolderm">
+                <source>Rounded folder brown</source>
+                <target>Carpeta redondeada marrón</target>
+            </trans-unit>
+            <trans-unit id="rfolderblt">
+                 <source>Rounded folder blue light</source>
+                 <target>Carpeta redondeada luz azul</target>
+            </trans-unit>
+            <trans-unit id="rfolderbl">
+                 <source>Rounded folder blue</source>
+                 <target>Carpeta redondeada azul</target>
+            </trans-unit>
+            <trans-unit id="rfolderblf">
+                <source>Rounded folder blue fluo</source>
+                <target>Carpeta redondeada fluo azul</target>
+            </trans-unit>
+            <trans-unit id="rfoldergb">
+                <source>Rounded folder gray brighter</source>
+                <target>Carpeta redondeada gris más brillante</target>
+            </trans-unit>
+            <trans-unit id="rfoldergd">
+                <source>Rounded folder gray dark</source>
+                <target>Carpeta redondeada gris oscuro</target>
+            </trans-unit>
+            <trans-unit id="rfoldergl">
+                <source>Rounded folder gray light</source>
+                <target>Carpeta redondeada luz gris</target>
+            </trans-unit>
+            <trans-unit id="rfolderg">
+                <source>Rounded folder gray</source>
+                <target>Carpeta redondeada gris</target>
+            </trans-unit>
+            <trans-unit id="rfoldergrl">
+                <source>Rounded folder green light</source>
+                <target>Carpeta redondeada luz verde</target>
+            </trans-unit>
+            <trans-unit id="rfoldergr">
+                <source>Rounded folder green</source>
+                <target>Carpeta redondeada verde</target>
+            </trans-unit>
+            <trans-unit id="rfoldergrf">
+                <source>Rounded folder green fluo</source>
+                <target>Carpeta redondeada fluo verde</target>
+            </trans-unit>
+            <trans-unit id="rfoldero">
+                <source>Rounded folder orange</source>
+                <target>Carpeta redondeada naranja</target>
+            </trans-unit>
+            <trans-unit id="rfolderof">
+                <source>Rounded folder orange fluo</source>
+                <target>Carpeta redondeada fluo naranja</target>
+            </trans-unit>
+            <trans-unit id="rfolderp">
+                 <source>Rounded folder purple</source>
+                 <target>Carpeta redondeada púrpura</target>
+            </trans-unit>
+            <trans-unit id="rfolderf">
+                <source>Rounded folder fuchsia</source>
+                <target>Carpeta redondeada fucsia</target>
+            </trans-unit>
+            <trans-unit id="rfolderrl">
+                 <source>Rounded folder red light</source>
+                 <target>Carpeta redondeada luz roja</target>
+            </trans-unit>
+            <trans-unit id="rfolderr">
+                 <source>Rounded folder red</source>
+                 <target>Carpeta redondeada roja</target>
+            </trans-unit>
+            <trans-unit id="rfolderrf">
+                <source>Rounded folder red fluo</source>
+                <target>Carpeta redondeada fluo roja</target>
+            </trans-unit>
+            <trans-unit id="rfolderw">
+                 <source>Rounded folder white</source>
+                 <target>Carpeta redondeada blanca</target>
+            </trans-unit>
+            <trans-unit id="rfolderyl">
+                 <source>Rounded folder yellow light</source>
+                 <target>Carpeta redondeada luz amarilla</target>
+            </trans-unit>
+            <trans-unit id="rfoldery">
+                 <source>Rounded folder yellow</source>
+                 <target>Carpeta redondeada amarilla</target>
+            </trans-unit>
+            <trans-unit id="rfolderyf">
+                <source>Rounded folder yellow fluo</source>
+                <target>Carpeta redondeada fluo amarilla</target>
+            </trans-unit>
+            <trans-unit id="pageb">
+                <source>Page black</source>
+                <target>Página negra</target>
+            </trans-unit>
+            <trans-unit id="pagem">
+                <source>Page brown</source>
+                <target>Página marrón</target>
+            </trans-unit>
+            <trans-unit id="pageblt">
+                <source>Page blue light</source>
+                <target>Página luz azul</target>
+            </trans-unit>
+            <trans-unit id="pagebl">
+                <source>Page blue</source>
+                <target>Página azul</target>
+            </trans-unit>
+            <trans-unit id="pageblf">
+                <source>Page blue fluo</source>
+                <target>Página fluo azul</target>
+            </trans-unit>
+            <trans-unit id="pagegb">
+                <source>Page gray brighter</source>
+                <target>Página gris más brillante</target>
+            </trans-unit>
+            <trans-unit id="pagegd">
+                <source>Page gray dark</source>
+                <target>Página gris oscuro</target>
+            </trans-unit>
+            <trans-unit id="pagegl">
+                <source>Page gray light</source>
+                <target>Página luz gris</target>
+            </trans-unit>
+            <trans-unit id="pageg">
+                <source>Page gray</source>
+                <target>Página gris</target>
+            </trans-unit>
+            <trans-unit id="pagegrl">
+                <source>Page green light</source>
+                <target>Página luz verde</target>
+            </trans-unit>
+            <trans-unit id="pagegr">
+                <source>Page green</source>
+                <target>Página luz verde</target>
+            </trans-unit>
+            <trans-unit id="pagegrf">
+                <source>Page green fluo</source>
+                <target>Página fluo verde</target>
+            </trans-unit>
+            <trans-unit id="pageo">
+                <source>Page orange</source>
+                <target>Página naranja</target>
+            </trans-unit>
+            <trans-unit id="pageof">
+                <source>Page orange fluo</source>
+                <target>Página fluo naranja</target>
+            </trans-unit>
+            <trans-unit id="pagep">
+                <source>Page purple</source>
+                <target>Página púrpura</target>
+            </trans-unit>
+            <trans-unit id="pagef">
+                <source>Page fuchsia</source>
+                <target>Página fucsia</target>
+            </trans-unit>
+            <trans-unit id="pagerl">
+                <source>Page red light</source>
+                <target>Página luz roja</target>
+            </trans-unit>
+            <trans-unit id="pager">
+                <source>Page red</source>
+                <target>Página roja</target>
+            </trans-unit>
+            <trans-unit id="pagerf">
+                <source>Page red fluo</source>
+                <target>Página fluo roja</target>
+            </trans-unit>
+            <trans-unit id="pagew">
+                <source>Page white</source>
+                <target>Página blanca</target>
+            </trans-unit>
+            <trans-unit id="pageyl">
+                <source>Page yellow light</source>
+                <target>Página luz amarilla</target>
+            </trans-unit>
+            <trans-unit id="pagey">
+                <source>Page yellow</source>
+                <target>Página amarilla</target>
+            </trans-unit>
+            <trans-unit id="pageyf">
+                <source>Page yellow fluo</source>
+                <target>Página fluo amarilla</target>
+            </trans-unit>
+            <trans-unit id="pagegdpr">
+                <source>Page GDPR</source>
+                <target>Página RGPD</target>
+            </trans-unit>
+            <trans-unit id="apptypo3b">
+                <source>TYPO3 logo black</source>
+                <target>Logo TYPO3 negro</target>
+            </trans-unit>
+            <trans-unit id="apptypo3o">
+                <source>TYPO3 logo orange</source>
+                <target>Logo TYPO3 naranja</target>
+            </trans-unit>
+            <trans-unit id="appts">
+                <source>TYPOSCRIPT logo</source>
+                <target>Logo TYPOSCRIPT</target>
+            </trans-unit>
+            <trans-unit id="appdev">
+                <source>Development</source>
+                <target>Desarrollo</target>
+            </trans-unit>
+            <trans-unit id="app404">
+                <source>404 error page</source>
+                <target>Página de error 404</target>
+            </trans-unit>
+            <trans-unit id="apptemplates">
+                <source>Templates</source>
+                <target>Plantillas</target>
+            </trans-unit>
+            <trans-unit id="appbelayouts">
+                <source>Backend Layouts</source>
+                <target>Diseños de backend</target>
+            </trans-unit>
+            <trans-unit id="appgride">
+                <source>Grid elements</source>
+                <target>Elementos de rejilla</target>
+            </trans-unit>
+            <trans-unit id="symbcoconut">
+                <source>Coconut tree</source>
+                <target>Árbol de coco</target>
+            </trans-unit>
+            <trans-unit id="symbshortcut">
+                <source>Shortcut</source>
+                <target>Acceso directo</target>
+            </trans-unit>
+            <trans-unit id="symblandpage">
+                <source>Landing page</source>
+                <target>Página de destino</target>
+            </trans-unit>
+            <trans-unit id="apppresentation">
+                <source>Presentation</source>
+                <target>Presentación</target>
+            </trans-unit>
+            <trans-unit id="symbdownload">
+                <source>Downloads</source>
+                <target>Descargas</target>
+            </trans-unit>
+            <trans-unit id="symbform">
+                <source>Form</source>
+                <target>Formulario</target>
+            </trans-unit>
+            <trans-unit id="symbdesktop">
+                <source>Desktop</source>
+                <target>Escritorio</target>
+            </trans-unit>
+            <trans-unit id="symbtablet">
+                <source>Tablet</source>
+                <target>Tableta</target>
+            </trans-unit>
+            <trans-unit id="symbmobile">
+                <source>Smartphone</source>
+                <target>Smartphone</target>
+            </trans-unit>
+            <trans-unit id="symbvideo">
+                <source>Video</source>
+                <target>Vídeo</target>
+            </trans-unit>
+            <trans-unit id="symbaudio">
+                <source>Audio</source>
+                <target>Audio</target>
+            </trans-unit>
+            <trans-unit id="symbcamera">
+                <source>Photos</source>
+                <target>Las fotos</target>
+            </trans-unit>
+            <trans-unit id="symbimage">
+                <source>Pictures</source>
+                <target>Imágenes</target>
+            </trans-unit>
+            <trans-unit id="symbcomments">
+                <source>Comments</source>
+                <target>Comentarios</target>
+            </trans-unit>
+            <trans-unit id="symbmagnifier">
+                <source>Magnifier</source>
+                <target>Lupa</target>
+            </trans-unit>
+            <trans-unit id="symbmail">
+                <source>Mail</source>
+                <target>Correo</target>
+            </trans-unit>
+            <trans-unit id="symbbooks">
+                <source>Publications</source>
+                <target>Publicaciones</target>
+            </trans-unit>
+            <trans-unit id="symbjobs">
+                <source>Jobs</source>
+                <target>Trabajos</target>
+            </trans-unit>
+            <trans-unit id="symblegalnotice">
+                <source>Legal notice</source>
+                <target>Aviso Legal</target>
+            </trans-unit>
+            <trans-unit id="symbsitemap">
+                <source>Sitemap</source>
+                <target>Mapa del sitio</target>
+            </trans-unit>
+            <trans-unit id="symbmenu">
+                <source>Menu</source>
+                <target>Menú</target>
+            </trans-unit>
+            <trans-unit id="symbagenda">
+                <source>Events</source>
+                <target>Eventos</target>
+            </trans-unit>
+            <trans-unit id="symbhome">
+                <source>Homepage</source>
+                <target>Página principal</target>
+            </trans-unit>
+            <trans-unit id="symbphone">
+                <source>Phone</source>
+                <target>Teléfono</target>
+            </trans-unit>
+            <trans-unit id="symblocation">
+                <source>Location</source>
+                <target>Ubicación</target>
+            </trans-unit>
+            <trans-unit id="symbcloud">
+                <source>Cloud</source>
+                <target>Nube</target>
+            </trans-unit>
+            <trans-unit id="symbmeteo">
+                <source>Weather</source>
+                <target>Clima</target>
+            </trans-unit>
+            <trans-unit id="symbcredcard">
+                <source>Payment</source>
+                <target>Pago</target>
+            </trans-unit>
+            <trans-unit id="symbshopcart">
+                <source>Shopping cart</source>
+                <target>Carrito de compras</target>
+            </trans-unit>
+            <trans-unit id="symbuniversity">
+                <source>University</source>
+                <target>Universidad</target>
+            </trans-unit>
+            <trans-unit id="symbbrainstorm">
+                <source>Brainstorming</source>
+                <target>Reunión creativa</target>
+            </trans-unit>
+            <trans-unit id="symbfaq">
+                <source>Faq</source>
+                <target>Preguntas más frecuentes</target>
+            </trans-unit>
+            <trans-unit id="symbtestimonial">
+                <source>Testimonials</source>
+                <target>Testimonios</target>
+            </trans-unit>
+            <trans-unit id="symbannouncement">
+                <source>Announcements</source>
+                <target>Anuncios</target>
+            </trans-unit>
+            <trans-unit id="apprssb">
+                <source>RSS feed black</source>
+                <target>RSS feed negro</target>
+            </trans-unit>
+            <trans-unit id="apprsso">
+                <source>RSS feed orange</source>
+                <target>RSS feed naranja</target>
+            </trans-unit>
+            <trans-unit id="symbchart">
+                <source>Charts</source>
+                <target>Cartas</target>
+            </trans-unit>
+            <trans-unit id="symbarob">
+                <source>Arobase black</source>
+                <target>Arobase negro</target>
+            </trans-unit>
+            <trans-unit id="symbaroo">
+                <source>Arobase orange</source>
+                <target>Arobase naranja</target>
+            </trans-unit>
+            <trans-unit id="symbastb">
+                <source>Asterisk black</source>
+                <target>Asterisco negro</target>
+            </trans-unit>
+            <trans-unit id="symbasto">
+                <source>Asterisk orange</source>
+                <target>Asterisco naranja</target>
+            </trans-unit>
+            <trans-unit id="symbhtagb">
+                <source>Hashtag black</source>
+                <target>Hashtag nero</target>
+            </trans-unit>
+            <trans-unit id="symbhtago">
+                <source>Hashtag orange</source>
+                <target>Hashtag naranja</target>
+            </trans-unit>
+            <trans-unit id="symbgearb">
+                <source>Gear black</source>
+                <target>Engranaje negro</target>
+            </trans-unit>
+            <trans-unit id="symbgearo">
+                <source>Gear orange</source>
+                <target>Engranaje naranja</target>
+            </trans-unit>
+            <trans-unit id="symbstarb">
+                <source>Star black</source>
+                <target>Estrella negra</target>
+            </trans-unit>
+            <trans-unit id="symbstaro">
+                <source>Star orange</source>
+                <target>Estrella naranja</target>
+            </trans-unit>
+            <trans-unit id="symbwrenchb">
+                <source>Wrench black</source>
+                <target>Llave negra</target>
+            </trans-unit>
+            <trans-unit id="symbwrencho">
+                <source>Wrench orange</source>
+                <target>Llave naranja</target>
+            </trans-unit>
+            <trans-unit id="symbcube">
+                <source>Cube</source>
+                <target>Cubo</target>
+            </trans-unit>
+            <trans-unit id="symbproduct">
+                <source>Product</source>
+                <target>Producto</target>
+            </trans-unit>
+            <trans-unit id="symbdelivery">
+                <source>Delivery</source>
+                <target>Entrega</target>
+            </trans-unit>
+            <trans-unit id="symbgift">
+                <source>Gifts</source>
+                <target>Regalos</target>
+            </trans-unit>
+            <trans-unit id="symbheartb">
+                <source>Heart black</source>
+                <target>Corazon negro</target>
+            </trans-unit>
+            <trans-unit id="symbheartr">
+                <source>Heart red</source>
+                <target>Corazon rojo</target>
+            </trans-unit>
+            <trans-unit id="symbarchive">
+                <source>Archives</source>
+                <target>Archivo</target>
+            </trans-unit>
+            <trans-unit id="symbart">
+                <source>Arts</source>
+                <target>Artes</target>
+            </trans-unit>
+            <trans-unit id="symbdb">
+                <source>Database</source>
+                <target>Base de datos</target>
+            </trans-unit>
+            <trans-unit id="symblightbulb">
+                <source>Lightbulb</source>
+                <target>Bombilla</target>
+            </trans-unit>
+            <trans-unit id="symblock">
+                <source>Lock</source>
+                <target>Bloquear</target>
+            </trans-unit>
+            <trans-unit id="symbsak">
+                <source>Swiss army knife</source>
+                <target>Navaja suiza</target>
+             </trans-unit>
+            <trans-unit id="symbusers">
+                <source>Users</source>
+                <target>Usuarios</target>
+            </trans-unit>
+            <trans-unit id="symbuser">
+                <source>User</source>
+                <target>Usuario</target>
+            </trans-unit>
+            <trans-unit id="symbearth">
+                <source>Earth</source>
+                <target>Tierra</target>
+            </trans-unit>
+            <trans-unit id="symbbookmark">
+                <source>Bookmarks</source>
+                <target>Marcadores</target>
+            </trans-unit>
+            <trans-unit id="symblink">
+                <source>Links</source>
+                <target>Enlaces</target>
+            </trans-unit>
+            <trans-unit id="symblogin">
+                <source>Login</source>
+                <target>Iniciar sesión</target>
+            </trans-unit>
+            <trans-unit id="symblive">
+                <source>Live</source>
+                <target>Vivir</target>
+            </trans-unit>
+            <trans-unit id="syslinux">
+                <source>System Linux</source>
+                <target>Sistema Linux</target>
+            </trans-unit>
+            <trans-unit id="sysandroid">
+                <source>System Android</source>
+                <target>Sistema Android</target>
+             </trans-unit>
+            <trans-unit id="sysapple">
+                <source>System Apple</source>
+                <target>Sistema Apple</target>
+            </trans-unit>
+            <trans-unit id="syswindows">
+                <source>System Windows</source>
+                <target>Sistema Windows</target>
+            </trans-unit>
+            <trans-unit id="browserchrome">
+                <source>Browser Chrome</source>
+                <target>Navegador Chrome</target>
+            </trans-unit>
+            <trans-unit id="browserfirefox">
+                <source>Browser Firefox</source>
+                <target>Navegador Firefox</target>
+             </trans-unit>
+            <trans-unit id="browseropera">
+                <source>Browser Opera</source>
+                <target>Navegador Opera</target>
+            </trans-unit>
+            <trans-unit id="browsersafari">
+                <source>Browser Safari</source>
+                <target>Navegador Safari</target>
+            </trans-unit>
+            <trans-unit id="browseredge">
+                <source>Browser Edge</source>
+                <target>Navegador Edge</target>
+            </trans-unit>
+            <trans-unit id="alphabeta">
+                <source>A letter</source>
+                <target>A letra</target>
+            </trans-unit>
+            <trans-unit id="alphabetb">
+                 <source>B letter</source>
+                 <target>B letra</target>
+             </trans-unit>
+            <trans-unit id="alphabetc">
+                 <source>C letter</source>
+                 <target>C letra</target>
+             </trans-unit>
+            <trans-unit id="alphabetd">
+                 <source>D letter</source>
+                 <target>D letra</target>
+             </trans-unit>
+            <trans-unit id="alphabete">
+                 <source>E letter</source>
+                 <target>E letra</target>
+             </trans-unit>
+            <trans-unit id="alphabetf">
+                 <source>F letter</source>
+                 <target>F letra</target>
+             </trans-unit>
+            <trans-unit id="alphabetg">
+                 <source>G letter</source>
+                 <target>G letra</target>
+             </trans-unit>
+            <trans-unit id="alphabeth">
+                 <source>H letter</source>
+                 <target>H letra</target>
+             </trans-unit>
+            <trans-unit id="alphabeti">
+                 <source>I letter</source>
+                 <target>I letra</target>
+             </trans-unit>
+            <trans-unit id="alphabetj">
+                 <source>J letter</source>
+                 <target>J letra</target>
+             </trans-unit>
+            <trans-unit id="alphabetk">
+                 <source>K letter</source>
+                 <target>K letra</target>
+             </trans-unit>
+            <trans-unit id="alphabetl">
+                 <source>L letter</source>
+                 <target>L letra</target>
+             </trans-unit>
+            <trans-unit id="alphabetm">
+                 <source>M letter</source>
+                 <target>M letra</target>
+             </trans-unit>
+            <trans-unit id="alphabetn">
+                 <source>N letter</source>
+                 <target>N letra</target>
+             </trans-unit>
+            <trans-unit id="alphabeto">
+                 <source>O letter</source>
+                 <target>O letra</target>
+             </trans-unit>
+            <trans-unit id="alphabetp">
+                 <source>P letter</source>
+                 <target>P letra</target>
+             </trans-unit>
+            <trans-unit id="alphabetq">
+                 <source>Q letter</source>
+                 <target>Q letra</target>
+             </trans-unit>
+            <trans-unit id="alphabetr">
+                 <source>R letter</source>
+                 <target>R letra</target>
+             </trans-unit>
+            <trans-unit id="alphabets">
+                 <source>S letter</source>
+                 <target>S letra</target>
+             </trans-unit>
+            <trans-unit id="alphabett">
+                 <source>T letter</source>
+                 <target>T letra</target>
+             </trans-unit>
+            <trans-unit id="alphabetu">
+                 <source>U letter</source>
+                 <target>U letra</target>
+             </trans-unit>
+            <trans-unit id="alphabetv">
+                 <source>V letter</source>
+                 <target>V letra</target>
+             </trans-unit>
+            <trans-unit id="alphabetw">
+                 <source>W letter</source>
+                 <target>W letra</target>
+             </trans-unit>
+            <trans-unit id="alphabetx">
+                 <source>X letter</source>
+                 <target>X letra</target>
+             </trans-unit>
+            <trans-unit id="alphabety">
+                 <source>Y letter</source>
+                 <target>Y letra</target>
+             </trans-unit>
+            <trans-unit id="alphabetz">
+                 <source>Z letter</source>
+                 <target>Z letra</target>
+             </trans-unit>
+            <trans-unit id="number0">
+               <source>0 number</source>
+               <target>0 numero</target>
+            </trans-unit>
+            <trans-unit id="number1">
+               <source>1 number</source>
+               <target>1 numero</target>
+            </trans-unit>
+            <trans-unit id="number2">
+               <source>2 number</source>
+               <target>2 numero</target>
+            </trans-unit>
+            <trans-unit id="number3">
+               <source>3 number</source>
+               <target>3 numero</target>
+            </trans-unit>
+            <trans-unit id="number4">
+               <source>4 number</source>
+               <target>4 numero</target>
+            </trans-unit>
+            <trans-unit id="number5">
+               <source>5 number</source>
+               <target>5 numero</target>
+            </trans-unit>
+            <trans-unit id="number6">
+               <source>6 number</source>
+               <target>6 numero</target>
+            </trans-unit>
+            <trans-unit id="number7">
+               <source>7 number</source>
+               <target>7 numero</target>
+            </trans-unit>
+            <trans-unit id="number8">
+               <source>8 number</source>
+               <target>8 numero</target>
+            </trans-unit>
+            <trans-unit id="number9">
+               <source>9 number</source>
+               <target>9 numero</target>
+            </trans-unit>
+            <trans-unit id="about">
+                <source>About</source>
+                <target>Sobre</target>
+            </trans-unit>
+            <trans-unit id="about.CMSPACA.title">
+                <source>About CMS-PACA</source>
+                <target>Sobre CMS-PACA</target>
+            </trans-unit>
+            <trans-unit id="about.CMSPACA.text">
+                <source>Development of functional and custom TYPO3 extensions since 2004.</source>
+                <target>Desarrollo de extensiones TYPO3 funcionales y personalizadas desde 2004.</target>
+            </trans-unit>
+            <trans-unit id="page.hiddenInMenu">
+                <source>Hidden in menu</source>
+                <target>Oculta en el menu</target>
+            </trans-unit>
+            <trans-unit id="page.hidden">
+                <source>Hidden</source>
+                <target>Oculta</target>
+            </trans-unit>
+            <trans-unit id="page.limitedInTime">
+                <source>Limited in time</source>
+                <target>Limitado en el tiempo</target>
+            </trans-unit>
+            <trans-unit id="page.restrictedAccess">
+                <source>Restricted Access</source>
+                <target>Acceso restringido</target>
+            </trans-unit>
+        </body>
+	</file>
+</xliff>

@@ -21,14 +21,14 @@
                             <f:if condition="{page0}">
                                 <f:else>
                                     <f:form.button type="submit" class="btn btn-default">
-                                        <core:icon identifier="actions-document-save" size="small" />&nbsp;<f:translate key="LLL:EXT:rt_pages_tree_icons/Resources/Private/Language/locallang_rtpim.xlf:save_label" />
+                                        <core:icon identifier="actions-document-save" size="small" />&nbsp;<f:translate key="save_label" />
                                     </f:form.button>
-                                    <f:form.hidden name="newIcon" id="newIcon"></f:form.hidden>
+                                    <f:form.hidden name="newIcon" id="newIcon" value="{selectedIcon}" />
                                 </f:else>
                             </f:if>
                             <div class="cmspaca typo3-login-copyright-text">
                                 <core:icon identifier="actions-pagetree-change-page-icon" size="small" />&nbsp;
-                                <f:translate key="LLL:EXT:rt_pages_tree_icons/Resources/Private/Language/locallang_rtpim.xlf:module_title" /> - CMSPACA&nbsp;&copy;&nbsp;<f:format.date date="now" format="Y" />
+                                <f:translate key="module_title" /> - <span class="orange">V{version}</span> - CMSPACA&nbsp;&copy;&nbsp;<f:format.date date="now" format="Y" />
                             </div>
                         </f:form>
                     </div>
@@ -40,10 +40,8 @@
                                 <f:else>
                                     <f:link.action action="editPageProperties"
                                                    arguments="{pageId:pageId}"
-                                                   title="<f:translate key='LLL:EXT:rt_pages_tree_icons/Resources/Private/Language/locallang_rtpim.xlf:editpageproperties' />" class="btn btn-default btn-sm">
-
+                                                   title="{f:translate(key: 'LLL:EXT:core/Resources/Private/Language/locallang_mod_web_list.xlf:editPage')}" class="btn btn-default btn-sm">
                                         <core:icon identifier="actions-version-page-open" size="small" />
-
                                     </f:link.action>
                                 </f:else>
                             </f:if>

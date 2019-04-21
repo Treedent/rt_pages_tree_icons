@@ -1,8 +1,28 @@
 .t3js-module-docheader {
-    background:linear-gradient(to bottom, #cccccc , #f7f7f7);
+    background:linear-gradient(to bottom, #cccccc , #f3f3f3)
+}
+#typo3-docbody {
+    background:linear-gradient(to bottom, #f3f3f3,#ffffff)
+}
+div.panel-body {
+    padding:0;
+    background-color: #F3F3F3
+}
+div.callout {
+    margin-bottom:0;
+    margin-top:5px
+}
+span.orange {
+    color:#E8A33D
+}
+div.panel.panel-tab {
+    padding:0
+}
+div.tab-content {
+    margin-top: -8px
 }
 div.icon-set ul {
-    margin-right: -5px;
+    margin-right: -15px;
     list-style-type: none;
     padding-left: 0;
     margin-left: 0
@@ -10,34 +30,119 @@ div.icon-set ul {
 div.icon-set li {
     background-color: rgba(240, 240, 240,.5);
     float: left;
-    width: 20%;
-    border: 2px solid #fff;
-    padding: 20px 10px;
-    height: 140px;
+    width: 165px;
+    border: 1px solid #fff;
+    padding: 10px 10px;
+    height: 100px;
     overflow: hidden;
-    transition: box-shadow 0.3s ease-in-out;
-}
-div.icon-set li img[src*=".gif"] {
-    width:48px;
-    height:48px
+    transition: box-shadow 0.3s ease-in-out
 }
 div.icon-set li:hover {
     background-color: rgba(255, 135, 0,.1);
     box-shadow: 0 5px 15px rgba(255, 135, 0, 0.4);
-    cursor: pointer;
+    cursor: pointer
 }
 div.icon-set li p {
     margin: 10px;
-    font-size:1.15em
+    font-size:1em
 }
 div.icon-set li.icon-current {
     background-color: rgba(255, 135, 0,.3);
-    box-shadow: 0 5px 15px rgba(255, 135, 0, 0.4);
+    box-shadow: 0 5px 15px rgba(255, 135, 0, 0.4)
 }
-
+div.btn-toolbar {
+    margin-top:-8px
+}
 div.cmspaca {
-    float:left;
-    clear:right;
-    margin:7px;
+    float: left;
+    clear: right;
+    margin: 4px 0 0 15px
 }
-
+div.rticon-markup {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0
+}
+div.rticon-overlay {
+    position: absolute;
+    top:82px;
+    left:49px
+}
+.wrapper {
+    width: 900px;
+    height: 100px;
+    position: relative;
+    top:-15px;
+    left:-18px
+}
+.wrapper h1 {
+    margin-left:90px
+}
+.wrapper span {
+    position: absolute;
+    display: block;
+    width: 8px;
+    height: 10px;
+    top: 12px;
+    left:20px
+}
+.wrapper span span {
+    position: absolute;
+    display: block;
+    background: url(../Icons/arrow.png);
+    width: 8px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 0;
+    height: 10px;
+    opacity: 0.5
+}
+.wrapper .arrow:before {
+    position: absolute;
+    content:"";
+    background: url(../Icons/arrow.png);
+    display: block;
+    width: 8px;
+    height: 10px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.3
+}
+.wrapper .arrow:after {
+    position: absolute;
+    content:"";
+    background: url(../Icons/arrow.png);
+    display: block;
+    width: 8px;
+    height: 10px;
+    top: 0;
+    bottom: 0;
+    right: 20px;
+    opacity: 1
+}
+.wrapper .arrow:before{
+    animation: animate-arrow-2 1s ease-in-out infinite 0.1s
+}
+.wrapper .arrow:after{
+    animation: animate-arrow-1 1s ease-in-out infinite
+}
+.wrapper .arrow span{
+    animation: animate-arrow-3 1s ease-in-out infinite 0.2s
+}
+@keyframes animate-arrow-1 {
+    0%{transform:translateX(100px);opacity: 0}
+    70%,100%{transform:translateX(0px);opacity: 1}
+}
+@keyframes animate-arrow-2 {
+    0%{transform:translateX(120px);opacity: 0}
+    70%,100%{transform:translateX(0px);opacity: 0.5}
+}
+@keyframes animate-arrow-3 {
+    0%{transform:translateX(140px);opacity: 0}
+    70%,100%{transform:translateX(0px);opacity: 0.3}
+}

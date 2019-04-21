@@ -12,11 +12,15 @@ Sceenshots
 What does it do?
 ----------------
 
-This extension gives you the ability to change the TYPO3 pages tree icons
+This extension gives you the ability to change the TYPO3 pages tree icons.
+A new Backend-Module to have a more comprehensive page treeview.
+You can now dress TYPO3 page treeview with custom SVG icons.
+
 
 .. important::
 
-   This extension only works with TYPO3 from V7.6.X to V9.3.X
+    - This extension works from TYPO3 V7.6.0 to V9.5.99
+    - This extension is provided with French, English, German, Italian and Spanish translations.
 
 
 .. _screenshots:
@@ -26,29 +30,38 @@ Screenshots
 
 This extension provides a new web module to change SVG icon per page.
 
-.. figure:: ../Images/rtpim.png
-   :width: 1333px
+.. figure:: ../Images/rt_pages_tree_icons.png
+   :width: 1583px
    :alt: Page icon changer web module
-
 
 Page icon changer web module in action.
 You can change page icon in a few clicks.
 
 
-.. figure:: ../Images/page_behaviour.png
-   :width: 594px
+
+.. figure:: ../Images/contains_plugin.png
+   :width: 623px
    :alt: Behavior Tab when editing page properties.
 
 Behavior Tab when editing page properties.
 
 
-This extension give the ability to change the background backend login transprency.
 
-.. figure:: ../Images/ext_conf.png
-   :width: 852px
-   :alt: Module configuration
+The extension give the ability to modify the backend login appearance.
+
+.. figure:: ../Images/backend-login-1.png
+   :width: 1196px
+   :alt: Backend Login new appearance
 
 
-.. figure:: ../Images/login_transparency.jpg
-   :width: 1000px
-   :alt: Transparent background for the TYPO3 login form.
+.. figure:: ../Images/backend-login-2.png
+   :width: 1196px
+   :alt: Backend Login new appearance
+
+
+.. figure:: ../Images/backend-login-3.png
+   :width: 1196px
+   :alt: Backend Login new appearance
+
+
+Uses Unsplash random images for backend login form background.
