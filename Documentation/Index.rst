@@ -1,5 +1,9 @@
-.. include:: Includes.txt
+﻿.. ==================================================
+.. FOR YOUR INFORMATION
+.. --------------------------------------------------
+.. -*- coding: utf-8 -*- with BOM.
 
+.. include:: Includes.txt
 
 .. _start:
 
@@ -34,15 +38,14 @@ Pages Tree Icons - a more comprehensive TYPO3 page tree!
 		regis.tedone@gmail.com
 
 	:License:
-		This document is published under the Open Publication License
-		available from http://www.opencontent.org/openpub/
+		This document is published under the Open Content License
+		available from http://www.opencontent.org/opl.shtml
 
 	:Rendered:
 		|today|
 
 	The content of this document is related to TYPO3,
-	a GNU/GPL CMS/Framework available from `www.typo3.org <https://typo3.org/>`__.
-
+	a GNU/GPL CMS/Framework available from `www.typo3.org <http://www.typo3.org/>`_.
 
 	**Table of Contents**
 
@@ -50,9 +53,9 @@ Pages Tree Icons - a more comprehensive TYPO3 page tree!
 	:maxdepth: 3
 	:titlesonly:
 
-	ScreenShots/Index
+	Introduction/Index
+	Administration/Index
 	Configuration/Index
-    Administration/Index
 	KnownProblems/Index
 	ChangeLog/Index
 	Links

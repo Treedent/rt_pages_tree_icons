@@ -35,6 +35,7 @@ Here, you can :
 
 
 
+
 .. figure:: ../Images/extension_configuration_login_options.png
    :width: 987px
    :alt: Extension configuration login options
