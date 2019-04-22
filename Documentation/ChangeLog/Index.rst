@@ -11,6 +11,12 @@
 ChangeLog
 =========
 
+V3.5.1
+
+    Documentation updated
+
+
+
 V3.5.0
 
     Update note from previous versions :
