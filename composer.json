@@ -1,0 +1,24 @@
+{
+    "name": "cmspaca/rt-pages-tree-icons",
+    "type": "typo3-cms-extension",
+    "description": "TYPO3 Page TreeView SVG icons changer.",
+    "authors": [
+        {
+            "name": "Regis TEDONE",
+            "role": "Developer"
+        }
+    ],
+    "version": "3.5.2",
+    "require": {
+        "typo3/cms-core": "^7.6 || ^8.7 || ^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "CMSPACA\\RtPagesTreeIcons\\": "Classes"
+        }
+    },
+    "replace": {
+        "rt_pages_tree_icon": "self.version",
+        "typo3-ter/rt-pages-tree-icons": "self.version"
+    }
+}

@@ -11,6 +11,12 @@
 ChangeLog
 =========
 
+V3.5.2
+
+    Add Composer Support
+
+
+
 V3.5.1
 
     Documentation updated
