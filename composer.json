@@ -18,7 +18,7 @@
         }
     },
     "replace": {
-        "rt_pages_tree_icon": "self.version",
+        "rt_pages_tree_icons": "self.version",
         "typo3-ter/rt-pages-tree-icons": "self.version"
     }
 }
