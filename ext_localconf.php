@@ -2,13 +2,7 @@
 
 defined('TYPO3_MODE') or die();
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Imaging\IconRegistry;
-use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
-
 $boot = function () {
-
-
     if (TYPO3_MODE === 'BE') {
 
         //SVG Icons files declarations
@@ -415,13 +409,15 @@ $boot = function () {
             'apps-pagetree-alphanum-9'				        =>			'alphanum/9.svg',
 	        'apps-pagetree-alphanum-9-h'				    =>			'alphanum/9-h.svg'
         ];
-        $iconRegistry = GeneralUtility::makeInstance( IconRegistry::class );
+        $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance( \TYPO3\CMS\Core\Imaging\IconRegistry::class );
         foreach ($icons as $identifier => $icon) {
-            $iconRegistry->registerIcon(
-                $identifier,
-                SvgIconProvider::class,
-                ['source' => 'EXT:rt_pages_tree_icons/Resources/Public/Icons/' . $icon]
-            );
+            if (!$iconRegistry->isRegistered($identifier)) {
+                $iconRegistry->registerIcon(
+                    $identifier,
+                    \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    ['source' => 'EXT:rt_pages_tree_icons/Resources/Public/Icons/' . $icon]
+                );
+            }
         }
     }
 };
