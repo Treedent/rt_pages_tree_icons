@@ -33,19 +33,31 @@
             </trans-unit>
             <trans-unit id="diplayiconsinbehaviourtab">
                 <source>Display icons in behaviour tab:Enable changing page tree icons when editing page properties (Need to flush system cache).</source>
-                <target>Mostrar iconos en la pestaña de comportamiento: habilite los iconos de árbol de página cambiantes al editar las propiedades de la página (Necesidad de vaciar la caché del sistema)</target>
+                <target>Mostrar iconos en la pestaña de comportamiento:Habilite los iconos de árbol de página cambiantes al editar las propiedades de la página (Necesidad de vaciar la caché del sistema)</target>
             </trans-unit>
             <trans-unit id="backLoginFormTransparent">
                 <source>Login form background opacity:Enable changing opacity of the TYPO3 backend login form background (Need to flush system cache).</source>
-                <target>Opacidad de fondo de formulario de inicio de sesión: habilite la opacidad cambiante del fondo de formulario de inicio de sesión de fondo de TYPO3 (Necesidad de vaciar la caché del sistema).</target>
+                <target>Opacidad de fondo de formulario de inicio de sesión:Habilite la opacidad cambiante del fondo de formulario de inicio de sesión del backend TYPO3 (Necesidad de vaciar la caché del sistema).</target>
             </trans-unit>
-            <trans-unit id="backLoginFormTransparency">
+            <trans-unit id="backLoginFormOpacity">
                 <source>Opacity value:Change the opacity value of the TYPO3 backend login form background (Need to flush system cache).</source>
-                <target>Opacidad de fondo de formulario de inicio de sesión: habilite la opacidad cambiante del fondo de formulario de inicio de sesión de fondo de TYPO3 (Necesidad de vaciar la caché del sistema).</target>
+                <target>Opacidad de fondo de formulario de inicio de sesión:Habilite la opacidad cambiante del fondo de formulario de inicio de sesión del backend TYPO3 (Necesidad de vaciar la caché del sistema).</target>
+            </trans-unit>
+            <trans-unit id="backLoginFormBorder">
+                <source>Login form border:Display the border of the TYPO3 backend login form (Need to flush system cache).</source>
+                <target>Borde de formulario de inicio de sesión:Mostrar el borde del formulario de inicio de sesión del backend TYPO3(Necesidad de vaciar la caché del sistema).</target>
+            </trans-unit>
+            <trans-unit id="backLoginBorderRadius">
+                <source>Login form border radius:Change the border radius value of the TYPO3 backend login form (Need to flush system cache).</source>
+                <target>Radio del borde de formulario de inicio de sesión:Cambie el valor del radio de borde de formulario de inicio de sesión del backend TYPO3</target>
+            </trans-unit>
+            <trans-unit id="backLoginBackColor">
+                <source>Login form background color:Change the background color value of the TYPO3 backend login form (Need to flush system cache).</source>
+                <target>Color de fondo del formulario de inicio de sesión:Cambie el valor del color de fondo del formulario de inicio de sesión del backend TYPO3 (Necesidad de vaciar la caché del sistema).</target>
             </trans-unit>
             <trans-unit id="backLoginRandomImage">
                 <source>Backend login random background images:Use random images from Unsplash [https://source.unsplash.com/random] for backend login background.</source>
-                <target>Imágenes de fondo aleatorias de inicio de sesión de backend: use imágenes aleatorias de Unsplash [https://source.unsplash.com/random] para el fondo de inicio de sesión de backend.</target>
+                <target>Imágenes de fondo aleatorias de inicio de sesión de backend:Use imágenes aleatorias de Unsplash [https://source.unsplash.com/random] para el fondo de inicio de sesión de backend.</target>
             </trans-unit>
             <trans-unit id="category.typo3Embedded">
                 <source>TYPO3 Embedded</source>
@@ -839,11 +851,11 @@
                 <source>About</source>
                 <target>Sobre</target>
             </trans-unit>
-            <trans-unit id="about.CMSPACA.title">
-                <source>About CMS-PACA</source>
-                <target>Sobre CMS-PACA</target>
+            <trans-unit id="about.SYRADEV.title">
+                <source>About SYRADEV</source>
+                <target>Sobre SYRADEV</target>
             </trans-unit>
-            <trans-unit id="about.CMSPACA.text">
+            <trans-unit id="about.SYRADEV.text">
                 <source>Development of functional and custom TYPO3 extensions since 2004.</source>
                 <target>Desarrollo de extensiones TYPO3 funcionales y personalizadas desde 2004.</target>
             </trans-unit>

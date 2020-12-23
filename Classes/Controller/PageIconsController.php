@@ -1,8 +1,10 @@
 <?php
-namespace CMSPACA\RtPagesTreeIcons\Controller;
+namespace SYRADEV\RtPagesTreeIcons\Controller;
 
+use TYPO3\CMS\Core\Package\Exception;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 use TYPO3\CMS\Extbase\Mvc\Exception\StopActionException;
 use TYPO3\CMS\Backend\Routing\UriBuilder;
@@ -14,7 +16,7 @@ use TYPO3\CMS\Core\DataHandling\DataHandler;
  *
  *  Copyright notice
  *
- *  (c) 2019 Regis TEDONE <regis.tedone@gmail.com>, CMS-PACA
+ *  (c) 2021 Regis TEDONE <regis.tedone@gmail.com>, SYRADEV
  *
  *  All rights reserved
  *
@@ -45,22 +47,25 @@ class PageIconsController extends ActionController {
 	 * action list
 	 *
 	 * @return void display
+	 * @throws Exception
 	 */
 	public function listAction() {
 
 		$urlvars = $_GET;
 		$pageId = isset($urlvars['pageId']) ? $urlvars['pageId'] : $urlvars['id'];
 		$page0 = false;
-		if($pageId==0 || $pageId==null) {
+		if($pageId===0 || $pageId===null) {
 			$page0 = true;
 		}
 
 		$langFile = 'LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf';
 		if(version_compare(TYPO3_version, '8.0', '<')) {
 			$langFile = 'LLL:EXT:lang/locallang_tca.xlf';
-		} elseif(version_compare(TYPO3_version, '8.0', '>=')) {
+		}
+		if(version_compare(TYPO3_version, '8.0', '>=')) {
 			  $langFile = 'LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf';
-		} elseif(version_compare(TYPO3_version, '9.0', '>=')) {
+		}
+		if(version_compare(TYPO3_version, '9.0', '>=')) {
 			$langFile = 'LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf';
 		}
 
@@ -70,7 +75,7 @@ class PageIconsController extends ActionController {
 		$pageIconName = $this->getPageIcon($pageId);
 
 		// Get Page Type
-		$pageType = $this->getPageType($pageId);
+		$pageType = (string) $this->getPageType( $pageId );
 
 		// Get Page Menu State
 		$pageMenuState = $this->getPageMenuState($pageId);
@@ -157,13 +162,17 @@ class PageIconsController extends ActionController {
 				$declared_icons[4] = 'default';
 			}
 
+			if(empty($declared_icons[0])) {
+				continue;
+			}
+
 			//Get Page icon class
 			if(!empty($pageIconName)) {
-				if($declared_icons[1]==$pageIconName || $declared_icons[1]==substr($pageIconName, 0, -2)) {
+				if($declared_icons[1]===$pageIconName || strpos( $pageIconName, $declared_icons[1] ) === 0 ) {
 					$pageIconClass = $declared_icons[2];
 					$selectedIcon = $pageIconName;
-
-					if(substr($pageIconName,-2)=='-s' || substr($pageIconName,-2)=='-h') {
+					$pIN = substr($pageIconName,-2);
+					if($pIN === '-s' || $pIN === '-h') {
 						$selectedIcon = substr($pageIconName,0,-2);
 					}
 
@@ -175,19 +184,20 @@ class PageIconsController extends ActionController {
 				$tabs['default']['isactive'] = 'in active';
 			}
 			//Remove empty icons or Shortcut Icons
-			if(empty($declared_icons[0]) || substr($declared_icons[1],-2)=='-s' || substr($declared_icons[1],-2)=='-h') {
+			$dis = substr($declared_icons[1],-2);
+			if(empty($declared_icons[0]) || $dis === '-s' || $dis === '-h') {
 				continue;
 			}
 			//Remove gifs/png from your TYPO3 extensions, switch to SVG, please!
-			if(substr($declared_icons[2], -4) =='.png') {
+			if(substr($declared_icons[2], -4) ==='.png') {
 				$declared_icons[3] = 'png';
 			}
-			if(substr($declared_icons[2], -4) =='.gif') {
+			if(substr($declared_icons[2], -4) ==='.gif') {
 				$declared_icons[3] = 'gif';
 			} else {
 				$declared_icons[3] = 'svg';
 			}
-			if(substr($declared_icons[0], 0, 3)=='LLL') {
+			if( strpos( $declared_icons[0], 'LLL' ) === 0 ) {
 				$declared_icons[0] = LocalizationUtility::translate($declared_icons[0], 'rt_pages_tree_icons');
 			}
 			$icons[] = $declared_icons;
@@ -222,17 +232,17 @@ class PageIconsController extends ActionController {
 		$newIcon = $postVars['newIcon'];
 
 		$getVars = GeneralUtility::_GET('tx_rtpagestreeicons_web_rtpagestreeiconsmod1');
-		$pageId = intval($getVars['pageId']);
+		$pageId = (int) $getVars['pageId'];
 
 		$pageType = $this->getPageType($pageId);
 		// Force Shortcut Icon
-		if($pageType == '4' && substr($newIcon,0,4)=='page' || $pageType == '4' && substr($newIcon,0,9)=='symbearth') {
+		if( ( $pageType === '4' && strpos( $newIcon, 'page' ) === 0 ) || ( $pageType === '4' && strpos( $newIcon, 'symbearth' ) === 0 ) ) {
 			$newIcon.= '-s';
 		}
 
 		// Force Hidden in menu Icon
 		$pageMenuState = $this->getPageMenuState($pageId);
-		if($pageMenuState == '1') {
+		if($pageMenuState === '1') {
 			$newIcon.= '-h';
 		}
 
@@ -266,11 +276,13 @@ class PageIconsController extends ActionController {
 	/**
 	 * action editPageProperties
 	 * @return void
+	 * @throws NoSuchArgumentException
 	 */
 	public function editPagePropertiesAction() {
 		$pageId = $this->request->getArgument('pageId');
+		$urlEditPage = '';
 		if(version_compare(TYPO3_version, '9.0', '<')) {
-			$sReturnUrl = BackendUtility::getModuleUrl("web_RtPagesTreeIconsMod1", [
+			$sReturnUrl = BackendUtility::getModuleUrl( 'web_RtPagesTreeIconsMod1', [
 				'id' => $pageId
 			]);
 			$urlEditPage = BackendUtility::getModuleUrl('record_edit', [
@@ -294,99 +306,90 @@ class PageIconsController extends ActionController {
 	/**
 	 * utils get Page Menu State
 	 * @param $pageId
-	 * @return boolean $pageMenuState
+	 * @return boolean
 	 */
 	protected function getPageMenuState($pageId) {
 		$tce = GeneralUtility::makeInstance( DataHandler::class );
-		$pageMenuState = $tce->pageInfo($pageId,'nav_hide');
-		return $pageMenuState;
+		return $tce->pageInfo($pageId,'nav_hide');
 	}
 
 	/**
 	 * utils get Page Icon
 	 * @param $pageId
-	 * @return string $pageIcon
+	 * @return string
 	 */
 	protected function getPageIcon($pageId) {
 		$tce = GeneralUtility::makeInstance( DataHandler::class );
-		$pageIcon = $tce->pageInfo($pageId,'module');
-		return $pageIcon;
+		return $tce->pageInfo($pageId,'module');
 	}
 
 	/**
 	 * utils get Page Icon
 	 * @param $pageId
-	 * @return string $pageIcon
+	 * @return string
 	 */
 	protected function getPageType($pageId) {
 		$tce = GeneralUtility::makeInstance( DataHandler::class );
-		$pageType = $tce->pageInfo($pageId,'doktype');
-		return $pageType;
+		return $tce->pageInfo($pageId,'doktype');
 	}
 
 	/**
 	 * Utils Get Is Site Root
 	 * @param $pageId
-	 * @return boolean $isSiteRoot
+	 * @return boolean
 	 */
 	protected function isSiteRoot($pageId) {
 		$tce = GeneralUtility::makeInstance( DataHandler::class );
-		$isSiteRoot = $tce->pageInfo($pageId,'is_siteroot');
-		return $isSiteRoot;
+		return $tce->pageInfo($pageId,'is_siteroot');
 	}
 
 	/**
 	 * Utils Get Is Hidden In Navigation
 	 * @param $pageId
-	 * @return boolean $isNavHide
+	 * @return boolean
 	 */
 	protected function isNavHide($pageId) {
 		$tce = GeneralUtility::makeInstance( DataHandler::class );
-		$isNavHide = $tce->pageInfo($pageId,'nav_hide');
-		return $isNavHide;
+		return $tce->pageInfo($pageId,'nav_hide');
 	}
 
 	/**
 	 * Utils Get Is Page Hidden
 	 * @param $pageId
-	 * @return boolean $isHidden
+	 * @return boolean
 	 */
 	protected function isHidden($pageId) {
 		$tce = GeneralUtility::makeInstance( DataHandler::class );
-		$isHidden = $tce->pageInfo($pageId,'hidden');
-		return $isHidden;
+		return $tce->pageInfo($pageId,'hidden');
 	}
 
 	/**
 	 * Utils Get Is Limited In Time
 	 * @param $pageId
-	 * @return boolean $isLimitedInTime
+	 * @return boolean
 	 */
 	protected function isLimitedInTime($pageId) {
 		$tce = GeneralUtility::makeInstance( DataHandler::class );
-		$isLimitedInTime = $tce->pageInfo($pageId,'starttime') > 0 || $tce->pageInfo($pageId,'endtime') > 0;
-		return $isLimitedInTime;
+		return $tce->pageInfo($pageId,'starttime') > 0 || $tce->pageInfo($pageId,'endtime') > 0;
 	}
 
 	/**
 	 * Utils Get Page Title
 	 * @param $pageId
-	 * @return string $pageTitle
+	 * @return string
 	 */
 	protected function getPageTitle($pageId) {
 		$tce = GeneralUtility::makeInstance( DataHandler::class );
-		$pageTitle = $tce->pageInfo($pageId,'title');
-		return $pageTitle;
+		return $tce->pageInfo($pageId,'title');
 	}
 
 	/**
 	 * Utils Get Page Group Access
 	 * @param $pageId
-	 * @return integer $pageGroupAccess
+	 * @return integer
 	 */
 	protected function getPageGroupAccess($pageId) {
 		$tce = GeneralUtility::makeInstance( DataHandler::class );
-		$pageGroupAccess = $tce->pageInfo($pageId,'fe_group');
-		return $pageGroupAccess;
+		return $tce->pageInfo($pageId,'fe_group');
 	}
 }

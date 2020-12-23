@@ -4,7 +4,7 @@ defined('TYPO3_MODE') or die();
 /* * *************************************************************
  *  Copyright notice
  *
- *  (c) 2019 Regis TEDONE <regis.tedone@gmail.com>
+ *  (c) 2021 Regis TEDONE <regis.tedone@gmail.com>, SYRADEV
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -31,8 +31,7 @@ defined('TYPO3_MODE') or die();
 /******** Override Page Tree Icons ********/
 /*****************************************/
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use CMSPACA\RtPagesTreeIcons\Utility\RtBackendUtility;
+use SYRADEV\RtPagesTreeIcons\Utility\RtBackendUtility;
 
 $langFile = 'LLL:EXT:rt_pages_tree_icons/Resources/Private/Language/locallang.xlf:';
 
@@ -449,14 +448,15 @@ $extConf = RtBackendUtility::getExtensionConfiguration('rt_pages_tree_icons');
 
 $diplayIconsInBehaviourTab = $extConf['diplayIconsInBehaviourTab'];
 
-if(version_compare(TYPO3_version, '8.0', '<')) {
+if(version_compare(TYPO3_version, '9.0', '<')) {
 	$GLOBALS['TCA']['pages']['columns']['module']['config']['showIconTable'] = $diplayIconsInBehaviourTab;
 } elseif(version_compare(TYPO3_version, '9.0', '>=')) {
 	$GLOBALS['TCA']['pages']['columns']['module']['config']['fieldWizard']['selectIcons']['disabled'] = !$diplayIconsInBehaviourTab;
 }
 
 foreach($pageIcons as $iconsParams) {
-	if(substr($iconsParams[1], -2) !='-s' || substr($iconsParams[1], -2) !='-h') {
+	$iP = substr($iconsParams[1], -2);
+	if( $iP !== '-s' || $iP !=='-h') {
 		$GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = $iconsParams;
 	}
 	$GLOBALS['TCA']['pages']['ctrl']['typeicon_classes'][ 'contains-' . $iconsParams[1] ] = $iconsParams[2];

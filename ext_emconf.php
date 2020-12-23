@@ -1,14 +1,14 @@
 <?php
 
-/*****************************************************************************
+/***************************************************************
  * Extension Manager/Repository config file for ext "rt_pages_tree_icons".
  *
- * Auto generated 21-04-2019 10:22
+ * Auto generated 29-04-2020 13:02
  *
  * Manual updates:
  * Only the data in the array - everything else is removed by next
  * writing. "version" and "dependencies" must not be touched!
- *****************************************************************************/
+ ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = [
   'title' => 'Pages Tree Icons',
@@ -18,21 +18,14 @@ $EM_CONF[$_EXTKEY] = [
   'author_email' => 'regis.tedone@gmail.com',
   'state' => 'stable',
   'uploadfolder' => false,
-  'createDirs' => '',
   'clearCacheOnLoad' => 1,
-  'version' => '3.5.2',
+  'version' => '4.1.2',
   'constraints' => 
   [
-    'depends' => 
-    [
-      'typo3' => '7.6.0-9.5.99',
-    ],
-    'conflicts' => 
-    [
-      'tsconf' => '',
-    ],
-    'suggests' => [],
+    'depends' => [ 'typo3' => '8.7.32-10.4.99' ],
+    'conflicts' => [ 'tsconf' => '' ],
+    'suggests' =>  [],
   ],
   'clearcacheonload' => true,
-  'author_company' => 'CMS-PACA'
+  'author_company' => 'SYRADEV',
 ];

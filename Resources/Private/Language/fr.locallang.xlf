@@ -39,9 +39,21 @@
                 <source>Login form background Opacity:Enable changing opacity of the TYPO3 backend login form background (Need to flush system cache).</source>
                 <target>Fond de formulaire de connexion:Activer le changement de l'opacité de l’arrière-plan du formulaire de connexion TYPO3 (Veuillez vider le cache système).</target>
             </trans-unit>
-            <trans-unit id="backLoginFormTransparency">
+            <trans-unit id="backLoginFormOpacity">
                 <source>Opacity value:Change the opacity value of the TYPO3 backend login form background (Need to flush system cache).</source>
-                <target>Valeur de l'opacité:Changer la valeur de l'opacité pour le fond de la bannière de login du Backend TYPO3 (Veuillez vider le cache système)</target>
+                <target>Valeur de l'opacité:Changer la valeur de l'opacité pour le fond de la bannière de connexion du Backend TYPO3 (Veuillez vider le cache système)</target>
+            </trans-unit>
+            <trans-unit id="backLoginFormBorder">
+                <source>Login form border:Display the border of the TYPO3 backend login form (Need to flush system cache).</source>
+                <target>Bordure de la bannière de connexion:Afficher la bordure de la bannière de connexion du Backend TYPO3 (Veuillez vider le cache système)</target>
+            </trans-unit>
+            <trans-unit id="backLoginBorderRadius">
+                <source>Login form border radius:Change the border radius value of the TYPO3 backend login form (Need to flush system cache).</source>
+                <target>Rayon de la bordure:Changer la valeur du rayon de bordure de la bannière de login du Backend TYPO3 (Veuillez vider le cache système)</target>
+            </trans-unit>
+            <trans-unit id="backLoginBackColor">
+                <source>Login form background color:Change the background color value of the TYPO3 backend login form (Need to flush system cache).</source>
+                <target>Couleur de fond:Changer la valeur de la couleur de fond de la bannière de connexion du Backend TYPO3 (Veuillez vider le cache système)</target>
             </trans-unit>
             <trans-unit id="backLoginRandomImage">
                 <source>Backend login random background images:Use random images from Unsplash [https://source.unsplash.com/random] for backend login background.</source>
@@ -839,11 +851,11 @@
                 <source>About</source>
                 <target>À propos</target>
             </trans-unit>
-            <trans-unit id="about.CMSPACA.title">
-                <source>About CMS-PACA</source>
-                <target>À propos de CMS-PACA</target>
+            <trans-unit id="about.SYRADEV.title">
+                <source>About SYRADEV</source>
+                <target>À propos de SYRADEV</target>
             </trans-unit>
-            <trans-unit id="about.CMSPACA.text">
+            <trans-unit id="about.SYRADEV.text">
                 <source>Development of functional and custom TYPO3 extensions since 2004.</source>
                 <target>Développement d'extensions TYPO3 fonctionnelles et sur mesure depuis 2004.</target>
             </trans-unit>

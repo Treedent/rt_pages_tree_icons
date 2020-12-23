@@ -37,15 +37,27 @@
             </trans-unit>
             <trans-unit id="backLoginFormTransparent">
                 <source>Login form background opacity:Enable changing opacity of the TYPO3 backend login form background (Need to flush system cache).</source>
-                <target>Anmeldeformular-hintergrund Deckkraft: Aktivieren Sie die Änderung der Deckkraft für das TYPO3 Backend-Login-Formular (Notwendigkeit, System-Cache zu löschen)</target>
+                <target>Anmeldeformular-hintergrund Deckkraft:Aktivieren Sie die Änderung der Deckkraft für das TYPO3 Backend-Login-Formular (Notwendigkeit, System-Cache zu löschen)</target>
             </trans-unit>
-            <trans-unit id="backLoginFormTransparency">
+            <trans-unit id="backLoginFormOpacity">
                 <source>Opacity value:Change the opacity value of the TYPO3 backend login form background (Need to flush system cache).</source>
-                <target>Deckkraftwert: Ändern Sie den Deckkraftwert für das TYPO3 Backend-Login-Formular (Notwendigkeit, System-Cache zu löschen).</target>
+                <target>Deckkraftwert:Ändern Sie den Deckkraftwert für das TYPO3 Backend-Login-Formular (Notwendigkeit, System-Cache zu löschen).</target>
+            </trans-unit>
+            <trans-unit id="backLoginFormBorder">
+                <source>Login form border:Display the border of the TYPO3 backend login form (Need to flush system cache).</source>
+                <target>Anmeldeformular-Rand:Zeigt den Rand für das TYPO3 Backend-Login-Formular (Notwendigkeit, System-Cache zu löschen).</target>
+            </trans-unit>
+            <trans-unit id="backLoginBorderRadius">
+                <source>Login form border radius:Change the border radius value of the TYPO3 backend login form (Need to flush system cache).</source>
+                <target>Anmeldeformular-Randradius:Ändern Sie den Randradiuswert für das TYPO3 Backend-Login-Formular (Notwendigkeit, System-Cache zu löschen).</target>
+            </trans-unit>
+            <trans-unit id="backLoginBackColor">
+                <source>Login form background color:Change the background color value of the TYPO3 backend login form (Need to flush system cache).</source>
+                <target>Anmeldeformulars-Hintergrundfarbe:Ändern Sie den Hintergrundfarbwert für das TYPO3 Backend-Login-Formular (Notwendigkeit, System-Cache zu löschen).</target>
             </trans-unit>
             <trans-unit id="backLoginRandomImage">
                 <source>Backend login random background images:Use random images from Unsplash [https://source.unsplash.com/random] for backend login background.</source>
-                <target>Zufällige Hintergrundbilder für das Backend-Login: Verwenden Sie für das TYPO3 Backend-Login-Formular zufällige Bilder von Unsplash [https://source.unsplash.com/random].</target>
+                <target>Zufällige Hintergrundbilder für das Backend-Login:Verwenden Sie für das TYPO3 Backend-Login-Formular zufällige Bilder von Unsplash [https://source.unsplash.com/random].</target>
             </trans-unit>
             <trans-unit id="category.typo3Embedded">
                 <source>TYPO3 Embedded</source>
@@ -839,11 +851,11 @@
                 <source>About</source>
                 <target>Über</target>
             </trans-unit>
-            <trans-unit id="about.CMSPACA.title">
-                <source>About CMS-PACA</source>
-                <target>über CMS-PACA</target>
+            <trans-unit id="about.SYRADEV.title">
+                <source>About SYRADEV</source>
+                <target>über SYRADEV</target>
             </trans-unit>
-            <trans-unit id="about.CMSPACA.text">
+            <trans-unit id="about.SYRADEV.text">
                 <source>Development of functional and custom TYPO3 extensions since 2004.</source>
                 <target>Entwicklung von funktionalen und benutzerdefinierten TYPO3-Erweiterungen seit 2004.</target>
             </trans-unit>

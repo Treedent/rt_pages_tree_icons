@@ -2,7 +2,7 @@
  *
  *  Copyright notice
  *
- *  (c) 2019 Regis TEDONE <regis.tedone@gmail.com>, CMS-PACA
+ *  (c) 2021 Regis TEDONE <regis.tedone@gmail.com>, SYRADEV
  *
  *  All rights reserved
  *
@@ -23,7 +23,7 @@
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-define('CMSPACA/RtPagesTreeIcons/pageIconChanger', ['jquery'], function($) {
+define('SYRADEV/RtPagesTreeIcons/pageIconChanger', ['jquery'], function() {
     $('li.icon-container').on('click', function() {
         $(this).siblings().removeClass('icon-current');
         $(this).addClass('icon-current');

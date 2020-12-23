@@ -30,8 +30,17 @@
             <trans-unit id="backLoginFormTransparent">
                 <source>Login form background opacity:Enable changing opacity of the TYPO3 backend login form background (Need to flush system cache).</source>
             </trans-unit>
-            <trans-unit id="backLoginFormTransparency">
+            <trans-unit id="backLoginFormOpacity">
                 <source>Opacity value:Change the opacity value of the TYPO3 backend login form background (Need to flush system cache).</source>
+            </trans-unit>
+            <trans-unit id="backLoginFormBorder">
+                <source>Login form border:Display the border of the TYPO3 backend login form (Need to flush system cache).</source>
+            </trans-unit>
+            <trans-unit id="backLoginBorderRadius">
+                <source>Login form border radius:Change the border radius value of the TYPO3 backend login form (Need to flush system cache).</source>
+            </trans-unit>
+            <trans-unit id="backLoginBackColor">
+                <source>Login form background color:Change the background color value of the TYPO3 backend login form (Need to flush system cache).</source>
             </trans-unit>
             <trans-unit id="backLoginRandomImage">
                 <source>Backend login random background images:Use random images from Unsplash [https://source.unsplash.com/random] for backend login background.</source>
@@ -630,10 +639,10 @@
             <trans-unit id="about">
                 <source>About</source>
             </trans-unit>
-            <trans-unit id="about.CMSPACA.title">
-                <source>About CMS-PACA</source>
+            <trans-unit id="about.SYRADEV.title">
+                <source>About SYRADEV</source>
             </trans-unit>
-            <trans-unit id="about.CMSPACA.text">
+            <trans-unit id="about.SYRADEV.text">
                 <source>Development of functional and custom TYPO3 extensions since 2004.</source>
             </trans-unit>
             <trans-unit id="page.hiddenInMenu">

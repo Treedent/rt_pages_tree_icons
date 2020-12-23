@@ -1,9 +1,8 @@
 {namespace core = TYPO3\CMS\Core\ViewHelpers}
-
 <f:be.container
         includeCssFiles="{0: '{f:uri.resource(path:\'Css/iconstyle.css\')}'}"
         includeJsFiles="{0: '{f:uri.resource(path:\'Js/iconChooser.js\')}'}"
-        includeRequireJsModules="{0: 'CMSPACA/RtPagesTreeIcons/pageIconChanger'}">
+        includeRequireJsModules="{0: 'SYRADEV/RtPagesTreeIcons/pageIconChanger'}">
 
     <div class="module" data-module-name="Icon page changer">
         <div class="module-docheader t3js-module-docheader">
@@ -26,9 +25,9 @@
                                     <f:form.hidden name="newIcon" id="newIcon" value="{selectedIcon}" />
                                 </f:else>
                             </f:if>
-                            <div class="cmspaca typo3-login-copyright-text">
+                            <div class="syradev typo3-login-copyright-text">
                                 <core:icon identifier="actions-pagetree-change-page-icon" size="small" />&nbsp;
-                                <f:translate key="module_title" /> - <span class="orange">V{version}</span> - CMSPACA&nbsp;&copy;&nbsp;<f:format.date date="now" format="Y" />
+                                <f:translate key="module_title" /> - <span class="orange">V{version}</span> - SYRADEV&nbsp;&copy;&nbsp;<f:format.date date="now" format="Y" />
                             </div>
                         </f:form>
                     </div>
@@ -45,7 +44,7 @@
                                     </f:link.action>
                                 </f:else>
                             </f:if>
-                            <span class="btn btn-default btn-sm"><f:be.buttons.shortcut/></span>
+                            <f:be.buttons.shortcut/>
                         </div>
                     </div>
                 </div>

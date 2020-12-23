@@ -33,19 +33,31 @@
             </trans-unit>
             <trans-unit id="diplayiconsinbehaviourtab">
                 <source>Display icons in behaviour tab:Enable changing page tree icons when editing page properties (Need to flush system cache).</source>
-                <target>Visualizzare le icone nella scheda Comportamento: abilitare la modifica delle icone dell'albero delle pagine quando si modificano le proprietà della pagina (è necessario svuotare la cache di sistema).</target>
+                <target>Visualizzare le icone nella scheda Comportamento:Abilitare la modifica delle icone dell'albero delle pagine quando si modificano le proprietà della pagina (è necessario svuotare la cache di sistema).</target>
             </trans-unit>
             <trans-unit id="backLoginFormTransparent">
                 <source>Login form background opacity:Enable changing opacity of the TYPO3 backend login form background (Need to flush system cache).</source>
-                <target>Opacità del modulo di accesso: abilita la modifica dell'opacità dello sfondo del modulo di backend back TYPO3 (è necessario svuotare la cache di sistema).</target>
+                <target>Opacità del modulo di accesso:Abilita la modifica dell'opacità dello sfondo del modulo di accesso al backend TYPO3 (è necessario svuotare la cache di sistema).</target>
             </trans-unit>
-            <trans-unit id="backLoginFormTransparency">
+            <trans-unit id="backLoginFormOpacity">
                 <source>Opacity value:Change the opacity value of the TYPO3 backend login form background (Need to flush system cache).</source>
-                <target>Opacità del modulo di accesso: abilita la modifica dell'opacità dello sfondo del modulo di backend back TYPO3 (è necessario svuotare la cache di sistema).</target>
+                <target>Opacità del modulo di accesso:Abilita la modifica dell'opacità dello sfondo del modulo di accesso al backend TYPO3 (è necessario svuotare la cache di sistema).</target>
+            </trans-unit>
+            <trans-unit id="backLoginFormBorder">
+                <source>Login form border:Display the border of the TYPO3 backend login form (Need to flush system cache).</source>
+                <target>Bordo modulo di accesso:Visualizza il bordo del modulo di accesso al backend TYPO3 (è necessario svuotare la cache di sistema).</target>
+            </trans-unit>
+            <trans-unit id="backLoginBorderRadius">
+                <source>Login form border radius:Change the border radius value of the TYPO3 backend login form (Need to flush system cache).</source>
+                <target>Raggio del bordo del modulo di accesso:Modifica il valore del raggio del bordo del modulo di accesso al backend TYPO3 (è necessario svuotare la cache di sistema).</target>
+            </trans-unit>
+            <trans-unit id="backLoginBackColor">
+                <source>Login form background color:Change the background color value of the TYPO3 backend login form (Need to flush system cache).</source>
+                <target>Colore di sfondo del modulo di accesso:Modifica il valore del colore di sfondo del modulo di accesso al backend TYPO3 (è necessario svuotare la cache di sistema).</target>
             </trans-unit>
             <trans-unit id="backLoginRandomImage">
                 <source>Backend login random background images:Use random images from Unsplash [https://source.unsplash.com/random] for backend login background.</source>
-                <target>Immagini di sfondo casuali di accesso back-end: utilizza immagini casuali da Unsplash [https://source.unsplash.com/random] per lo sfondo del login back-end.</target>
+                <target>Immagini di sfondo casuali di accesso back-end:Utilizza immagini casuali da Unsplash [https://source.unsplash.com/random] per lo sfondo del login back-end.</target>
             </trans-unit>
             <trans-unit id="category.typo3Embedded">
                 <source>TYPO3 Embedded</source>
@@ -839,11 +851,11 @@
                 <source>About</source>
                 <target>Di</target>
             </trans-unit>
-            <trans-unit id="about.CMSPACA.title">
-                <source>About CMS-PACA</source>
-                <target>Informazioni su CMS-PACA</target>
+            <trans-unit id="about.SYRADEV.title">
+                <source>About SYRADEV</source>
+                <target>Informazioni su SYRADEV</target>
             </trans-unit>
-            <trans-unit id="about.CMSPACA.text">
+            <trans-unit id="about.SYRADEV.text">
                 <source>Development of functional and custom TYPO3 extensions since 2004.</source>
                 <target>Sviluppo di estensioni TYPO3 funzionali e personalizzate dal 2004.</target>
             </trans-unit>
