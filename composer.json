@@ -1,15 +1,26 @@
 {
-    "name": "syradev/rt-pages-tree-icons",
+    "name": "syradev/rt_pages_tree_icons",
     "type": "typo3-cms-extension",
     "description": "TYPO3 Page TreeView SVG icons changer.",
+    "keywords": [
+        "TYPO3 CMS",
+        "Icons",
+        "SVG",
+        "Pages",
+        "Tree"
+    ],
+    "homepage": "https://extensions.typo3.org/extension/rt_pages_tree_icons/",
+    "support": {
+        "issues": "https://github.com/Treedent/rt_pages_tree_icons/issues"
+    },
     "authors": [
         {
             "name": "Regis TEDONE",
-	    "email": "regis.tedone@gmail.com",
+	        "email": "regis.tedone@gmail.com",
             "role": "Developer"
         }
     ],
-    "license": ["GPL-2.0-or-later"],
+    "license": "GPL-2.0-or-later",
     "require": {
         "typo3/cms-core": "8.7.32 || 9.5.24 || 10.4.12"
     },
@@ -19,7 +30,7 @@
         }
     },
     "replace": {
-        "syradev/rt-pages-tree-icons": "self.version",
+        "syradev/rt_pages_tree_icons": "self.version",
         "typo3-ter/rt-pages-tree-icons": "self.version"
     }
 }
