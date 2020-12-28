@@ -11,6 +11,13 @@
 ChangeLog
 =========
 
+V4.1.2
+
+    - Add TYPO3 V10 Compatibility
+    - Redesign the backend CSS generation
+    - Remove TYPO3 V7 Suppport
+
+
 V3.5.2
 
     Add Composer Support

@@ -24,8 +24,9 @@ You can now dress TYPO3 page treeview with custom SVG icons.
 
 .. important::
 
-    - This extension works from TYPO3 V7.6.0 to V9.5.99
-    - This extension is provided with French, English, German, Italian and Spanish translations.
+    - This extension works from TYPO3 V8.7.32 to V10.4.99
+    - For TYPO3 V7, use the 3.5.2 Version.
+    - This extension comes with translations in French, English, German, Italian and Spanish.
 
 
 .. _screenshots:

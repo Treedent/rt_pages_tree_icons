@@ -16,7 +16,7 @@ Target group: **Administrators**
 You can adust backend login interface appearance by configuring the global extension.
 
     - In TYPO3 V7 or V8 : Admin Tools > Extensions Manager > Pages Tree Icons (rt_pages_tree_icons) > Cog configuration icon.
-    - In TYPO3 V9 : Admin Tools > Settings module > Configure extension > rt_pages_tree_icons.
+    - In TYPO3 V9 or V10 : Admin Tools > Settings module > Configure extension > rt_pages_tree_icons.
 
 Here, you can :
 
