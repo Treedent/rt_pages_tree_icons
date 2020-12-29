@@ -16,13 +16,13 @@
     "authors": [
         {
             "name": "Regis TEDONE",
-	        "email": "regis.tedone@gmail.com",
+            "email": "regis.tedone@gmail.com",
             "role": "Developer"
         }
     ],
     "license": "GPL-2.0-or-later",
     "require": {
-        "typo3/cms-core": "^8.7 || ^9.5 || ^10.4"
+        "typo3/cms-core": "8.7.32 || 9.5.17 || 10.4.10"
     },
     "autoload": {
         "psr-4": {
