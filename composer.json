@@ -22,7 +22,7 @@
     ],
     "license": "GPL-2.0-or-later",
     "require": {
-        "typo3/cms-core": "8.7.32 || 9.5.24 || 10.4.12"
+        "typo3/cms-core": "^8.7 || ^9.5 || ^10.4"
     },
     "autoload": {
         "psr-4": {
@@ -30,7 +30,7 @@
         }
     },
     "replace": {
-        "syradev/rt_pages_tree_icons": "self.version",
-        "typo3-ter/rt-pages-tree-icons": "self.version"
+        "syradev/rt_pages_tree_icons": "*",
+        "typo3-ter/rt-pages-tree-icons": "*"
     }
 }
