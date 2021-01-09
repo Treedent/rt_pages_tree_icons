@@ -11,6 +11,12 @@
 ChangeLog
 =========
 
+V4.1.3
+
+   - Javascript Bug correction in module template
+   - Documentation update
+
+
 V4.1.2
 
     - Add TYPO3 V10 Compatibility
