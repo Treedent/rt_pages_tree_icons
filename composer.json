@@ -31,5 +31,10 @@
     },
     "replace": {
         "typo3-ter/rt-pages-tree-icons": "*"
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "rt_pages_tree_icons"
+        }
     }
 }
