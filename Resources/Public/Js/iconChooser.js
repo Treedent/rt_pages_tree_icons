@@ -2,7 +2,7 @@
  *
  *  Copyright notice
  *
- *  (c) 2021 Regis TEDONE <regis.tedone@gmail.com>, SYRADEV
+ *  (c) 2022 Regis TEDONE <regis.tedone@gmail.com>, SYRADEV
  *
  *  All rights reserved
  *
@@ -23,10 +23,30 @@
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-define('SYRADEV/RtPagesTreeIcons/pageIconChanger', ['jquery'], function() {
-    $('li.icon-container').on('click', function() {
-        $(this).siblings().removeClass('icon-current');
-        $(this).addClass('icon-current');
-        $('#newIcon').val($(this).data('icon'));
+define('SYRADEV/RtPagesTreeIcons/pageIconChanger', () => {
+
+    let getSiblings = function (e) {
+        let siblings = [];
+        if(!e.parentNode) {
+            return siblings;
+        }
+        let sibling  = e.parentNode.firstChild;
+        while (sibling) {
+            if (sibling.nodeType === 1 && sibling !== e) {
+                siblings.push(sibling);
+            }
+            sibling = sibling.nextSibling;
+        }
+        return siblings;
+    };
+
+    document.querySelectorAll('li.icon-container').forEach(container => {
+        container.addEventListener('click', (e) => {
+            getSiblings(e.currentTarget).forEach(icon => {
+                icon.classList.remove('icon-current');
+            });
+            e.currentTarget.classList.add('icon-current');
+            document.querySelector('#newIcon').value = e.currentTarget.dataset.icon;
+        });
     });
 });

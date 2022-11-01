@@ -22,7 +22,7 @@
     ],
     "license": "GPL-2.0-or-later",
     "require": {
-        "typo3/cms-core": "~8.7.32 || ~9.5.31 || ~10.4.12"
+        "typo3/cms-core": "~11.5.0 || ~12.99.99"
     },
     "autoload": {
         "psr-4": {
@@ -31,5 +31,10 @@
     },
     "replace": {
         "typo3-ter/rt-pages-tree-icons": "*"
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "rt_pages_tree_icons"
+        }
     }
 }

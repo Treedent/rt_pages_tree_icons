@@ -1,11 +1,11 @@
 <?php
 
-defined('TYPO3_MODE') or die();
+defined('TYPO3') || die();
 /***************************************************************
  *
  *  Copyright notice
  *
- *  (c) 2021 Regis TEDONE <regis.tedone@gmail.com>, SYRADEV
+ *  (c) 2022 Regis TEDONE <regis.tedone@gmail.com>, SYRADEV
  *
  *  All rights reserved
  *
@@ -30,20 +30,24 @@ use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use SYRADEV\RtPagesTreeIcons\Utility\RtBackendUtility;
 
-ExtensionUtility::registerModule(
-    'SYRADEV.rt_pages_tree_icons',
-    'web',
-    'mod1',
-    'Page Tree Icons',
-    [
-        'PageIcons' => 'list,changepageicon,editPageProperties'
-    ],
-    [
-        'access' => 'user,group',
-        'icon'   => 'EXT:rt_pages_tree_icons/Resources/Public/Icons/palm-tree-BE.svg',
-        'labels' => 'LLL:EXT:rt_pages_tree_icons/Resources/Private/Language/locallang.xlf',
-    ]
-);
+
+(static function() {
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
+        'SYRADEV.rt_pages_tree_icons',
+        'web',
+        'mod1',
+        'Page Tree Icons',
+        [
+            \SYRADEV\RtPagesTreeIcons\Controller\PageIconsController::class => 'list,changepageicon,editPageProperties'
+        ],
+        [
+            'access' => 'user,group',
+            'icon'   => 'EXT:rt_pages_tree_icons/Resources/Public/Icons/palm-tree-BE.svg',
+            'labels' => 'LLL:EXT:rt_pages_tree_icons/Resources/Private/Language/locallang.xlf',
+        ]
+    );
+
+})();
 
 // Get extension configuration
 $extConf = RtBackendUtility::getExtensionConfiguration('rt_pages_tree_icons');
@@ -95,7 +99,7 @@ STYLE1;
 
 if( isset($params['opacity']) && (float)$params['opacity'] !== 1 ) {
     $style2 = <<<STYLE2
-.panel, .panel-footer {
+.card.card-login {
     background-color: rgba(255, 255, 255, {$params['opacity']}) !important;
     padding:15px;
 }
@@ -104,7 +108,7 @@ STYLE2;
 
 if( isset($params['border']) && $params['border'] === '0' ) {
     $style3 = <<<STYLE3
-.panel-login {
+.card.card-login {
     border: none !important;
 }
 STYLE3;
@@ -112,7 +116,7 @@ STYLE3;
 
 if( isset($params['radius']) ) {
     $style4 = <<<STYLE4
-.panel-login {
+.card.card-login {
     border-radius: {$params['radius']}px !important;
 }
 STYLE4;
@@ -121,7 +125,7 @@ STYLE4;
 if( isset($params['backcolor']) ) {
     list($r, $g, $b) = sscanf($params['backcolor'], '#%02x%02x%02x' );
     $style5 = <<<STYLE5
-.panel-login {
+.card.card-login {
     background-color: rgba({$r},{$g},{$b},{$params['opacity']}) !important;
 }
 STYLE5;

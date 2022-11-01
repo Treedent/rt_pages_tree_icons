@@ -1,5 +1,6 @@
-{namespace core = TYPO3\CMS\Core\ViewHelpers}
-<div xmlns:f="https://fluidtypo3.org/schemas/fluid-master.xsd" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+      data-namespace-typo3-fluid="true" lang="en">
     <f:layout name="Default" />
 
     <f:section name="content">
@@ -74,60 +75,50 @@
                 </div>
             </div>
         </div>
-
         <div role="tabpanel">
             <ul class="nav nav-tabs nav-justified t3js-tabs" role="tablist" id="tabs-icons" data-store-last-tab="1">
-                <li role="presentation" class="t3js-tabmenu-item {tabs.default.isactive}">
-                    <a href="#tab-default" title="" aria-controls="tab-default" role="tab" data-toggle="tab">
+                <li role="presentation">
+                    <a href="#tab-default" title="{f:translate(key:'category.typo3Embedded')}" class="nav-item {tabs.default.isactive}" aria-controls="tab-default" role="tab" data-bs-toggle="tab">
                         <f:translate key="category.typo3Embedded" />
                     </a>
                 </li>
-                <li role="presentation" class="t3js-tabmenu-item {tabs.page.isactive}">
-                    <a href="#tab-page" title="" aria-controls="tab-page" role="tab" data-toggle="tab">
+                <li role="presentation">
+                    <a href="#tab-page" title="{f:translate(key:'category.pages')}" class="nav-item {tabs.page.isactive}" aria-controls="tab-page" role="tab" data-bs-toggle="tab">
                         <f:translate key="category.pages" />
                     </a>
                 </li>
-                <li role="presentation" class="t3js-tabmenu-item {tabs.folder.isactive}">
-                    <a href="#tab-folder" title="" aria-controls="tab-folder" role="tab" data-toggle="tab">
+                <li role="presentation">
+                    <a href="#tab-folder" title="{f:translate(key:'category.folders')}" class="nav-item {tabs.folder.isactive}" aria-controls="tab-folder" role="tab" data-bs-toggle="tab">
                         <f:translate key="category.folders" />
                     </a>
                 </li>
-                <li role="presentation" class="t3js-tabmenu-item {tabs.symbol.isactive}">
-                    <a href="#tab-symbol" title="" aria-controls="tab-symbol" role="tab" data-toggle="tab">
+                <li role="presentation">
+                    <a href="#tab-symbol" title="{f:translate(key:'category.symbols')}" class="nav-item {tabs.symbol.isactive}" aria-controls="tab-symbol" role="tab" data-bs-toggle="tab">
                         <f:translate key="category.symbols" />
                     </a>
                 </li>
-                <li role="presentation" class="t3js-tabmenu-item {tabs.app.isactive}">
-                    <a href="#tab-app" title="" aria-controls="tab-app" role="tab" data-toggle="tab">
+                <li role="presentation">
+                    <a href="#tab-app" title="{f:translate(key:'category.applications')}" class="nav-item {tabs.app.isactive}" aria-controls="tab-app" role="tab" data-bs-toggle="tab">
                         <f:translate key="category.applications" />
                     </a>
                 </li>
-                <li role="presentation" class="t3js-tabmenu-item {tabs.alphanum.isactive}">
-                    <a href="#tab-alphanum" title="" aria-controls="tab-alphanum" role="tab" data-toggle="tab">
+                <li role="presentation">
+                    <a href="#tab-alphanum" title="{f:translate(key:'category.alphanum')}" class="nav-item {tabs.alphanum.isactive}" aria-controls="tab-alphanum" role="tab" data-bs-toggle="tab">
                         <f:translate key="category.alphanum" />
                     </a>
                 </li>
-                <li role="presentation" class="t3js-tabmenu-item">
-                    <a href="#tab-about" title="" aria-controls="tab-about" role="tab" data-toggle="tab">
+                <li role="presentation">
+                    <a href="#tab-about" title="{f:translate(key:'about')}" class="nav-item" aria-controls="tab-about" role="tab" data-bs-toggle="tab">
                         <f:translate key="about" />
                     </a>
                 </li>
             </ul>
-            <div class="tab-content">
+            <div class="tab-content pt-2">
                 <div role="tabpanel" class="tab-pane fade {tabs.default.isactive}" id="tab-default">
                     <div class="panel panel-tab">
                         <div class="panel-body">
                             <div class="icon-set clearfix">
                                 <ul>
-                                    <f:comment>
-                                    <!--
-                                    <li data-icon="{icons.0.1}" class="icon-container text-center{f:if(condition: '{selectedIcon}=={icon.1}', then: ' icon-current', else: '')}">
-                                        <core:icon identifier="{icons.0.2}" size="default" />
-                                        <br />
-                                        <p>{icons.0.0}</p>
-                                    </li>
-                                    -->
-                                    </f:comment>
                                     <f:for each="{icons}" as="icon">
                                         <f:if condition="{icon.4}=='default'">
                                             <f:then>
@@ -147,7 +138,7 @@
                                                             <core:icon identifier="{icon.2}" size="default" />
                                                         </f:then>
                                                     </f:if>
-                                                    <br />
+                                                    <br>
                                                     <p>{icon.0}</p>
                                                 </li>
                                             </f:then>
@@ -168,7 +159,7 @@
                                             <f:then>
                                                 <li data-icon="{icon.1}" class="icon-container text-center{f:if(condition: '{selectedIcon}=={icon.1}', then: ' icon-current', else: '')}">
                                                     <core:icon identifier="{icon.2}" size="default" />
-                                                    <br />
+                                                    <br>
                                                     <p>{icon.0}</p>
                                                 </li>
                                             </f:then>
@@ -189,7 +180,7 @@
                                             <f:then>
                                                 <li data-icon="{icon.1}" class="icon-container text-center{f:if(condition: '{selectedIcon}=={icon.1}', then: ' icon-current', else: '')}">
                                                     <core:icon identifier="{icon.2}" size="default" />
-                                                    <br />
+                                                    <br>
                                                     <p>{icon.0}</p>
                                                 </li>
                                             </f:then>
@@ -210,7 +201,7 @@
                                             <f:then>
                                                 <li data-icon="{icon.1}" class="icon-container text-center{f:if(condition: '{selectedIcon}=={icon.1}', then: ' icon-current', else: '')}">
                                                     <core:icon identifier="{icon.2}" size="default" />
-                                                    <br />
+                                                    <br>
                                                     <p>{icon.0}</p>
                                                 </li>
                                             </f:then>
@@ -231,7 +222,7 @@
                                             <f:then>
                                                 <li data-icon="{icon.1}" class="icon-container text-center{f:if(condition: '{selectedIcon}=={icon.1}', then: ' icon-current', else: '')}">
                                                     <core:icon identifier="{icon.2}" size="default" />
-                                                    <br />
+                                                    <br>
                                                     <p>{icon.0}</p>
                                                 </li>
                                             </f:then>
@@ -252,7 +243,7 @@
                                             <f:then>
                                                 <li data-icon="{icon.1}" class="icon-container text-center{f:if(condition: '{selectedIcon}=={icon.1}', then: ' icon-current', else: '')}">
                                                     <core:icon identifier="{icon.2}" size="default" />
-                                                    <br />
+                                                    <br>
                                                     <p>{icon.0}</p>
                                                 </li>
                                             </f:then>
@@ -266,35 +257,21 @@
                 <div role="tabpanel" class="tab-pane fade" id="tab-about">
                     <div class="panel panel-tab">
                         <div class="panel-body">
-                            <div class="icon-set clearfix">
-                                <div class="callout callout-warning">
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <img src="/typo3conf/ext/rt_pages_tree_icons/Resources/Public/syradev.png" alt="SYRADEV">
-                                        </div>
-                                        <div class="media-body">
-                                            <h4 class="callout-title">
-                                                <f:translate key="about.SYRADEV.title" />
-                                            </h4>
-                                            <div class="callout-body">
-                                                <f:translate key="about.SYRADEV.text" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <f:be.infobox title="{f:translate(key:'about.SYRADEV.title')}" state="1">
+                                <img src="/typo3conf/ext/rt_pages_tree_icons/Resources/Public/syradev.png" alt="SYRADEV">
+                                <f:translate key="about.SYRADEV.text" />
+                            </f:be.infobox>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <br />
     </f:section>
 
     <f:section name="content0">
-        <br />
+        <br>
         <div class="wrapper">
             <span class="arrow"><span></span></span><h1><f:translate key="selectapage" /></h1>
         </div>
     </f:section>
-</div>
+</html>

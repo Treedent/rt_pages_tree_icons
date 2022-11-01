@@ -1,61 +1,54 @@
-﻿.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
+.. include:: /Includes.rst.txt
 
-.. include:: Includes.txt
+=========
+<project>
+=========
 
-.. _start:
+:Extension key:
+   rt_pages_tree_icons
 
-=============================================================
-Pages Tree Icons - a more comprehensive TYPO3 page tree!
-=============================================================
+:Package name:
+   syradev/rt_pages_tree_icons
 
-.. only:: html
+:Version:
+   |release|
 
-	:Classification:
-		rt_pages_tree_icons
+:Language:
+   en
 
-	:Version:
-		|release|
+:Author:
+   Regis TEDONE
 
-	:Language:
-		en
+:License:
+   This document is published under the
+   `Creative Commons BY 4.0 <https://creativecommons.org/licenses/by/4.0/>`__
+   license.
 
-	:Description:
-		Manual covering TYPO3 extension rt_pages_tree_icons
+:Rendered:
+   |today|
 
-	:Keywords:
-		TYPO3, Page tree, Icons, SVG
+----
 
-	:Copyright:
-		2021
+TYPO3 Page TreeView SVG icons changer.
 
-	:Author:
-		Regis TEDONE
+----
 
-	:Email:
-		regis.tedone@gmail.com
-
-	:License:
-		This document is published under the Open Content License
-		available from http://www.opencontent.org/opl.shtml
-
-	:Rendered:
-		|today|
-
-	The content of this document is related to TYPO3,
-	a GNU/GPL CMS/Framework available from `www.typo3.org <http://www.typo3.org/>`_.
-
-	**Table of Contents**
+**Table of Contents:**
 
 .. toctree::
-	:maxdepth: 3
-	:titlesonly:
+   :maxdepth: 2
+   :titlesonly:
 
-	Introduction/Index
-	Administration/Index
-	Configuration/Index
-	KnownProblems/Index
-	ChangeLog/Index
-	Links
+   Introduction/Index
+   Installation/Index
+   Administration/Index
+   KnownProblems/Index
+   Changelog/Index
+
+.. Meta Menu
+
+.. toctree::
+   :hidden:
+
+   Sitemap
+   genindex

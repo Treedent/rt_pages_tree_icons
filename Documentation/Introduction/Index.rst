@@ -1,73 +1,48 @@
-﻿.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
-.. include:: ../Includes.txt
-
+.. include:: /Includes.rst.txt
 
 .. _introduction:
 
+============
 Introduction
 ============
-
 
 .. _what-it-does:
 
 What does it do?
-----------------
+================
 
 This extension gives you the ability to change the TYPO3 pages tree icons.
 A new Backend-Module to have a more comprehensive page treeview.
 You can now dress TYPO3 page treeview with custom SVG icons.
 
-
 .. important::
 
-    - This extension works from TYPO3 V8.7.32 to V10.4.99
-    - For TYPO3 V7, use the 3.5.2 Version.
-    - This extension comes with translations in French, English, German, Italian and Spanish.
-
+   This extension works from TYPO3 V7.6.0 to V12.9.99,
+   It is provided with French, English, German, Italian and Spanish translations.
 
 .. _screenshots:
 
 Screenshots
------------
+===========
 
-This extension provides a new web module to change SVG icon per page.
+.. figure:: /Images/BackenView.png
+   :class: with-shadow
+   :alt: Pages Tree Icons - a more comprehensive TYPO3 page tree!
+   :width: 700px
 
-.. figure:: ../Images/rt_pages_tree_icons.png
-   :width: 1583px
-   :alt: Page icon changer web module
-
-Page icon changer web module in action.
-You can change page icon in a few clicks.
-
-
-
-.. figure:: ../Images/contains_plugin.png
-   :width: 623px
-   :alt: Behavior Tab when editing page properties.
-
-Behavior Tab when editing page properties.
+   Pages Tree Icons after installation (a more comprehensive TYPO3 page tree!).
 
 
 
 The extension give the ability to modify the backend login appearance.
+.. figure:: /Images/LoginScreen1.png
+   :class: with-shadow
+   :alt: Pages Tree Icons - Login Screen redesigned!
+   :width: 700px
 
-.. figure:: ../Images/backend-login-1.png
-   :width: 1196px
-   :alt: Backend Login new appearance
+.. figure:: /Images/LoginScreen2.png
+   :class: with-shadow
+   :alt: Pages Tree Icons - Login Screen redesigned!
+   :width: 700px
 
-
-.. figure:: ../Images/backend-login-2.png
-   :width: 1196px
-   :alt: Backend Login new appearance
-
-
-.. figure:: ../Images/backend-login-3.png
-   :width: 1196px
-   :alt: Backend Login new appearance
-
-
-Uses Unsplash random images for backend login form background.
+   Uses Unsplash random images for backend login form background.

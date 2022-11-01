@@ -1,8 +1,6 @@
 <?php
 
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-
-defined('TYPO3_MODE') || die();
+defined('TYPO3') || die();
 
 //Load Extension Typoscipt Configuration
-ExtensionManagementUtility::addStaticFile('rt_pages_tree_icons', 'Configuration/TypoScript', 'Pages Tree Icons');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('rt_pages_tree_icons', 'Configuration/TypoScript', 'Pages Tree Icons');

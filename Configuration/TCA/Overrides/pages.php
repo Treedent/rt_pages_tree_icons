@@ -1,10 +1,10 @@
 <?php
-defined('TYPO3_MODE') or die();
+defined('TYPO3') || die();
 
 /* * *************************************************************
  *  Copyright notice
  *
- *  (c) 2021 Regis TEDONE <regis.tedone@gmail.com>, SYRADEV
+ *  (c) 2022 Regis TEDONE <regis.tedone@gmail.com>, SYRADEV
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -448,15 +448,11 @@ $extConf = RtBackendUtility::getExtensionConfiguration('rt_pages_tree_icons');
 
 $diplayIconsInBehaviourTab = $extConf['diplayIconsInBehaviourTab'];
 
-if(version_compare(TYPO3_version, '9.0', '<')) {
-	$GLOBALS['TCA']['pages']['columns']['module']['config']['showIconTable'] = $diplayIconsInBehaviourTab;
-} elseif(version_compare(TYPO3_version, '9.0', '>=')) {
-	$GLOBALS['TCA']['pages']['columns']['module']['config']['fieldWizard']['selectIcons']['disabled'] = !$diplayIconsInBehaviourTab;
-}
+$GLOBALS['TCA']['pages']['columns']['module']['config']['fieldWizard']['selectIcons']['disabled'] = !$diplayIconsInBehaviourTab;
 
 foreach($pageIcons as $iconsParams) {
 	$iP = substr($iconsParams[1], -2);
-	if( $iP !== '-s' || $iP !=='-h') {
+	if( $iP !== '-s' || $iP !== '-h') {
 		$GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = $iconsParams;
 	}
 	$GLOBALS['TCA']['pages']['ctrl']['typeicon_classes'][ 'contains-' . $iconsParams[1] ] = $iconsParams[2];

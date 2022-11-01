@@ -1,16 +1,16 @@
 <?php
 namespace SYRADEV\RtPagesTreeIcons\Utility;
 
+use TYPO3\CMS\Core\Configuration\Exception\ExtensionConfigurationExtensionNotConfiguredException;
+use TYPO3\CMS\Core\Configuration\Exception\ExtensionConfigurationPathDoesNotExistException;
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Object\ObjectManager;
-use TYPO3\CMS\Core\Utility\ArrayUtility;
-use TYPO3\CMS\Core\Registry;
 
 /***************************************************************
  *
  *  Copyright notice
  *
- *  (c) 2021 Regis TEDONE <regis.tedone@gmail.com>, SYRADEV
+ *  (c) 2022 Regis TEDONE <regis.tedone@gmail.com>, SYRADEV
  *
  *  All rights reserved
  *
@@ -42,45 +42,12 @@ class RtBackendUtility {
 	* @param string $extensionKey Extension Key
 	* @return array $extConf Extension configuration
     */
-	public static function getExtensionConfiguration($extensionKey) {
-		 $extConf ='';
-	 	if(version_compare(TYPO3_version, '9.0', '<')) {
-			 $extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$extensionKey]);
-		 } elseif(version_compare(TYPO3_version, '9.0', '>=')) {
-			 $extConf = GeneralUtility::makeInstance( \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class )->get($extensionKey);
-		 }
-		 return $extConf;
-	 }
-
-	/*
-	* Write a new extension configuration
-	* @param array $newConfiguration New configuration to write
-	* @param string $extensionKey Extension Key
-	* @return void
-	*/
-	 public static function writeConfiguration($newConfiguration, $extensionKey) {
-		if ( version_compare( TYPO3_version, '9.0', '<' ) ) {
-			$GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['backend'] = serialize( $newConfiguration );
-			$objectManager = GeneralUtility::makeInstance( ObjectManager::class );
-			$configurationUtility = $objectManager->get( TYPO3\CMS\Extensionmanager\Utility\ConfigurationUtility::class );
-			$oldConfiguration = $configurationUtility->getCurrentConfiguration( $extensionKey );
-			ArrayUtility::mergeRecursiveWithOverrule( $newConfiguration, $oldConfiguration );
-			$configurationUtility->writeConfiguration(
-				$configurationUtility->convertValuedToNestedConfiguration( $newConfiguration ),
-				$extensionKey
-			);
-		}
-	}
-
-	/*
-	* Write an array to the TYPO3 system registry
-	* @param string $nameSpace The registry name space
-	* @param string $key Extension Key
-	* @param array $information The data to store in the registry
-	* @return void
-	*/
-	public static function setT3Registry($nameSpace, $key, $information) {
-		$registry = GeneralUtility::makeInstance(Registry::class);
-		$registry->set($nameSpace, $key, $information);
-	}
+    /**
+     * @throws ExtensionConfigurationExtensionNotConfiguredException;
+     * @throws ExtensionConfigurationPathDoesNotExistException
+     *
+     */
+    public static function getExtensionConfiguration($extensionKey) {
+       return GeneralUtility::makeInstance(ExtensionConfiguration::class)->get($extensionKey);
+    }
 }

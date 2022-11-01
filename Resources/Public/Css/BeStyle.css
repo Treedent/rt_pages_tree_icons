@@ -1,7 +1,11 @@
-
-.panel, .panel-footer {
+.typo3-login {
+    background-image: url("https://source.unsplash.com/random") !important;
+}
+.card.card-login {
     background-color: rgba(255, 255, 255, 0.5) !important;
     padding:15px;
 }
 
-
+.card.card-login {
+    border-radius: 5px !important;
+}
