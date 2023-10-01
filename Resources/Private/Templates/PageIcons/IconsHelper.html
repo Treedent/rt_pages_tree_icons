@@ -1,0 +1,73 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:core="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true" lang="en">
+
+<f:layout name="iconHelper"/>
+
+<f:section name="Content">
+    <div class="card">
+        <div class="card-header" id="new-icon-container">
+            <div class="card-icon">
+                <core:icon identifier="actions-pagetree-change-page-icon" size="large"/>
+            </div>
+            <div class="card-header-body">
+                <div class="card-code">
+                    <code id="iconFluidTag">
+                        &lbrace;namespace core=TYPO3\CMS\Core\ViewHelpers&rbrace;
+                        <br>
+                        &lt;core:icon identifier="actions-pagetree-change-page-icon"  size="large"/&gt;
+                    </code>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                <f:translate key="iconHelper.message" />
+            </p>
+        </div>
+        <div class="card-footer">
+            <form>
+
+                <f:form.hidden id="iconName" value="symbcocotier"/>
+                <f:form.hidden id="icon" value="actions-pagetree-change-page-icon"/>
+                <f:form.hidden id="copySuccessTitle" value="{copySuccessTitle}"/>
+                <f:form.hidden id="copySuccessMessage" value="{copySuccessMessage}"/>
+
+                <div class="btn-group">
+                    <f:form.select class="form-select form-select-sm" id="iconSize">
+                        <f:for each="{iconSizes}" as="iconSizeLabel" key="iconSize">
+                            <f:if condition="{iconSize}==large">
+                                <f:then>
+                                    <f:variable name="selected">selected</f:variable>
+                                </f:then>
+                                <f:else>
+                                    <f:variable name="selected"></f:variable>
+                                </f:else>
+                            </f:if>
+                            <f:form.select.option value="{iconSize}" selected="{selected}">
+                                {iconSizeLabel}
+                            </f:form.select.option>
+                        </f:for>
+                    </f:form.select>
+                </div>
+                &nbsp;
+                <f:form.checkbox id="semitransparent" class="form-check-input" value="1"/>
+                <label for="semitransparent">
+                    <f:translate key="semitransparent" extensionName="rt_pages_tree_icons"/>
+                </label>
+                &nbsp;
+                <f:form.button type="button" id="copyBtn" class="btn btn-sm btn-default">
+                    <f:translate key="copy" extensionName="rt_pages_tree_icons"/>
+                </f:form.button>
+            </form>
+        </div>
+    </div>
+
+    <div id="icons-container" class="text-center">
+        <div class="widget-waiting">
+            <core:icon identifier="spinner-circle" size="large"/>
+        </div>
+    </div>
+</f:section>
+
+</html>

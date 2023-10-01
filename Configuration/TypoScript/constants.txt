@@ -1,8 +1,0 @@
-module.tx_rtpagestreeicons_web_mod1 {
-	view {
-		# cat=module.tx_rtpagestreeicons/file; type=string; label=Path to template root (BE)
-		templateRootPath =
-		# cat=module.tx_rtpagestreeicons/file; type=string; label=Path to template layouts (BE)
-		layoutRootPath =
-	}
-}

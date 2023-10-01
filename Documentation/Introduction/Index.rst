@@ -1,48 +1,66 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
-.. _introduction:
+..  _introduction:
 
 ============
 Introduction
 ============
 
-.. _what-it-does:
+..  _what-it-does:
 
 What does it do?
 ================
 
-This extension gives you the ability to change the TYPO3 pages tree icons.
+This extension gives you the ability to:
+
+- Change the TYPO3 pages tree icons.
+- Apply Icon to 1st level supbpages of selected page.
+- Use all icons provided with this extension in your backend or frontend Fluid Templates.
+- Redesign the TYPO3 login screen.
+
 A new Backend-Module to have a more comprehensive page treeview.
 You can now dress TYPO3 page treeview with custom SVG icons.
 
-.. important::
 
-   This extension works from TYPO3 V7.6.0 to V12.9.99,
-   It is provided with French, English, German, Italian and Spanish translations.
+..  attention::
 
-.. _screenshots:
+    The latest version :code:`6.0.0` has been redesigned for TYPO3 versions 11LTS and 12LTS.
+
+    This version comes with English, French, German, Italian and Spanish translations.
+
+..  _screenshots:
 
 Screenshots
 ===========
 
-.. figure:: /Images/BackenView.png
-   :class: with-shadow
-   :alt: Pages Tree Icons - a more comprehensive TYPO3 page tree!
-   :width: 700px
+..  figure:: /Images/BackendView.jpg
+    :class: with-shadow
+    :alt: Pages Tree Icons - a more comprehensive TYPO3 page tree!
+    :width: 700px
 
-   Pages Tree Icons after installation (a more comprehensive TYPO3 page tree!).
+    Pages Tree Icons changer ( a more comprehensive TYPO3 page tree! ).
+
+|
+
+..  figure:: /Images/BackendView2.jpg
+    :class: with-shadow
+    :alt: Icons Usage Helper - copy the icon viewhelper for using it in your own Fluid templates.
+    :width: 700px
+
+    Icons Usage Helper - copy the icon viewhelper for using it in your own Fluid templates.
 
 
 
-The extension give the ability to modify the backend login appearance.
-.. figure:: /Images/LoginScreen1.png
-   :class: with-shadow
-   :alt: Pages Tree Icons - Login Screen redesigned!
-   :width: 700px
+..  figure:: /Images/LoginScreen.jpg
+    :class: with-shadow
+    :alt: Pages Tree Icons - Login Screen redesigned!
+    :width: 700px
 
-.. figure:: /Images/LoginScreen2.png
-   :class: with-shadow
-   :alt: Pages Tree Icons - Login Screen redesigned!
-   :width: 700px
+|
 
-   Uses Unsplash random images for backend login form background.
+..  figure:: /Images/LoginScreen2.jpg
+    :class: with-shadow
+    :alt: Pages Tree Icons - Login Screen redesigned!
+    :width: 700px
+
+    This extension gives the ability to modify the backend login screen appearance.

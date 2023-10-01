@@ -1,0 +1,11 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Syradev\RtPagesTreeIcons\:
+    resource: '../Classes/*'
+
+  Syradev\RtPagesTreeIcons\Controller\PageIconsController:
+    public: true

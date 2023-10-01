@@ -1,54 +1,59 @@
-.. include:: /Includes.rst.txt
+..  include:: /Includes.rst.txt
 
-=========
-<project>
-=========
+.. _start:
+
+=====================
+RT Pages Tree Icons
+=====================
 
 :Extension key:
-   rt_pages_tree_icons
+    rt_pages_tree_icons
 
 :Package name:
-   syradev/rt_pages_tree_icons
+    syradev/rt_pages_tree_icons
 
 :Version:
-   |release|
+    |release|
 
 :Language:
-   en
+    en
 
 :Author:
-   Regis TEDONE
+    Regis TEDONE
 
 :License:
-   This document is published under the
-   `Creative Commons BY 4.0 <https://creativecommons.org/licenses/by/4.0/>`__
-   license.
+    This document is published under the
+    `Creative Commons BY 4.0 <https://creativecommons.org/licenses/by/4.0/>`__
+    license.
 
 :Rendered:
-   |today|
+    |today|
 
 ----
 
-TYPO3 Page TreeView SVG icons changer.
+TYPO3 Pages TreeView SVG icons changer and Icons Usage Helper for your Fluid Templates.
 
 ----
 
 **Table of Contents:**
 
-.. toctree::
-   :maxdepth: 2
-   :titlesonly:
+..  toctree::
+    :maxdepth: 2
+    :titlesonly:
 
-   Introduction/Index
-   Installation/Index
-   Administration/Index
-   KnownProblems/Index
-   Changelog/Index
+    Introduction/Index
+    Installation/Index
+    Configuration/Index
+    Usage/Index
+    Templates/Index
+    Changelog/Index
+    KnownProblems/Index
 
-.. Meta Menu
+..  Meta Menu
 
-.. toctree::
-   :hidden:
+..  toctree::
+    :hidden:
 
-   Sitemap
-   genindex
+    Contributing
+    Sitemap
+    genindex

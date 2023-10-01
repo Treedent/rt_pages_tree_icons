@@ -16,21 +16,22 @@
     "authors": [
         {
             "name": "Regis TEDONE",
-            "email": "regis.tedone@gmail.com",
+            "email": "syradev@proton.me",
             "role": "Developer"
         }
     ],
     "license": "GPL-2.0-or-later",
     "require": {
-        "typo3/cms-core": "~11.5.0 || ~12.0.0"
+        "php": ">= 8.0 < 8.3",
+        "typo3/cms-core": "^11.5 || ^12.4"
+    },
+    "replace": {
+        "typo3-ter/rt-pages-tree-icons": "self.version"
     },
     "autoload": {
         "psr-4": {
-            "SYRADEV\\RtPagesTreeIcons\\": "Classes"
+            "Syradev\\RtPagesTreeIcons\\": "Classes"
         }
-    },
-    "replace": {
-        "typo3-ter/rt-pages-tree-icons": "*"
     },
     "extra": {
         "typo3/cms": {

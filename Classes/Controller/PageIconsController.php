@@ -1,26 +1,39 @@
 <?php
 
-namespace SYRADEV\RtPagesTreeIcons\Controller;
+declare(strict_types=1);
 
+namespace Syradev\RtPagesTreeIcons\Controller;
+
+use PDO;
+use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Backend\Routing\Exception\RouteNotFoundException;
 use TYPO3\CMS\Backend\Routing\UriBuilder;
+use TYPO3\CMS\Backend\Template\Components\ButtonBar;
+use TYPO3\CMS\Backend\Template\ModuleTemplate;
+use TYPO3\CMS\Backend\Template\ModuleTemplateFactory;
+use TYPO3\CMS\Backend\Tree\Repository\PageTreeRepository;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
+use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Package\Exception;
+use TYPO3\CMS\Core\DataHandling\DataHandler;
+use TYPO3\CMS\Core\Error\Exception;
+use TYPO3\CMS\Core\Imaging\Icon;
+use TYPO3\CMS\Core\Imaging\IconFactory;
+use TYPO3\CMS\Core\Information\Typo3Version;
+use TYPO3\CMS\Core\Localization\LanguageService;
+use TYPO3\CMS\Core\Package\Exception as T3Exception;
+use TYPO3\CMS\Core\Type\Bitmask\Permission;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\DataHandling\DataHandler;
 use TYPO3\CMS\Extbase\Http\ForwardResponse;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException;
-use TYPO3\CMS\Extbase\Mvc\Exception\StopActionException;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 /***************************************************************
  *
  *  Copyright notice
  *
- *  (c) 2022 Regis TEDONE <regis.tedone@gmail.com>, SYRADEV
+ *  (c) 2023 Regis TEDONE <syradev@proton.me>, Syradev
  *
  *  All rights reserved
  *
@@ -43,180 +56,236 @@ use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 
 /**
- * PageIconsController
+ * Page Icons Controller
  */
-class PageIconsController extends ActionController
+final class PageIconsController extends ActionController
 {
+
     /**
-     * action list
-     *
-     * @return void display
-     * @throws Exception
+     * @var ModuleTemplateFactory The module template factory
      */
-public function listAction()
+    private ModuleTemplateFactory $moduleTemplateFactory;
+
+    /**
+     * @var IconFactory The icon factory
+     */
+    private IconFactory $iconFactory;
+
+    /**
+     * @var ModuleTemplate The module template
+     */
+    private ModuleTemplate $moduleTemplate;
+
+    /**
+     * Page Icons Module Constructor
+     * @param ModuleTemplateFactory $moduleTemplateFactory
+     * @param IconFactory $iconFactory
+     */
+    public function __construct(ModuleTemplateFactory $moduleTemplateFactory, IconFactory $iconFactory)
     {
-
-        $urlvars = $_GET;
-        $pageId = $urlvars['pageId'] ?? $urlvars['id'];
-        $page0 = (int)$pageId === 0 || $pageId === null;
-
-        $langFile = 'LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf';
-
-        $pageIconClass = '';
-
-        //Get Page Icon
-        $pageIconName = $this->getPageIcon($pageId);
-
-        // Get Page Type
-        $pageType = (string)$this->getPageType($pageId);
-
-        // Get Page Menu State
-        $pageMenuState = $this->getPageMenuState($pageId);
-
-        // Get Page Hidden State
-        $pageIsHidden = $this->isHidden($pageId);
-
-        // Get Page Is Limited In Time
-        $pageIsLimitedInTime = $this->isLimitedInTime($pageId);
-
-        // Get Page Access Group
-        $pageGroupAccess = $this->getPageGroupAccess($pageId);
-
-        // Default page type label
-
-        $pageTypeLabel = match ($pageType) {
-            '3' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.doktype.I.8',
-            '4' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.doktype.I.2',
-            '6' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.doktype.I.4',
-            '7' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.doktype.I.5',
-            '199' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.doktype.I.7',
-            '254' => $langFile . ':doktype.I.1',
-            '255' => $langFile . ':doktype.I.2',
-            default => $langFile . ':doktype.I.0',
-        };
-
-        $defaultPageIconClass = $GLOBALS['TCA']['pages']['ctrl']['typeicon_classes'][$pageType];
-        if ($this->isNavHide($pageId)) {
-            $defaultPageIconClass = $GLOBALS['TCA']['pages']['ctrl']['typeicon_classes'][$pageType . '-hideinmenu'];
-        }
-        if ($this->isSiteRoot($pageId)) {
-            $defaultPageIconClass = $GLOBALS['TCA']['pages']['ctrl']['typeicon_classes'][$pageType . '-root'];
-        }
-
-        // Set default icon
-        $default_label = LocalizationUtility::translate('defaultPageType', 'rt_pages_tree_icons');
-        $icons[0] = [$default_label, '', $defaultPageIconClass, 'svg', 'default'];
-
-        $selectedIcon = '';
-        $tabs = [];
-
-        foreach ($GLOBALS['TCA']['pages']['columns']['module']['config']['items'] as $declared_icons) {
-
-            // declared_icons
-            // 0 > label
-            // 1 > icon id
-            // 2 > class
-            // 3 > type
-            // 4 > category
-
-            if (empty($declared_icons[4])) {
-                $declared_icons[4] = 'default';
-            }
-
-            if (empty($declared_icons[0])) {
-                continue;
-            }
-
-            //Get Page icon class
-            if (!empty($pageIconName)) {
-                if ($declared_icons[1] === $pageIconName || str_starts_with($pageIconName, $declared_icons[1])) {
-                    $pageIconClass = $declared_icons[2];
-                    $selectedIcon = $pageIconName;
-                    $pIN = substr($pageIconName, -2);
-                    if ($pIN === '-s' || $pIN === '-h') {
-                        $selectedIcon = substr($pageIconName, 0, -2);
-                    }
-
-                    // Set tab
-                    $tabs[$declared_icons[4]]['isactive'] = 'show active';
-                }
-            } else {
-                $pageIconClass = $defaultPageIconClass;
-                $tabs['default']['isactive'] = 'show active';
-            }
-            //Remove empty icons or Shortcut Icons
-            $dis = substr($declared_icons[1], -2);
-            if ($dis === '-s' || $dis === '-h') {
-                continue;
-            }
-            //Remove gifs/png from your TYPO3 extensions, switch to SVG, please!
-            if (str_ends_with($declared_icons[2], '.png')) {
-                $declared_icons[3] = 'png';
-            }
-            if (str_ends_with($declared_icons[2], '.gif')) {
-                $declared_icons[3] = 'gif';
-            } else {
-                $declared_icons[3] = 'svg';
-            }
-            if (str_starts_with($declared_icons[0], 'LLL')) {
-                $declared_icons[0] = LocalizationUtility::translate($declared_icons[0], 'rt_pages_tree_icons');
-            }
-            $icons[] = $declared_icons;
-        }
-
-        $this->view->assignMultiple([
-            'version' => ExtensionManagementUtility::getExtensionVersion('rt_pages_tree_icons'),
-            'pageTypeLabel' => $pageTypeLabel,
-            'icons' => $icons,
-            'pageId' => $pageId,
-            'pageIcon' => $pageIconClass,
-            'selectedIcon' => $selectedIcon,
-            'page0' => $page0,
-            'pageTitle' => $this->getPageTitle($pageId),
-            'tabs' => $tabs,
-            'pageMenuState' => $pageMenuState,
-            'pageIsHidden' => $pageIsHidden,
-            'pageIsLimitedInTime' => $pageIsLimitedInTime,
-            'pageGroupAccess' => $pageGroupAccess
-        ]);
+        $this->moduleTemplateFactory = $moduleTemplateFactory;
+        $this->iconFactory = $iconFactory;
     }
 
     /**
-     * action changePageIcon
-     * @return ForwardResponse
+     * Initialize List Action
+     * @return void
+     * @throws RouteNotFoundException
+     * @throws T3Exception
      */
-    public function changepageiconAction(): ForwardResponse
+    protected function initializeListAction(): void
+    {
+        $this->moduleTemplate = $this->moduleTemplateFactory->create($this->request);
+        $this->addMenu();
+        $this->addListButtons();
+    }
+
+    /**
+     * action list
+     *
+     * @return ResponseInterface display
+     * @throws T3Exception
+     */
+    public function listAction(): ResponseInterface
+    {
+
+        $version = ExtensionManagementUtility::getExtensionVersion('rt_pages_tree_icons');
+        $pageId = 0;
+        if (GeneralUtility::_GET('id') !== null) {
+            $pageId = (int)GeneralUtility::_GET('id');
+        }
+        $page0 = $pageId === 0;
+
+        //Get Page Icon
+        if (!$page0) {
+
+            // Get page information
+            $pageInfos = $this->getPageInfos($pageId);
+
+            // Get page type label
+            $frontendLangFile = 'LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf';
+            $coreLangFile = 'LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf';
+            $pageInfos['pageTypeLabel'] = match ($pageInfos['doktype']) {
+                3 => $frontendLangFile . ':pages.doktype.I.8',
+                4 => $frontendLangFile . ':pages.doktype.I.2',
+                6 => $frontendLangFile . ':pages.doktype.I.4',
+                7 => $frontendLangFile . ':pages.doktype.I.5',
+                199 => $frontendLangFile . ':pages.doktype.I.7',
+                254 => $coreLangFile . ':doktype.I.1',
+                255 => $coreLangFile . ':doktype.I.2',
+                default => $coreLangFile . ':doktype.I.0',
+            };
+
+            // Get page real icon name
+            if (empty($pageInfos['module'])) {
+                // Get page default icon
+                $pageInfos['pageIcon'] = $GLOBALS['TCA']['pages']['ctrl']['typeicon_classes'][$pageInfos['doktype']];
+                if ($pageInfos['nav_hide']) {
+                    $pageInfos['pageIcon'] = $GLOBALS['TCA']['pages']['ctrl']['typeicon_classes'][$pageInfos['doktype'] . '-hideinmenu'];
+                }
+                if ($pageInfos['is_siteroot']) {
+                    $pageInfos['pageIcon'] = $GLOBALS['TCA']['pages']['ctrl']['typeicon_classes'][$pageInfos['doktype'] . '-root'];
+                }
+            } else {
+                $pageInfos['pageIcon'] = $this->getPageIcon($pageInfos['module']);
+            }
+
+            // Send page infos to view
+            $this->view->assignMultiple([
+                'version' => $version,
+                'pageId' => $pageId,
+                'page0' => false,
+                'pageInfos' => $pageInfos
+            ]);
+
+        } else {
+            $this->view->assignMultiple([
+                'version' => $version,
+                'page0' => true
+            ]);
+        }
+
+        $perms_clause = $this->getBackendUser()->getPagePermsClause(Permission::PAGE_SHOW);
+        $pageAcess = BackendUtility::readPageAccess($pageId, $perms_clause) ?: [];
+        if ($pageAcess !== []) {
+            $this->moduleTemplate->getDocHeaderComponent()->setMetaInformation($pageAcess);
+        }
+
+        $moduleTitle = LocalizationUtility::translate('module_title', 'rt_pages_tree_icons') . ' V' . $version;
+        $this->moduleTemplate->setTitle($moduleTitle);
+        $this->moduleTemplate->setContent($this->view->render());
+        return $this->htmlResponse($this->moduleTemplate->renderContent());
+    }
+
+
+    /**
+     * Utils: get Page Information
+     * @param $pageId
+     * @return array
+     */
+    private function getPageInfos($pageId): array
+    {
+        $pageInfos = [];
+        $dhc = GeneralUtility::makeInstance(DataHandler::class);
+        $pageInfos['module'] = $dhc->pageInfo($pageId, 'module');
+        $pageInfos['title'] = $dhc->pageInfo($pageId, 'title');
+        $pageInfos['doktype'] = (int)$dhc->pageInfo($pageId, 'doktype');
+        $pageInfos['nav_hide'] = $dhc->pageInfo($pageId, 'nav_hide')===1;
+        $pageInfos['hidden'] = $dhc->pageInfo($pageId, 'hidden')===1;
+        $pageInfos['limited'] = $dhc->pageInfo($pageId, 'starttime') > 0 || $dhc->pageInfo($pageId, 'endtime') > 0;
+        $pageInfos['fe_group'] = $dhc->pageInfo($pageId, 'fe_group');
+        $pageInfos['is_siteroot'] = $dhc->pageInfo($pageId, 'is_siteroot') === 1;
+        return $pageInfos;
+    }
+
+    /**
+     * Get page real icon name
+     * @param string $module
+     * @return string
+     */
+    private function getPageIcon(string $module): string
+    {
+        $pageIcon = '';
+        foreach ($GLOBALS['TCA']['pages']['columns']['module']['config']['items'] as $declared_icons) {
+            $declared_icons = array_values($declared_icons);
+            if ($declared_icons[1] === $module) {
+                $pageIcon = $declared_icons[2];
+                break;
+            }
+        }
+        return $pageIcon;
+    }
+
+
+    /**
+     * Utils: Returns an instance of BackendUserAuthentication
+     * @return BackendUserAuthentication
+     */
+    protected function getBackendUser(): BackendUserAuthentication
+    {
+        return $GLOBALS['BE_USER'];
+    }
+
+    /**
+     * action icons helper
+     *
+     * @return ResponseInterface display
+     */
+    public function iconsHelperAction(): ResponseInterface
+    {
+        $majorVersion = GeneralUtility::makeInstance(Typo3Version::class)->getMajorVersion();
+        $iconSizes = [];
+        if($majorVersion === 11) {
+            $iconSizes = ['overlay'=>'Overlay - 1em', 'small'=>'Small - 16px', 'default'=>'Default - 32px','large'=>'Large - 48px'];
+        }
+        if($majorVersion === 12) {
+            $iconSizes = ['default'=>'Default - 1em', 'small'=>'Small - 16px', 'medium'=>'Medium - 32px','large'=>'Large - 48px','mega'=>'Mega - 64px'];
+        }
+        $moduleTitle = $copySuccessTitle = LocalizationUtility::translate('actionmenu.iconsHelper', 'rt_pages_tree_icons');
+        $copySuccessMessage = LocalizationUtility::translate('copy.success', 'rt_pages_tree_icons');
+        $this->view->assignMultiple([
+            'iconSizes' => $iconSizes,
+            'copySuccessTitle' => $copySuccessTitle,
+            'copySuccessMessage' => $copySuccessMessage,
+        ]);
+        $this->moduleTemplate->setTitle($moduleTitle);
+        $this->moduleTemplate->setContent($this->view->render());
+        return $this->htmlResponse($this->moduleTemplate->renderContent());
+    }
+
+    /**
+     * Action: change Page Icon
+     * @return ForwardResponse
+     * @throws Exception
+     */
+    public function changePageIconAction(): ForwardResponse
     {
 
         //Retrieve vars
-        $postVars = GeneralUtility::_POST('tx_rtpagestreeicons_web_rtpagestreeiconsmod1');
-        $newIcon = $postVars['newIcon'];
+        $postVars = $this->request->getParsedBody();
+        extract($postVars);
+        /** @var $newicon */
+        /** @var $pageId */
 
-        $getVars = GeneralUtility::_GET('tx_rtpagestreeicons_web_rtpagestreeiconsmod1');
-        $pageId = (int)$getVars['pageId'];
-
-        $pageType = $this->getPageType($pageId);
-        // Force Shortcut Icon
-        if (($pageType === '4' && str_starts_with($newIcon, 'page')) || ($pageType === '4' && str_starts_with($newIcon, 'symbearth'))) {
+        // Get page information
+        $pageInfos = $this->getPageInfos($pageId);
+        // Force Shortcut Icon on certain icons
+        if (($pageInfos['doktype'] === 4 && str_starts_with($newIcon, 'page')) || ($pageInfos['doktype']  === 4 && str_starts_with($newIcon, 'rpage')) || ($pageInfos['doktype']  === 4 && str_starts_with($newIcon, 'symbearth'))) {
             $newIcon .= '-s';
         }
-
         // Force Hidden in menu Icon
-        $pageMenuState = $this->getPageMenuState($pageId);
-        if ($pageMenuState == '1') {
+        if ($pageInfos['nav_hide']) {
             $newIcon .= '-h';
         }
 
         //Update page icon in database
-        $page_update = false;
-
         $pagesQueryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('pages');
         $page_update = $pagesQueryBuilder
             ->update('pages')
-            ->where($pagesQueryBuilder->expr()->eq('uid', $pagesQueryBuilder->createNamedParameter($pageId, \PDO::PARAM_INT)))
+            ->where($pagesQueryBuilder->expr()->eq('uid', $pagesQueryBuilder->createNamedParameter($pageId, PDO::PARAM_INT)))
             ->set('tstamp', time())
             ->set('module', $newIcon)
-            ->execute();
+            ->executeStatement();
 
 
         //Reload the page tree
@@ -227,128 +296,261 @@ public function listAction()
     }
 
     /**
-     * action editPageProperties
+     * Action: change Subpages Icons
+     * @return ForwardResponse
+     * @throws Exception
+     */
+    public function changeSubpagesIconsAction(): ForwardResponse
+    {
+
+        //Retrieve vars
+        $postVars = $this->request->getParsedBody();
+        $newSubIcon = (string)$postVars['newSubIcon'];
+        $pagePid = (int)$postVars['pagePid'];
+
+        $subPages = $this->getSubpages($pagePid);
+        $pagesQueryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('pages');
+        foreach ($subPages as $subPageId) {
+            $module = $newSubIcon;
+            $pageInfos = $this->getPageInfos($subPageId);
+            // Force certain Shortcut Icon
+            if (($pageInfos['doktype'] === 4 && str_starts_with($module, 'page')) || ($pageInfos['doktype'] === 4 && str_starts_with($module, 'rpage')) || ($pageInfos['doktype'] === 4 && str_starts_with($module, 'symbearth'))) {
+                $module .= '-s';
+            }
+            // Force Hidden in menu Icon
+            if ($pageInfos['nav_hide']) {
+                $module .= '-h';
+            }
+
+            //Update page icon in database
+            $page_update = $pagesQueryBuilder
+                ->update('pages')
+                ->where($pagesQueryBuilder->expr()->eq('uid', $pagesQueryBuilder->createNamedParameter($subPageId, PDO::PARAM_INT)))
+                ->set('tstamp', time())
+                ->set('module', $module)
+                ->executeStatement();
+        }
+        //Reload the page tree
+        BackendUtility::setUpdateSignal('updatePageTree');
+        return new ForwardResponse('list');
+    }
+
+    /**
+     * Utils: get array of a page subpages ids
+     * @param $pagePid
+     * @return array
+     */
+    private function getSubpages($pagePid): array
+    {
+        $ptr = GeneralUtility::makeInstance(PageTreeRepository::class);
+        $subpages = $ptr->getTree($pagePid)['_children'];
+        $subpagesIds = [];
+        foreach ($subpages as $subpage) {
+            $subpagesIds[] = $subpage['uid'];
+        }
+        return ($subpagesIds);
+    }
+
+
+
+    /**
      * @return void
-     * @throws NoSuchArgumentException|RouteNotFoundException
-     * @throws StopActionException
      */
-    public function editPagePropertiesAction()
+    private function addMenu(): void
     {
-        $pageId = $this->request->getArgument('pageId');
-        $urlEditPage = '';
+        $menuRegistry = $this->moduleTemplate->getDocHeaderComponent()->getMenuRegistry();
+        $menu = $menuRegistry->makeMenu();
+        $menu->setIdentifier('actionmenu');
 
+        $menuItems = ['list', 'iconsHelper'];
+        foreach ($menuItems as $key => $action) {
+            $uri = $this->uriBuilder->reset()->uriFor($action, [], 'PageIcons');
+            $isActive = $this->request->getControllerActionName() === $action;
+            $title = LocalizationUtility::translate('actionmenu.' . $action, 'rt_pages_tree_icons');
+            $menuItem = $menu->makeMenuItem()
+                ->setTitle($title)
+                ->setHref($uri)
+                ->setActive($isActive);
+            $menu->addMenuItem($menuItem);
+        }
+        $menuRegistry->addMenu($menu);
+    }
+
+    /**
+     * Add the Buttons into the docheader for List View
+     * @throws RouteNotFoundException
+     * @throws T3Exception
+     */
+    private function addListButtons(): void
+    {
+        $buttonBar = $this->moduleTemplate->getDocHeaderComponent()->getButtonBar();
         $uriBuilder = GeneralUtility::makeInstance(UriBuilder::class);
-        $sReturnUrl = (string)$uriBuilder->buildUriFromRoute('web_RtPagesTreeIconsMod1', ['id' => $pageId]);
-        $urlEditPage = (string)$uriBuilder->buildUriFromRoute('record_edit', [
-            'edit[pages][' . $pageId . ']' => 'edit',
-            'pageId' => $pageId,
-            'returnUrl' => $sReturnUrl
-        ]);
+        $pageId = 0;
+        if (GeneralUtility::_GET('id') !== null) {
+            $pageId = (int)GeneralUtility::_GET('id');
+        }
+        $moduleTitle = LocalizationUtility::translate('module_title', 'rt_pages_tree_icons');
+        $version = ExtensionManagementUtility::getExtensionVersion('rt_pages_tree_icons');
 
-        //typo3/record/edit?edit%5Bpages%5D%5B78%5D=edit&returnUrl=%2Ftypo3%2Fmodule%2Fweb%2Flayout%3Ftoken%3D903671f8161d33927b14304dd103c56fe4645063%26id%3D78
-        //typo3/record/edit?token=f71e23906af03e3b5db54c784a28b305088bc21c&edit%5Bpages%5D%5B78%5D=edit&pageId=78&returnUrl=%2Ftypo3%2Fmodule%2Fweb%2FRtPagesTreeIconsMod1%3Ftoken%3D12532993c108b8c3c81d6c6306bfb0a028a70ac0%26id%3D78
+        // Save icon buttons
+        if ($pageId > 0) {
+            $saveButtonDropdown = $buttonBar->makeSplitButton();
 
-        //$this->response->setStatus(303);
-        //dd($urlEditPage);
-        $this->redirect($urlEditPage);
+            // Apply on current page
+            $saveTitle = LocalizationUtility::translate('apply_current_page', 'rt_pages_tree_icons');
+            $saveButton = $buttonBar->makeInputButton()
+                ->setForm('setPageIconForm')
+                ->setName('_setcurrentpage')
+                ->setValue('1')
+                ->setShowLabelText(true)
+                ->setIcon($this->iconFactory->getIcon('actions-save', Icon::SIZE_SMALL))
+                ->setTitle($saveTitle);
+            $saveButtonDropdown->addItem($saveButton);
+
+            // Apply on subpages
+            if (!empty($this->getSubpages($pageId))) {
+                $saveSubTitle = LocalizationUtility::translate('apply_subpages', 'rt_pages_tree_icons');
+                $saveSubButton = $buttonBar->makeInputButton()
+                    ->setForm('setSubpagesIconsForm')
+                    ->setName('_setsubpages')
+                    ->setValue('2')
+                    ->setShowLabelText(true)
+                    ->setIcon($this->iconFactory->getIcon('actions-arrow-right-down-alt', Icon::SIZE_SMALL))
+                    ->setTitle($saveSubTitle);
+                $saveButtonDropdown->addItem($saveSubButton);
+                $buttonBar->addButton($saveButtonDropdown, ButtonBar::BUTTON_POSITION_LEFT, 1);
+            } else {
+                $buttonBar->addButton($saveButton, ButtonBar::BUTTON_POSITION_LEFT, 1);
+            }
+        }
+
+        // Module infos fake button
+        $infosLabel = $moduleTitle . ' - V' . $version . ' - SYRADEV © ' . date('Y');
+        $infosButton = $buttonBar->makeLinkButton()
+            ->setHref('#')
+            ->setTitle($infosLabel)
+            ->setIcon($this->iconFactory->getIcon('actions-pagetree-change-page-icon', Icon::SIZE_SMALL))
+            ->setShowLabelText(True)
+            ->setClasses('btn-warning')
+            ->setDisabled(true);
+        $buttonBar->addButton($infosButton, ButtonBar::BUTTON_POSITION_LEFT, 2);
+
+        // Edit page button
+        if ($pageId > 0) {
+            $sReturnUrl = (string)$uriBuilder->buildUriFromRoute('web_RtPagesTreeIconsRtptim1', ['id' => $pageId]);
+            $urlEditPage = (string)$uriBuilder->buildUriFromRoute('record_edit', [
+                'edit[pages][' . $pageId . ']' => 'edit',
+                'returnUrl' => $sReturnUrl
+            ]);
+            $editPageTitle = $this->getLanguageService()->sL('LLL:EXT:backend/Resources/Private/Language/locallang_layout.xlf:editPageProperties');
+            $editPageButton = $buttonBar->makeLinkButton()
+                ->setHref($urlEditPage)
+                ->setTitle($editPageTitle)
+                ->setIcon($this->iconFactory->getIcon('actions-file-edit', Icon::SIZE_SMALL));
+            $buttonBar->addButton($editPageButton, ButtonBar::BUTTON_POSITION_RIGHT, 3);
+        }
+
+        // Reload button
+        $reloadTitle = $this->getLanguageService()->sL('LLL:EXT:core/Resources/Private/Language/locallang_common.xlf:reload');
+        $reloadIcon = $this->iconFactory->getIcon('actions-refresh', Icon::SIZE_SMALL);
+        $moduleUrl = (string)$uriBuilder->buildUriFromRoute('web_RtPagesTreeIconsRtptim1', ['id' => $pageId]);
+        $reloadButton = $buttonBar->makeLinkButton()
+            ->setHref($moduleUrl)
+            ->setTitle($reloadTitle)
+            ->setIcon($reloadIcon);
+        $buttonBar->addButton($reloadButton, ButtonBar::BUTTON_POSITION_RIGHT, 4);
+
+        // Shortcut button
+        $majorVersion = GeneralUtility::makeInstance(Typo3Version::class)->getMajorVersion();
+        $shortcutButton = $buttonBar->makeShortcutButton();
+        if($majorVersion === 11) {
+            $shortcutButton->setRouteIdentifier('web_RtPagesTreeIconsRtptim1')
+                ->setDisplayName($moduleTitle)
+                ->setArguments([
+                    'tx_rtpagestreeicons_web_rtpagestreeiconsrtptim1' => [
+                        'action' => 'list',
+                        'controller' => 'PageIcons'
+                    ],
+                ]);
+        }
+        if($majorVersion === 12) {
+            $shortcutButton->setRouteIdentifier('web_RtPagesTreeIconsRtptim1.PageIcons_list')
+                ->setDisplayName($moduleTitle);
+        }
+        $buttonBar->addButton($shortcutButton, ButtonBar::BUTTON_POSITION_RIGHT, 5);
     }
 
     /**
-     * utils get Page Menu State
-     * @param $pageId
-     * @return bool|null
+     * Add the Buttons into the docheader for Icons helper View
+     * @return void
+     * @throws T3Exception
      */
-    protected function getPageMenuState($pageId): bool|null
+    private function addHelperButtons():void
     {
-        $tce = GeneralUtility::makeInstance(DataHandler::class);
-        return $tce->pageInfo($pageId, 'nav_hide');
+        $buttonBar = $this->moduleTemplate->getDocHeaderComponent()->getButtonBar();
+        $uriBuilder = GeneralUtility::makeInstance(UriBuilder::class);
+        $moduleTitle = LocalizationUtility::translate('actionmenu.iconsHelper', 'rt_pages_tree_icons');
+        $version = ExtensionManagementUtility::getExtensionVersion('rt_pages_tree_icons');
+
+        // Module infos fake button
+        $infosLabel = $moduleTitle . ' - V' . $version . ' - SYRADEV © ' . date('Y');
+        $infosButton = $buttonBar->makeLinkButton()
+            ->setHref('#')
+            ->setTitle($infosLabel)
+            ->setIcon($this->iconFactory->getIcon('actions-pagetree-change-page-icon', Icon::SIZE_SMALL))
+            ->setShowLabelText(True)
+            ->setClasses('btn-warning')
+            ->setDisabled(true);
+        $buttonBar->addButton($infosButton, ButtonBar::BUTTON_POSITION_LEFT, 2);
+
+        // Reload button
+        $reloadTitle = $this->getLanguageService()->sL('LLL:EXT:core/Resources/Private/Language/locallang_common.xlf:reload');
+        $reloadIcon = $this->iconFactory->getIcon('actions-refresh', Icon::SIZE_SMALL);
+        $moduleUrl = $this->uriBuilder->reset()->uriFor('iconsHelper', [], 'PageIcons');
+        $reloadButton = $buttonBar->makeLinkButton()
+            ->setHref($moduleUrl)
+            ->setTitle($reloadTitle)
+            ->setIcon($reloadIcon);
+        $buttonBar->addButton($reloadButton, ButtonBar::BUTTON_POSITION_RIGHT, 4);
+
+        // Shortcut button
+        $majorVersion = GeneralUtility::makeInstance(Typo3Version::class)->getMajorVersion();
+        $shortcutButton = $buttonBar->makeShortcutButton();
+        if($majorVersion === 11) {
+            $shortcutButton->setRouteIdentifier('web_RtPagesTreeIconsRtptim1')
+                ->setDisplayName($moduleTitle)
+                ->setArguments([
+                    'tx_rtpagestreeicons_web_rtpagestreeiconsrtptim1' => [
+                        'action' => 'iconsHelper',
+                        'controller' => 'PageIcons'
+                    ],
+                ]);
+        }
+        if($majorVersion === 12) {
+            $shortcutButton->setRouteIdentifier('web_RtPagesTreeIconsRtptim1.PageIcons_iconsHelper')
+                ->setDisplayName($moduleTitle);
+        }
+        $buttonBar->addButton($shortcutButton, ButtonBar::BUTTON_POSITION_RIGHT, 5);
     }
 
     /**
-     * utils get Page Icon
-     * @param $pageId
-     * @return string|null
+     * Utils: Returns an instance of LanguageService
+     * @return LanguageService
      */
-    protected function getPageIcon($pageId): string|null
+    protected function getLanguageService(): LanguageService
     {
-        $tce = GeneralUtility::makeInstance(DataHandler::class);
-        return $tce->pageInfo($pageId, 'module');
+        return $GLOBALS['LANG'];
     }
 
     /**
-     * utils get Page Icon
-     * @param $pageId
-     * @return string|null
+     * Initialize Icons Helper Action
+     * @return void
+     * @throws T3Exception
      */
-    protected function getPageType($pageId): string|null
+    protected function initializeIconsHelperAction(): void
     {
-        $tce = GeneralUtility::makeInstance(DataHandler::class);
-        return $tce->pageInfo($pageId, 'doktype');
-    }
-
-    /**
-     * Utils Get Is Site Root
-     * @param $pageId
-     * @return bool|null
-     */
-    protected function isSiteRoot($pageId): bool|null
-    {
-        $tce = GeneralUtility::makeInstance(DataHandler::class);
-        return $tce->pageInfo($pageId, 'is_siteroot');
-    }
-
-    /**
-     * Utils Get Is Hidden In Navigation
-     * @param $pageId
-     * @return bool|null
-     */
-    protected function isNavHide($pageId): bool|null
-    {
-        $tce = GeneralUtility::makeInstance(DataHandler::class);
-        return $tce->pageInfo($pageId, 'nav_hide');
-    }
-
-    /**
-     * Utils Get Is Page Hidden
-     * @param $pageId
-     * @return bool|null
-     */
-    protected function isHidden($pageId): bool|null
-    {
-        $tce = GeneralUtility::makeInstance(DataHandler::class);
-        return $tce->pageInfo($pageId, 'hidden');
-    }
-
-    /**
-     * Utils Get Is Limited In Time
-     * @param $pageId
-     * @return boolean
-     */
-    protected function isLimitedInTime($pageId): bool
-    {
-        $tce = GeneralUtility::makeInstance(DataHandler::class);
-        return $tce->pageInfo($pageId, 'starttime') > 0 || $tce->pageInfo($pageId, 'endtime') > 0;
-    }
-
-    /**
-     * Utils Get Page Title
-     * @param $pageId
-     * @return string|null
-     */
-    protected function getPageTitle($pageId): string|null
-    {
-        $tce = GeneralUtility::makeInstance(DataHandler::class);
-        return $tce->pageInfo($pageId, 'title');
-    }
-
-    /**
-     * Utils Get Page Group Access
-     * @param $pageId
-     * @return string|null
-     */
-    protected function getPageGroupAccess($pageId): string|null
-    {
-        $tce = GeneralUtility::makeInstance(DataHandler::class);
-        return $tce->pageInfo($pageId, 'fe_group');
+        $this->moduleTemplate = $this->moduleTemplateFactory->create($this->request);
+        $this->addMenu();
+        $this->addHelperButtons();
     }
 }

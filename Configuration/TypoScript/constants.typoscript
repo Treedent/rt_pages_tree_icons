@@ -1,0 +1,10 @@
+module.tx_rtpagestreeicons {
+	view {
+		# cat=module.tx_rtpagestreeicons/file; type=string; label=Path to template root (BE)
+		templateRootPath = EXT:rt_pages_tree_icons/Resources/Private/Templates/
+		# cat=module.tx_rtpagestreeicons/file; type=string; label=Path to partials root (BE)
+		patialRootPath = EXT:rt_pages_tree_icons/Resources/Private/Partials/
+		# cat=module.tx_rtpagestreeicons/file; type=string; label=Path to layouts root (BE)
+		layoutRootPath = EXT:rt_pages_tree_icons/Resources/Private/Layouts/
+	}
+}

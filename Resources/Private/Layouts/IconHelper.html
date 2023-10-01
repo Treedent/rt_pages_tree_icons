@@ -1,0 +1,13 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true" lang="en">
+
+<f:flashMessages />
+
+<f:be.pageRenderer includeCssFiles="{0: '{f:uri.resource(path:\'Css/iconStyle.css\')}'}"
+                   includeJsFiles="{0: '{f:uri.resource(path:\'JavaScript/iconHelper.js\')}'}"
+                   includeRequireJsModules="{0: 'SYRADEV/RtPagesTreeIcons/iconHelper'}"
+/>
+
+<f:render section="Content"/>
+
+</html>

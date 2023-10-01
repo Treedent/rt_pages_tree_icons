@@ -1,0 +1,254 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:core="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true" lang="en">
+
+<f:variable name="typo3Embedded"><f:translate key="category.typo3Embedded" extensionName="rt_pages_tree_icons"/></f:variable>
+<f:variable name="pages"><f:translate key="category.pages" extensionName="rt_pages_tree_icons"/></f:variable>
+<f:variable name="folders"><f:translate key="category.folders" extensionName="rt_pages_tree_icons"/></f:variable>
+<f:variable name="symbols"><f:translate key="category.symbols" extensionName="rt_pages_tree_icons"/></f:variable>
+<f:variable name="applications"><f:translate key="category.applications" extensionName="rt_pages_tree_icons"/></f:variable>
+<f:variable name="socials"><f:translate key="category.socials" extensionName="rt_pages_tree_icons"/></f:variable>
+<f:variable name="alphanum"><f:translate key="category.alphanum" extensionName="rt_pages_tree_icons"/></f:variable>
+<f:variable name="about"><f:translate key="about" extensionName="rt_pages_tree_icons"/></f:variable>
+
+<div role="tabpanel">
+    <ul class="nav nav-tabs nav-justified t3js-tabs" role="tablist" id="tabs-icons" data-store-last-tab="1">
+        <li role="presentation" class="t3js-tabmenu-item">
+            <a href="#tab-default" title="{typo3Embedded}"
+               class="nav-item {f:if(condition: '{tab} == default', then: 'show active', else: '')}"
+               aria-controls="tab-default" role="tab" data-bs-toggle="tab">
+                {typo3Embedded}
+            </a>
+        </li>
+        <li role="presentation" class="t3js-tabmenu-item">
+            <a href="#tab-page" title="{pages}"
+               class="nav-item {f:if(condition: '{tab} == page', then: 'show active', else: '')}"
+               aria-controls="tab-page" role="tab" data-bs-toggle="tab">
+                {pages}
+            </a>
+        </li>
+        <li role="presentation" class="t3js-tabmenu-item">
+            <a href="#tab-folder" title="{folders}"
+               class="nav-item {f:if(condition: '{tab} == folder', then: 'show active', else: '')}"
+               aria-controls="tab-folder" role="tab" data-bs-toggle="tab">
+                {folders}
+            </a>
+        </li>
+        <li role="presentation" class="t3js-tabmenu-item">
+            <a href="#tab-symbol" title="{symbols}"
+               class="nav-item {f:if(condition: '{tab} == symbol', then: 'show active', else: '')}"
+               aria-controls="tab-symbol" role="tab" data-bs-toggle="tab">
+                {symbols}
+            </a>
+        </li>
+        <li role="presentation" class="t3js-tabmenu-item">
+            <a href="#tab-app" title="{applications}"
+               class="nav-item {f:if(condition: '{tab} == app', then: 'show active', else: '')}"
+               aria-controls="tab-app" role="tab" data-bs-toggle="tab">
+                {applications}
+            </a>
+        </li>
+        <li role="presentation" class="t3js-tabmenu-item">
+            <a href="#tab-social" title="{socials}"
+               class="nav-item {f:if(condition: '{tab} == social', then: 'show active', else: '')}"
+               aria-controls="tab-social" role="tab" data-bs-toggle="tab">
+                {socials}
+            </a>
+        </li>
+        <li role="presentation" class="t3js-tabmenu-item">
+            <a href="#tab-alphanum" title="{alphanum}"
+               class="nav-item {f:if(condition: '{tab} == alphanum', then: 'show active', else: '')}"
+               aria-controls="tab-alphanum" role="tab" data-bs-toggle="tab">
+                {alphanum}
+            </a>
+        </li>
+        <li role="presentation" class="t3js-tabmenu-item">
+            <a href="#tab-about" title="{about}" class="nav-item" aria-controls="tab-about" role="tab"
+               data-bs-toggle="tab">
+                {about}
+            </a>
+        </li>
+    </ul>
+
+    <div class="tab-content pt-2">
+        <div role="tabpanel" class="tab-pane fade {f:if(condition: '{tab} == default', then: 'show active', else: '')}" id="tab-default">
+            <div class="panel panel-tab">
+                <div class="panel-body">
+                    <div class="icon-set clearfix">
+                        <ul>
+                            <f:for each="{icons}" as="icon">
+                                <f:if condition="{icon.3}=='default'">
+                                    <f:then>
+                                        <li data-icon="{icon.1}"
+                                            class="icon-container text-center{f:if(condition: '{selectedIcon}=={icon.1}', then: ' icon-current', else: '')}">
+                                            <f:if condition="{icon.4}=='gif'">
+                                                <f:then>
+                                                    <img src="{icon.2}" width="48px" alt="Naughty gif!">
+                                                </f:then>
+                                            </f:if>
+                                            <f:if condition="{icon.4}=='png'">
+                                                <f:then>
+                                                    <img src="{icon.2}" width="48px" alt="Poor png!">
+                                                </f:then>
+                                            </f:if>
+                                            <f:if condition="{icon.4}=='svg'">
+                                                <f:then>
+                                                    <core:icon identifier="{icon.2}" size="large"/>
+                                                </f:then>
+                                            </f:if>
+                                            <br>
+                                            <small>{icon.0}</small>
+                                        </li>
+                                    </f:then>
+                                </f:if>
+                            </f:for>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade {f:if(condition: '{tab} == page', then: 'show active', else: '')}" id="tab-page">
+            <div class="panel panel-tab">
+                <div class="panel-body">
+                    <div class="icon-set clearfix">
+                        <ul>
+                            <f:for each="{icons}" as="icon">
+                                <f:if condition="{icon.3} == 'page'">
+                                    <f:then>
+                                        <li data-icon="{icon.1}"
+                                            class="icon-container text-center{f:if(condition: '{selectedIcon}=={icon.1}', then: ' icon-current', else: '')}">
+                                            <core:icon identifier="{icon.2}" size="large"/>
+                                            <br>
+                                            <small>{icon.0}</small>
+                                        </li>
+                                    </f:then>
+                                </f:if>
+                            </f:for>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade {f:if(condition: '{tab} == folder', then: 'show active', else: '')}" id="tab-folder">
+            <div class="panel panel-tab">
+                <div class="panel-body">
+                    <div class="icon-set clearfix">
+                        <ul>
+                            <f:for each="{icons}" as="icon">
+                                <f:if condition="{icon.3} == 'folder'">
+                                    <f:then>
+                                        <li data-icon="{icon.1}"
+                                            class="icon-container text-center{f:if(condition: '{selectedIcon}=={icon.1}', then: ' icon-current', else: '')}">
+                                            <core:icon identifier="{icon.2}" size="large"/>
+                                            <br>
+                                            <small>{icon.0}</small>
+                                        </li>
+                                    </f:then>
+                                </f:if>
+                            </f:for>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade {f:if(condition: '{tab} == symbol', then: 'show active', else: '')}" id="tab-symbol">
+            <div class="panel panel-tab">
+                <div class="panel-body">
+                    <div class="icon-set clearfix">
+                        <ul class="mtm8">
+                            <f:for each="{icons}" as="icon">
+                                <f:if condition="{icon.3} == 'symbol'">
+                                    <f:then>
+                                        <li data-icon="{icon.1}"
+                                            class="icon-container text-center{f:if(condition: '{selectedIcon}=={icon.1}', then: ' icon-current', else: '')}">
+                                            <core:icon identifier="{icon.2}" size="large"/>
+                                            <br>
+                                            <small>{icon.0}</small>
+                                        </li>
+                                    </f:then>
+                                </f:if>
+                            </f:for>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade {f:if(condition: '{tab} == app', then: 'show active', else: '')}" id="tab-app">
+            <div class="panel panel-tab">
+                <div class="panel-body">
+                    <div class="icon-set clearfix">
+                        <ul>
+                            <f:for each="{icons}" as="icon">
+                                <f:if condition="{icon.3} == 'app'">
+                                    <f:then>
+                                        <li data-icon="{icon.1}"
+                                            class="icon-container text-center{f:if(condition: '{selectedIcon}=={icon.1}', then: ' icon-current', else: '')}">
+                                            <core:icon identifier="{icon.2}" size="large"/>
+                                            <p class="small">{icon.0}</p>
+                                        </li>
+                                    </f:then>
+                                </f:if>
+                            </f:for>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade {f:if(condition: '{tab} == social', then: 'show active', else: '')}" id="tab-social">
+            <div class="panel panel-tab">
+                <div class="panel-body">
+                    <div class="icon-set clearfix">
+                        <ul>
+                            <f:for each="{icons}" as="icon">
+                                <f:if condition="{icon.3} == 'social'">
+                                    <f:then>
+                                        <li data-icon="{icon.1}"
+                                            class="icon-container text-center{f:if(condition: '{selectedIcon}=={icon.1}', then: ' icon-current', else: '')}">
+                                            <core:icon identifier="{icon.2}" size="large"/>
+                                            <br>
+                                            <small>{icon.0}</small>
+                                        </li>
+                                    </f:then>
+                                </f:if>
+                            </f:for>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade {f:if(condition: '{tab} == alphanum', then: 'show active', else: '')}" id="tab-alphanum">
+            <div class="panel panel-tab">
+                <div class="panel-body">
+                    <div class="icon-set clearfix">
+                        <ul>
+                            <f:for each="{icons}" as="icon">
+                                <f:if condition="{icon.3} == 'alphanum'">
+                                    <f:then>
+                                        <li data-icon="{icon.1}"
+                                            class="icon-container text-center{f:if(condition: '{selectedIcon}=={icon.1}', then: ' icon-current', else: '')}">
+                                            <core:icon identifier="{icon.2}" size="large"/>
+                                            <br>
+                                            <small>{icon.0}</small>
+                                        </li>
+                                    </f:then>
+                                </f:if>
+                            </f:for>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="tab-about">
+            <div class="panel panel-tab">
+                <div class="panel-body">
+                    <f:be.infobox title="{f:translate(key:'about.Syradev.text', extensionName: 'rt_pages_tree_icons')}" disableIcon="TRUE" state="-2">
+                        <img src="/typo3conf/ext/rt_pages_tree_icons/Resources/Public/syradev_2023.svg"
+                             alt="Syradev">
+                    </f:be.infobox>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>

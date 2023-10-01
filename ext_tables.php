@@ -1,11 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 defined('TYPO3') || die();
+
 /***************************************************************
  *
  *  Copyright notice
  *
- *  (c) 2022 Regis TEDONE <regis.tedone@gmail.com>, SYRADEV
+ *  (c) 2023 Regis TEDONE <syradev@proton.me>, Syradev
  *
  *  All rights reserved
  *
@@ -26,23 +29,26 @@ defined('TYPO3') || die();
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
+
+use Syradev\RtPagesTreeIcons\Controller\PageIconsController;
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
+use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use SYRADEV\RtPagesTreeIcons\Utility\RtBackendUtility;
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 
-(static function() {
-    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
-        'SYRADEV.rt_pages_tree_icons',
+(static function () {
+    ExtensionUtility::registerModule(
+        'RtPagesTreeIcons',
         'web',
-        'mod1',
-        'Page Tree Icons',
+        'rtptim1',
+        'after:info',
         [
-            \SYRADEV\RtPagesTreeIcons\Controller\PageIconsController::class => 'list,changepageicon,editPageProperties'
+            PageIconsController::class => 'list,changePageIcon,changeSubpagesIcons,iconsHelper'
         ],
         [
             'access' => 'user,group',
-            'icon'   => 'EXT:rt_pages_tree_icons/Resources/Public/Icons/palm-tree-BE.svg',
+            'iconIdentifier' => 'module-pagetreeicons',
             'labels' => 'LLL:EXT:rt_pages_tree_icons/Resources/Private/Language/locallang.xlf',
         ]
     );
@@ -50,54 +56,55 @@ use SYRADEV\RtPagesTreeIcons\Utility\RtBackendUtility;
 })();
 
 // Get extension configuration
-$extConf = RtBackendUtility::getExtensionConfiguration('rt_pages_tree_icons');
+$extConf = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('rt_pages_tree_icons');
 
 // CSS generation url paramters
-$params=[];
+$params = [];
 
 // Backend login form background opacity
 $opacity = !empty($extConf['backLoginFormOpacity']) ? $extConf['backLoginFormOpacity'] : '0.5';
 // Backend login form opacity style
-if($extConf['backLoginFormTransparent']==='1') {
-	$params['opacity'] =  $opacity;
+if ($extConf['backLoginFormTransparent'] === '1') {
+    $params['opacity'] = $opacity;
 }
 
 // Backend login form border
-if($extConf['backLoginFormBorder']==='0') {
-	$params['border'] = '0';
+if (isset($extConf['backLoginFormBorder']) && $extConf['backLoginFormBorder'] === '0') {
+    $params['border'] = '0';
 }
 
 // Backend login form border radius
 $radius = !empty($extConf['backLoginBorderRadius']) ? $extConf['backLoginBorderRadius'] : '3';
 // Backend login form border radius style
-if($radius!=='3') {
-	$params['radius'] =  $radius;
+if ($radius !== '3') {
+    $params['radius'] = $radius;
 }
 
 // Backend login form background color
 $backcolor = !empty($extConf['backLoginBackColor']) ? $extConf['backLoginBackColor'] : '#ffffff';
-if($backcolor!=='#ffffff') {
-	$params['backcolor'] = $backcolor;
+if ($backcolor !== '#ffffff') {
+    $params['backcolor'] = $backcolor;
 }
 
 // Backend login random background image
-if($extConf['backLoginRandomImage']==='1') {
-	$params['random'] = '1';
+if ($extConf['backLoginRandomImage'] === '1') {
+    $params['random'] = '1';
 }
 
 // Generates new Login Backend CSS Style
-$style1=$style2=$style3=$style4=$style5='';
-$opacity=1;
+$style1 = $style2 = $style3 = $style4 = $style5 = '';
+$opacity = 1;
 
-if( isset($params['random']) && $params['random'] === '1' ) {
+if (isset($params['random']) && $params['random'] === '1') {
+    $randomImageUrl = empty($extConf['randomImageUrl']) ? 'https://source.unsplash.com/random' : $extConf['randomImageUrl'];
     $style1 = <<<STYLE1
 .typo3-login {
-    background-image: url("https://source.unsplash.com/random") !important;
+    background-image: url("{$randomImageUrl}") !important;
 }
 STYLE1;
 }
 
-if( isset($params['opacity']) && (float)$params['opacity'] !== 1 ) {
+if (isset($params['opacity']) && (float)$params['opacity'] != 1) {
     $style2 = <<<STYLE2
 .card.card-login {
     background-color: rgba(255, 255, 255, {$params['opacity']}) !important;
@@ -106,7 +113,7 @@ if( isset($params['opacity']) && (float)$params['opacity'] !== 1 ) {
 STYLE2;
 }
 
-if( isset($params['border']) && $params['border'] === '0' ) {
+if (isset($params['border']) && $params['border'] === '0') {
     $style3 = <<<STYLE3
 .card.card-login {
     border: none !important;
@@ -114,7 +121,7 @@ if( isset($params['border']) && $params['border'] === '0' ) {
 STYLE3;
 }
 
-if( isset($params['radius']) ) {
+if (isset($params['radius'])) {
     $style4 = <<<STYLE4
 .card.card-login {
     border-radius: {$params['radius']}px !important;
@@ -122,8 +129,8 @@ if( isset($params['radius']) ) {
 STYLE4;
 
 }
-if( isset($params['backcolor']) ) {
-    list($r, $g, $b) = sscanf($params['backcolor'], '#%02x%02x%02x' );
+if (isset($params['backcolor'])) {
+    list($r, $g, $b) = sscanf($params['backcolor'], '#%02x%02x%02x');
     $style5 = <<<STYLE5
 .card.card-login {
     background-color: rgba({$r},{$g},{$b},{$params['opacity']}) !important;
@@ -131,12 +138,18 @@ if( isset($params['backcolor']) ) {
 STYLE5;
 }
 
-$content =  $style1 ."\n" . $style2 ."\n" . $style3 ."\n" . $style4 ."\n" . $style5;
+$content = $style1 . "\n" . $style2 . "\n" . $style3 . "\n" . $style4 . "\n" . $style5;
 
 $BeCssFile = 'EXT:rt_pages_tree_icons/Resources/Public/Css/BeStyle.css';
 
 GeneralUtility::writeFile(GeneralUtility::getFileAbsFileName($BeCssFile), $content);
 
-if( $extConf['backLoginFormTransparent']==='1' || $extConf['backLoginRandomImage']==='1' ) {
-    $GLOBALS['TBE_STYLES']['stylesheet'] = $BeCssFile;
+$majorVersion = GeneralUtility::makeInstance(Typo3Version::class)->getMajorVersion();
+
+if ($extConf['backLoginFormTransparent'] === '1' || $extConf['backLoginRandomImage'] === '1') {
+    if($majorVersion === 11) {
+        $GLOBALS['TBE_STYLES']['stylesheet'] = $BeCssFile;
+    } else {
+        $GLOBALS['TYPO3_CONF_VARS']['BE']['stylesheets']['rt_pages_tree_icons'] = $BeCssFile;
+    }
 }

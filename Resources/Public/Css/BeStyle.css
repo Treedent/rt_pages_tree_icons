@@ -5,7 +5,9 @@
     background-color: rgba(255, 255, 255, 0.5) !important;
     padding:15px;
 }
-
 .card.card-login {
-    border-radius: 5px !important;
+    border: none !important;
+}
+.card.card-login {
+    border-radius: 10px !important;
 }
