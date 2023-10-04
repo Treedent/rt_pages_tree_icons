@@ -25,6 +25,7 @@
         "php": ">= 8.0 < 8.3",
         "typo3/cms-core": "~11.5 || ~12.4"
     },
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "replace": {
         "typo3-ter/rt-pages-tree-icons": "self.version"
