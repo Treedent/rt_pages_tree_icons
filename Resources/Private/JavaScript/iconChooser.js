@@ -57,12 +57,14 @@ define('SYRADEV/RtPagesTreeIcons/pageIconChanger', () => {
     if (pagesIconsContainer !== null) {
         pagesIconsContainer.addEventListener('click', (e) => {
             const li = e.target.closest('li');
-            getSiblings(li).forEach(icon => {
-                icon.classList.remove('icon-current');
-            });
-            li.classList.add('icon-current');
-            newIcon.value = li.dataset.icon;
-            newSubIcon.value = li.dataset.icon;
+            if (li && li.dataset.icon !== undefined) {
+                getSiblings(li).forEach(icon => {
+                    icon.classList.remove('icon-current');
+                });
+                li.classList.add('icon-current');
+                newIcon.value = li.dataset.icon;
+                newSubIcon.value = li.dataset.icon;
+            }
         }, true);
     }
 

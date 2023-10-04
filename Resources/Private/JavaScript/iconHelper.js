@@ -39,7 +39,7 @@ define('SYRADEV/RtPagesTreeIcons/iconHelper', ['TYPO3/CMS/Backend/Notification']
 
     iconsContainer.addEventListener('click', (e) => {
         const li = e.target.closest('li');
-        if(li.dataset.icon !== undefined) {
+        if (li && li.dataset.icon !== undefined) {
             getSiblings(li).forEach(icon => {
                 icon.classList.remove('icon-current');
             });
@@ -68,7 +68,7 @@ define('SYRADEV/RtPagesTreeIcons/iconHelper', ['TYPO3/CMS/Backend/Notification']
                 mode: 'cors'
             };
             const request = new AjaxRequest(TYPO3.settings.ajaxUrls.set_newIcon);
-            request.post(body,init).then(
+            request.post(body, init).then(
                 async (response) => {
                     const reponse = await response.resolve();
                     icon.value = reponse.newIconInfos.icon
@@ -114,7 +114,7 @@ define('SYRADEV/RtPagesTreeIcons/iconHelper', ['TYPO3/CMS/Backend/Notification']
             mode: 'cors'
         };
         const request = new AjaxRequest(TYPO3.settings.ajaxUrls.get_allIcons);
-        request.post(body,init).then(
+        request.post(body, init).then(
             async (response) => {
                 iconsContainer.innerHTML = await response.resolve();
             }, (error) => {

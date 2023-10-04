@@ -6,6 +6,13 @@
 Changelog
 ===========
 
+- V6.0.1 for TYPO3 V11 & V12.
+    - JavaScript bug correction and optimization.
+    - Adjusted github tag for composer install.
+    - Online documentation render correction.
+
+
+
 - V6.0.0 for TYPO3 V11 & V12.
     - Complete revamping for TYPO3 V12.
     - Apply Icon to 1st level supbpages of selected page.
