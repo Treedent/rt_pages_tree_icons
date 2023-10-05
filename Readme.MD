@@ -4,6 +4,7 @@
 [![Total Downloads](http://poser.pugx.org/syradev/rt_pages_tree_icons/downloads)](https://packagist.org/packages/syradev/rt_pages_tree_icons)
 [![Monthly Downloads](http://poser.pugx.org/syradev/rt_pages_tree_icons/d/monthly)](https://packagist.org/packages/syradev/rt_pages_tree_icons)
 [![License](http://poser.pugx.org/syradev/rt_pages_tree_icons/license)](https://packagist.org/packages/syradev/rt_pages_tree_icons)
+[![Crowdin](https://badges.crowdin.net/typo3-rtpagestreeicons/localized.svg)](https://crowdin.com)
 
 # TYPO3 Extension `rt_pages_tree_icons`
 
