@@ -8,7 +8,7 @@ Enable Features
 
 - In TYPO3 V11 or V12  : Admin Tools > Settings module > Configure extension > rt_pages_tree_icons.
 
-Enable changing page tree icons when editing page properties in behavior tab > Use as Container.
+Enable changing pages tree icons when editing page properties in behavior tab > Use as Container.
 
 ..  figure:: /Images/SettingsConfiguratioFeatures.jpg
     :class: with-shadow
@@ -29,7 +29,7 @@ Enable changing page tree icons when editing page properties in behavior tab > U
 
 ..  confval:: PHP - Enable Features
 
-    Enable changing page tree icons when editing page properties::
+    Enable changing pages tree icons when editing page properties::
 
        <?php
        // TYPO3 V11: typo3conf/LocalConfiguration.php

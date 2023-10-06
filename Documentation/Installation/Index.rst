@@ -28,4 +28,4 @@ Installation
 ..  attention::
    Are there any dependencies that need to be resolved?
 
-   This version requires TYPO3 V11LTS or TYPO3 V12LTS and PHP >= V8.
+   This version requires TYPO3 V11LTS or TYPO3 V12LTS and PHP >= 8.0.0

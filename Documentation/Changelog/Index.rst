@@ -55,7 +55,7 @@ Changelog
     - New features :
         - Compatibility for TYPO3 V9LTS,
         - Tabs icons reorganization,
-        - Add support for page shortcuts icons,
+        - Add support for shortcuts pages icons,
         - Add support for hide in menu icons,
         - Add random login background images from Unspalsh,
         - Documentation update,

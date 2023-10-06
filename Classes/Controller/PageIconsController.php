@@ -110,6 +110,9 @@ final class PageIconsController extends ActionController
     {
 
         $version = ExtensionManagementUtility::getExtensionVersion('rt_pages_tree_icons');
+        if(str_starts_with($version, 'v')) {
+            $version = substr($version, 1);
+        }
         $pageId = 0;
         if (GeneralUtility::_GET('id') !== null) {
             $pageId = (int)GeneralUtility::_GET('id');
@@ -391,6 +394,9 @@ final class PageIconsController extends ActionController
         }
         $moduleTitle = LocalizationUtility::translate('module_title', 'rt_pages_tree_icons');
         $version = ExtensionManagementUtility::getExtensionVersion('rt_pages_tree_icons');
+        if(str_starts_with($version, 'v')) {
+            $version = substr($version, 1);
+        }
 
         // Save icon buttons
         if ($pageId > 0) {
@@ -491,6 +497,9 @@ final class PageIconsController extends ActionController
         $uriBuilder = GeneralUtility::makeInstance(UriBuilder::class);
         $moduleTitle = LocalizationUtility::translate('actionmenu.iconsHelper', 'rt_pages_tree_icons');
         $version = ExtensionManagementUtility::getExtensionVersion('rt_pages_tree_icons');
+        if(str_starts_with($version, 'v')) {
+            $version = substr($version, 1);
+        }
 
         // Module infos fake button
         $infosLabel = $moduleTitle . ' - V' . $version . ' - SYRADEV © ' . date('Y');

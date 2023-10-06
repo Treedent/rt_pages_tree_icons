@@ -18,8 +18,8 @@ This extension gives you the ability to:
 - Use all icons provided with this extension in your backend or frontend Fluid Templates.
 - Redesign the TYPO3 login screen.
 
-A new Backend-Module to have a more comprehensive page treeview.
-You can now dress TYPO3 page treeview with custom SVG icons.
+A new Backend-Module to have a more comprehensive pages treeview.
+You can now dress TYPO3 pages treeview with custom SVG icons.
 
 
 ..  attention::
@@ -35,10 +35,10 @@ Screenshots
 
 ..  figure:: /Images/BackendView.jpg
     :class: with-shadow
-    :alt: Pages Tree Icons - a more comprehensive TYPO3 page tree!
+    :alt: Pages Tree Icons - a more comprehensive TYPO3 pages treeview!
     :width: 700px
 
-    Pages Tree Icons changer ( a more comprehensive TYPO3 page tree! ).
+    Pages Tree Icons changer ( a more comprehensive TYPO3 pages treeview! ).
 
 |
 

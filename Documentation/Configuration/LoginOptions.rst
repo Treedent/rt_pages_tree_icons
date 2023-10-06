@@ -42,7 +42,7 @@ With this configuration, you can:
 
 ..  confval:: PHP - Login Options
 
-    Adust backend login interface appearance::
+    Adjust backend login interface appearance::
 
        <?php
        // TYPO3 V11: typo3conf/LocalConfiguration.php
@@ -51,13 +51,13 @@ With this configuration, you can:
        return [
           'EXTENSIONS' => [
              'rt_pages_tree_icons' => [
-               'backLoginBackColor' => '#f0b81f',
-               'backLoginBorderRadius' => '6',
-               'backLoginFormBorder' => '1',
-               'backLoginFormOpacity' => '0.5',
-               'backLoginFormTransparent' => '1',
-               'backLoginRandomImage' => '1',
-               'randomImageUrl' => 'https://source.unsplash.com/random',
+             'backLoginBackColor' => '#f0b81f',
+             'backLoginBorderRadius' => '6',
+             'backLoginFormBorder' => '1',
+             'backLoginFormOpacity' => '0.5',
+             'backLoginFormTransparent' => '1',
+             'backLoginRandomImage' => '1',
+             'randomImageUrl' => 'https://source.unsplash.com/random',
             ],
          ],
       ];
