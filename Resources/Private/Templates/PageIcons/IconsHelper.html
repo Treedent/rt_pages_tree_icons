@@ -32,6 +32,8 @@
                 <f:form.hidden id="icon" value="actions-pagetree-change-page-icon"/>
                 <f:form.hidden id="copySuccessTitle" value="{copySuccessTitle}"/>
                 <f:form.hidden id="copySuccessMessage" value="{copySuccessMessage}"/>
+                <f:form.hidden id="searchWarningTitle" value="{searchWarningTitle}"/>
+                <f:form.hidden id="searchWarningMessage" value="{searchWarningMessage}"/>
 
                 <div class="btn-group">
                     <f:form.select class="form-select form-select-sm" id="iconSize">
@@ -68,6 +70,10 @@
             <core:icon identifier="spinner-circle" size="large"/>
         </div>
     </div>
+
+    <script>
+        const spinner = `<div class="widget-waiting"><core:icon identifier="spinner-circle" size="large"/></div>`;
+    </script>
 </f:section>
 
 </html>

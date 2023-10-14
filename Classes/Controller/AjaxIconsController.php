@@ -56,8 +56,8 @@ final class AjaxIconsController extends ActionController
         $tab = 'default';
         $icons = [];
 
-        if(isset($postVars['action']) && $postVars['action']==='iconsHelper') {
-            $tab='symbol';
+        if (isset($postVars['action']) && $postVars['action'] === 'iconsHelper') {
+            $tab = 'symbol';
             $selectedIcon = 'symbcocotier';
         } else {
             $pageModule = $postVars['pageModule'];
@@ -108,7 +108,7 @@ final class AjaxIconsController extends ActionController
             if (!empty($pageModule)) {
                 if ($declared_icons[1] === $pageModule) {
                     $selectedIcon = $pageModule;
-                    if(str_ends_with($pageModule, '-s') || str_ends_with($pageModule, '-h')) {
+                    if (str_ends_with($pageModule, '-s') || str_ends_with($pageModule, '-h')) {
                         $selectedIcon = substr($pageModule, 0, -2);
                     }
                     // Set tab
@@ -116,8 +116,8 @@ final class AjaxIconsController extends ActionController
                 }
             }
 
-            //Remove empty icons or Shortcut Icons
-            if( str_ends_with($declared_icons[1], '-s') || str_ends_with($declared_icons[1], '-h') ) {
+            //Remove Shortcut and Semi-transparent Icons
+            if (str_ends_with($declared_icons[1], '-s') || str_ends_with($declared_icons[1], '-h')) {
                 continue;
             }
 
@@ -134,11 +134,100 @@ final class AjaxIconsController extends ActionController
         }
 
         $iconsVars = [
-            'icons'         => $icons,
-            'tab'           => $tab,
-            'selectedIcon'  => $selectedIcon
+            'icons' => $icons,
+            'tab' => $tab,
+            'selectedIcon' => $selectedIcon
         ];
-        $partialView = $this->getPartialTemplate('PageIcons/AllIcons',$iconsVars);
+        $partialView = $this->getPartialTemplate('PageIcons/AllIcons', $iconsVars);
+        $response = $this->responseFactory->createResponse()->withHeader('Content-Type', 'text/html; charset=utf-8');
+        $response->getBody()->write($this->minify($partialView));
+        return $response;
+    }
+
+    /**
+     * Get partial template html from its name
+     *
+     * @param string $partialName
+     * @param array $variables
+     * @return string
+     */
+    private function getPartialTemplate(string $partialName, array $variables = []): string
+    {
+        $extTemplatePath = 'EXT:rt_pages_tree_icons/Resources/Private/';
+        $standaloneView = GeneralUtility::makeInstance(StandaloneView::class);
+        $standaloneView->setFormat('html');
+        $standaloneView->setPartialRootPaths([GeneralUtility::getFileAbsFileName($extTemplatePath . 'Partials')]);
+        return $standaloneView->renderPartial($partialName, NULL, $variables);
+    }
+
+    /**
+     * Minify HTML
+     * @param string $html
+     * @return string
+     */
+    private function minify(string $html = ''): string
+    {
+        $sr = array(
+            '/\/\*\*.\*\//' => ' ',
+            '/\n/' => ' ',
+            '/\t/' => ' ',
+            '/[ ]+/' => ' ',
+            '/\>\s\<(?:(?!(?:a|b|strong|img|em|i|span|small|big)[ ]))/' => '><'
+        );
+        return preg_replace(array_keys($sr), array_values($sr), $html);
+    }
+
+    /**
+     * Ajax function to search icons
+     *
+     * @param ServerRequestInterface $request
+     * @return ResponseInterface
+     */
+    public function searchIconsAction(ServerRequestInterface $request): ResponseInterface
+    {
+        $postVars = $request->getParsedBody();
+        $searchWords = '/' . implode('|', GeneralUtility::trimExplode(' ', $postVars['searchWords'], true)) . '/i';
+        $icons = [];
+
+        foreach ($GLOBALS['TCA']['pages']['columns']['module']['config']['items'] as $declared_icons) {
+            $declared_icons = array_values($declared_icons);
+            if ($declared_icons[1] === 'fe_users') {
+                continue;
+            }
+            if (empty($declared_icons[3])) {
+                $declared_icons[3] = 'default';
+            }
+            if (empty($declared_icons[0])) {
+                continue;
+            }
+
+            // Get icons label
+            if (str_starts_with($declared_icons[0], 'LLL')) {
+                $declared_icons[0] = LocalizationUtility::translate($declared_icons[0], 'rt_pages_tree_icons');
+            }
+
+            // Some default icons have no description
+            if (!isset($declared_icons[4])) {
+                $declared_icons[4] = 'svg';
+            }
+
+            // Construct the search words area
+            $iconInfos = implode(' ', $declared_icons);
+
+            //Remove Shortcut and Semi-transparent Icons
+            if (str_ends_with($declared_icons[1], '-s') || str_ends_with($declared_icons[1], '-h')) {
+                continue;
+            }
+
+            //Search comparison
+            if (preg_match($searchWords, $iconInfos)) {
+                $icons[] = $declared_icons;
+            }
+        }
+        $iconsVars = [
+            'icons' => $icons
+        ];
+        $partialView = $this->getPartialTemplate('PageIcons/FindIcons', $iconsVars);
         $response = $this->responseFactory->createResponse()->withHeader('Content-Type', 'text/html; charset=utf-8');
         $response->getBody()->write($this->minify($partialView));
         return $response;
@@ -169,7 +258,7 @@ final class AjaxIconsController extends ActionController
                     'icon' => $declared_icons[2],
                     'iconSize' => $newIconSize
                 ];
-                if($semiTransparent==='true') {
+                if ($semiTransparent === 'true') {
                     $newIcon['icon'] .= '-h';
                 }
                 break;
@@ -183,39 +272,5 @@ final class AjaxIconsController extends ActionController
         $response = $this->responseFactory->createResponse()->withHeader('Content-Type', 'application/json; charset=utf-8');
         $response->getBody()->write(json_encode(['newIconInfos' => $newIconInfos], JSON_THROW_ON_ERROR));
         return $response;
-    }
-
-    /**
-     * Minify HTML
-     * @param string $html
-     * @return string
-     */
-    private function minify(string $html=''): string
-    {
-        $sr = array(
-            '/\/\*\*.\*\//' => ' ',
-            '/\n/' => ' ',
-            '/\t/' => ' ',
-            '/[ ]+/' => ' ',
-            '/\>\s\<(?:(?!(?:a|b|strong|img|em|i|span|small|big)[ ]))/' => '><'
-        );
-        return preg_replace(array_keys($sr), array_values($sr), $html);
-    }
-
-
-    /**
-     * Get partial template html from its name
-     *
-     * @param string $partialName
-     * @param array $variables
-     * @return string
-     */
-    private function getPartialTemplate(string $partialName, array $variables=[]): string
-    {
-        $extTemplatePath = 'EXT:rt_pages_tree_icons/Resources/Private/';
-        $standaloneView = GeneralUtility::makeInstance(StandaloneView::class);
-        $standaloneView->setFormat('html');
-        $standaloneView->setPartialRootPaths([GeneralUtility::getFileAbsFileName($extTemplatePath . 'Partials')]);
-        return $standaloneView->renderPartial($partialName, NULL, $variables);
     }
 }

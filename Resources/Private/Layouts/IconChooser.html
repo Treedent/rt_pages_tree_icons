@@ -4,8 +4,8 @@
 <f:flashMessages />
 
 <f:be.pageRenderer includeCssFiles="{0: '{f:uri.resource(path:\'Css/iconStyle.css\')}'}"
-                   includeJsFiles="{0: '{f:uri.resource(path:\'JavaScript/iconChooser.min.js\')}'}"
-                   includeRequireJsModules="{0: 'SYRADEV/RtPagesTreeIcons/pageIconChanger'}"
+                   includeJsFiles="{0: '{f:uri.resource(path:\'JavaScript/iconChooser.min.js\')}', 1: '{f:uri.resource(path:\'JavaScript/searchIcons.min.js\')}'}"
+                   includeRequireJsModules="{0: 'SYRADEV/RtPagesTreeIcons/pageIconChanger', 1: 'SYRADEV/RtPagesTreeIcons/searchIcons'}"
 />
 
 <f:if condition="{page0}">

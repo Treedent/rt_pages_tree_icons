@@ -38,6 +38,7 @@ define('SYRADEV/RtPagesTreeIcons/pageIconChanger', () => {
     const pageDoktype = document.querySelector('#pageDoktype');
     const pageNavHide = document.querySelector('#pageNavHide');
     const pageIsSiteroot = document.querySelector('#pageIsSiteroot');
+    const searchWords = document.querySelector('#search-words');
 
     let getSiblings = function (e) {
         let siblings = [];
@@ -77,7 +78,7 @@ define('SYRADEV/RtPagesTreeIcons/pageIconChanger', () => {
         });
     }
 
-    if (pageId !== null) {
+    let loadIcons = () => {
         require(['TYPO3/CMS/Core/Ajax/AjaxRequest'], (AjaxRequest) => {
             let body = {
                 pageId: parseInt(pageId.value),
@@ -98,5 +99,23 @@ define('SYRADEV/RtPagesTreeIcons/pageIconChanger', () => {
                 }
             );
         });
+    };
+
+    require(['TYPO3/CMS/Backend/Input/Clearable'], function () {
+        if (searchWords !== null) {
+            searchWords.clearable(
+                {
+                    onClear: function () {
+                        iconsContainer.innerHTML = spinner;
+                        loadIcons();
+                    }
+                }
+            );
+        }
+    });
+
+    if (pageId !== null) {
+        loadIcons();
     }
+
 });

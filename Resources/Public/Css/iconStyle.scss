@@ -52,6 +52,15 @@
     background-color: #fcf1e2 !important;
     border: none !important;
   }
+
+  .btn-outline-dark {
+    border: 1px solid #bbbbbb;
+  }
+
+  #search-words {
+    width: 200px;
+    height: 26px;
+  }
 }
 
 .module {
@@ -151,6 +160,7 @@ div.syradev {
   border-radius: 4px;
   padding: 10px;
   width: 100%;
+
   & code {
     font-size: 1.3em;
     color: #f7d3aa;

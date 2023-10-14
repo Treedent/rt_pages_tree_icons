@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file source-language="en" target-language="it" datatype="plaintext" original="EXT:rt_pages_tree_icons/Resources/Private/Language/locallang.xlf" date="2023-09-29T07:51:56Z" product-name="rt_pages_tree_icons">
+	<file source-language="en" target-language="it" datatype="plaintext" original="EXT:rt_pages_tree_icons/Resources/Private/Language/locallang.xlf" date="2023-10-14T15:31:46Z" product-name="rt_pages_tree_icons">
 		<header/>
 		<body>
 			<trans-unit id="mlang_tabs_tab" resname="mlang_tabs_tab">
@@ -107,6 +107,54 @@
 				<source>Letters &amp; Numbers</source>
 				<target>Lettere e numeri</target>
 			</trans-unit>
+			<trans-unit id="default.root" resname="default.root">
+				<source>TYPO3 root</source>
+				<target>TYPO3 radice</target>
+			</trans-unit>
+			<trans-unit id="default.squared" resname="default.squared">
+				<source>TYPO3 squared</source>
+				<target>TYPO3 al quadrato</target>
+			</trans-unit>
+			<trans-unit id="user.admin" resname="user.admin">
+				<source>Administrator</source>
+				<target>Amministratore</target>
+			</trans-unit>
+			<trans-unit id="user.backend" resname="user.backend">
+				<source>Backend user</source>
+				<target>Utente backend</target>
+			</trans-unit>
+			<trans-unit id="user.frontend" resname="user.frontend">
+				<source>Frontend user</source>
+				<target>Utente frontend</target>
+			</trans-unit>
+			<trans-unit id="not.found" resname="not.found">
+				<source>Not found</source>
+				<target>Non trovato</target>
+			</trans-unit>
+			<trans-unit id="folder.shop" resname="folder.shop">
+				<source>Folder Shop</source>
+				<target>Cartella Negozio</target>
+			</trans-unit>
+			<trans-unit id="folder.approve" resname="folder.approve">
+				<source>Folder Approve</source>
+				<target>Cartella Approvare</target>
+			</trans-unit>
+			<trans-unit id="folder.board" resname="folder.board">
+				<source>Folder Board</source>
+				<target>Cartella Board</target>
+			</trans-unit>
+			<trans-unit id="folder.users" resname="folder.users">
+				<source>Folder Users</source>
+				<target>Cartella utente</target>
+			</trans-unit>
+			<trans-unit id="folder.news" resname="folder.news">
+				<source>Folder News</source>
+				<target>Cartella Notizie</target>
+			</trans-unit>
+			<trans-unit id="folder.opened" resname="folder.opened">
+				<source>Folder Opened</source>
+				<target>Cartella Aperta</target>
+			</trans-unit>
 			<trans-unit id="folderb" resname="folderb">
 				<source>Folder black</source>
 				<target>Cartella negra</target>
@@ -114,6 +162,10 @@
 			<trans-unit id="folderm" resname="folderm">
 				<source>Folder brown</source>
 				<target>Cartella marrone</target>
+			</trans-unit>
+			<trans-unit id="folderbe" resname="folderbe">
+				<source>Folder beige</source>
+				<target>Cartella beige</target>
 			</trans-unit>
 			<trans-unit id="folderblt" resname="folderblt">
 				<source>Folder blue light</source>
@@ -207,6 +259,10 @@
 				<source>Rounded folder brown</source>
 				<target>Cartella arrotondata marrone</target>
 			</trans-unit>
+			<trans-unit id="rfolderbe" resname="rfolderbe">
+				<source>Rounded folder beige</source>
+				<target>Cartella arrotondata beige</target>
+			</trans-unit>
 			<trans-unit id="rfolderblt" resname="rfolderblt">
 				<source>Rounded folder blue light</source>
 				<target>Cartella arrotondata luce blu</target>
@@ -298,6 +354,10 @@
 			<trans-unit id="pagem" resname="pagem">
 				<source>Page brown</source>
 				<target>Pagina marrone</target>
+			</trans-unit>
+			<trans-unit id="pagebe" resname="pagebe">
+				<source>Page beige</source>
+				<target>Pagina beige</target>
 			</trans-unit>
 			<trans-unit id="pageblt" resname="pageblt">
 				<source>Page blue light</source>
@@ -395,6 +455,10 @@
 				<source>Rounded page brown</source>
 				<target>Pagina arrotondata marrone</target>
 			</trans-unit>
+			<trans-unit id="rpagebe" resname="rpagebe">
+				<source>Rounded page beige</source>
+				<target>Pagina arrotondata beige</target>
+			</trans-unit>
 			<trans-unit id="rpageblt" resname="rpageblt">
 				<source>Rounded page blue light</source>
 				<target>Pagina arrotondata luce blu</target>
@@ -484,7 +548,7 @@
 				<target>Logo TYPO3 nero</target>
 			</trans-unit>
 			<trans-unit id="apptypo3g" resname="apptypo3g">
-				<source>TYPO3 logo grey</source>
+				<source>TYPO3 logo gray</source>
 				<target>Logo grigio TYPO3</target>
 			</trans-unit>
 			<trans-unit id="apptypo3o" resname="apptypo3o">
@@ -539,9 +603,17 @@
 				<source>Form</source>
 				<target>Modulo</target>
 			</trans-unit>
+			<trans-unit id="symbserver" resname="symbserver">
+				<source>Server</source>
+				<target>Server</target>
+			</trans-unit>
 			<trans-unit id="symbdesktop" resname="symbdesktop">
 				<source>Desktop</source>
 				<target>Desktop</target>
+			</trans-unit>
+			<trans-unit id="symblaptop" resname="symblaptop">
+				<source>Laptop</source>
+				<target>Computer portatile</target>
 			</trans-unit>
 			<trans-unit id="symbtablet" resname="symbtablet">
 				<source>Tablet</source>
@@ -550,6 +622,10 @@
 			<trans-unit id="symbmobile" resname="symbmobile">
 				<source>Mobile</source>
 				<target>Smartphone</target>
+			</trans-unit>
+			<trans-unit id="symbbattery" resname="symbbattery">
+				<source>Battery</source>
+				<target>Batteria</target>
 			</trans-unit>
 			<trans-unit id="symbvideo" resname="symbvideo">
 				<source>Video</source>
@@ -639,13 +715,89 @@
 				<source>Payment</source>
 				<target>Pagamento</target>
 			</trans-unit>
+			<trans-unit id="symbpound" resname="symbpound">
+				<source>Pound</source>
+				<target>Sterlina</target>
+			</trans-unit>
+			<trans-unit id="symbchf" resname="symbchf">
+				<source>Swiss Franc</source>
+				<target>Franco svizzero</target>
+			</trans-unit>
 			<trans-unit id="symbshopcart" resname="symbshopcart">
 				<source>Shopping cart</source>
 				<target>Carrello della spesa</target>
 			</trans-unit>
+			<trans-unit id="symbrestaurant" resname="symbrestaurant">
+				<source>Restaurant</source>
+				<target>Ristorante</target>
+			</trans-unit>
 			<trans-unit id="symbuniversity" resname="symbuniversity">
 				<source>University</source>
 				<target>Università</target>
+			</trans-unit>
+			<trans-unit id="symbinfinity" resname="symbinfinity">
+				<source>Infinity</source>
+				<target>L&#039;infinito</target>
+			</trans-unit>
+			<trans-unit id="symbsports" resname="symbsports">
+				<source>Sports</source>
+				<target>Sport</target>
+			</trans-unit>
+			<trans-unit id="symbfootball" resname="symbfootball">
+				<source>Football</source>
+				<target>Calcio</target>
+			</trans-unit>
+			<trans-unit id="symbrugby" resname="symbrugby">
+				<source>Rugby</source>
+				<target>Il rugby</target>
+			</trans-unit>
+			<trans-unit id="symbbasketball" resname="symbbasketball">
+				<source>Basketball</source>
+				<target>Pallacanestro</target>
+			</trans-unit>
+			<trans-unit id="symbanchor" resname="symbanchor">
+				<source>Anchor</source>
+				<target>Ancora</target>
+			</trans-unit>
+			<trans-unit id="symbship" resname="symbship">
+				<source>Ship</source>
+				<target>Nave</target>
+			</trans-unit>
+			<trans-unit id="symbsailboat" resname="symbsailboat">
+				<source>Sailboat</source>
+				<target>Barca a vela</target>
+			</trans-unit>
+			<trans-unit id="symbtrain" resname="symbtrain">
+				<source>Train</source>
+				<target>Treno</target>
+			</trans-unit>
+			<trans-unit id="symbtramway" resname="symbtramway">
+				<source>Tramway</source>
+				<target>Tram</target>
+			</trans-unit>
+			<trans-unit id="symbcar" resname="symbcar">
+				<source>Car</source>
+				<target>Auto</target>
+			</trans-unit>
+			<trans-unit id="symbmotorbike" resname="symbmotorbike">
+				<source>Motorbike</source>
+				<target>Motocicletta</target>
+			</trans-unit>
+			<trans-unit id="symbmotorscooter" resname="symbmotorscooter">
+				<source>Motor-scooter</source>
+				<target>Scooter a motore</target>
+			</trans-unit>
+			<trans-unit id="symbbycicle" resname="symbbycicle">
+				<source>Bycicle</source>
+				<target>Bicicletta</target>
+			</trans-unit>
+			<trans-unit id="symbebike" resname="symbebike">
+				<source>E-bike</source>
+				<target>Bicicletta elettrica</target>
+			</trans-unit>
+			<trans-unit id="symbscooter" resname="symbscooter">
+				<source>Scooter</source>
+				<target>Scooter</target>
 			</trans-unit>
 			<trans-unit id="symbbrainstorm" resname="symbbrainstorm">
 				<source>Brainstorming</source>
@@ -782,6 +934,10 @@
 			<trans-unit id="symblogin" resname="symblogin">
 				<source>Login</source>
 				<target>Accesso</target>
+			</trans-unit>
+			<trans-unit id="symbteeshirt" resname="symbteeshirt">
+				<source>Tee-shirt</source>
+				<target>Maglietta</target>
 			</trans-unit>
 			<trans-unit id="symblive" resname="symblive">
 				<source>Live</source>
@@ -1002,6 +1158,22 @@
 			<trans-unit id="semitransparent" resname="semitransparent">
 				<source>Semi-transparent</source>
 				<target>Semi-trasparente</target>
+			</trans-unit>
+			<trans-unit id="search.icon" resname="search.icon">
+				<source>Search for an icon...</source>
+				<target>Cercare un&#039;icona...</target>
+			</trans-unit>
+			<trans-unit id="search.warning" resname="search.warning">
+				<source>Please enter one or more words to search for!</source>
+				<target>Inserisci una o più parole da cercare!</target>
+			</trans-unit>
+			<trans-unit id="search.results" resname="search.results">
+				<source>Search results</source>
+				<target>Risultati della ricerca</target>
+			</trans-unit>
+			<trans-unit id="search.noresult" resname="search.noresult">
+				<source>Sorry, there are no icons matching your search criteria!</source>
+				<target>Spiacente, non ci sono icone corrispondenti ai criteri di ricerca!</target>
 			</trans-unit>
 		</body>
 	</file>

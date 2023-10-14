@@ -38,5 +38,10 @@ return [
     'set_newIcon' => [
         'path' => '/newicon',
         'target' => AjaxIconsController::class . '::setNewIconAction'
+    ],
+    // Search for Icons
+    'search_icons' => [
+        'path' => '/searchicons',
+        'target' => AjaxIconsController::class . '::searchIconsAction'
     ]
 ];

@@ -36,6 +36,7 @@ define('SYRADEV/RtPagesTreeIcons/iconHelper', ['TYPO3/CMS/Backend/Notification']
     const copySuccessTitle = document.querySelector('#copySuccessTitle');
     const copySuccessMessage = document.querySelector('#copySuccessMessage');
     const semiTransparent = document.querySelector('#semitransparent');
+    const searchWords = document.querySelector('#search-words');
 
     iconsContainer.addEventListener('click', (e) => {
         const li = e.target.closest('li');
@@ -105,23 +106,39 @@ define('SYRADEV/RtPagesTreeIcons/iconHelper', ['TYPO3/CMS/Backend/Notification']
         return siblings;
     };
 
+    let loadIcons = () => {
+        require(['TYPO3/CMS/Core/Ajax/AjaxRequest'], (AjaxRequest) => {
+            const body = {
+                action: 'iconsHelper'
+            };
+            const init = {
+                mode: 'cors'
+            };
+            const request = new AjaxRequest(TYPO3.settings.ajaxUrls.get_allIcons);
+            request.post(body, init).then(
+                async (response) => {
+                    iconsContainer.innerHTML = await response.resolve();
+                }, (error) => {
+                    console.error('Request failed because of error: ' + error.status + ' ' + error.statusText);
+                }
+            );
+        });
+    };
 
-    require(['TYPO3/CMS/Core/Ajax/AjaxRequest'], (AjaxRequest) => {
-        const body = {
-            action: 'iconsHelper'
-        };
-        const init = {
-            mode: 'cors'
-        };
-        const request = new AjaxRequest(TYPO3.settings.ajaxUrls.get_allIcons);
-        request.post(body, init).then(
-            async (response) => {
-                iconsContainer.innerHTML = await response.resolve();
-            }, (error) => {
-                console.error('Request failed because of error: ' + error.status + ' ' + error.statusText);
-            }
-        );
+    require(['TYPO3/CMS/Backend/Input/Clearable'], function () {
+        if (searchWords !== null) {
+            searchWords.clearable(
+                {
+                    onClear: function () {
+                        iconsContainer.innerHTML = spinner;
+                        loadIcons();
+                    }
+                }
+            );
+        }
     });
+
+    loadIcons();
 
 });
 

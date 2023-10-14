@@ -81,21 +81,7 @@
                                     <f:then>
                                         <li data-icon="{icon.1}"
                                             class="icon-container text-center{f:if(condition: '{selectedIcon}=={icon.1}', then: ' icon-current', else: '')}">
-                                            <f:if condition="{icon.4}=='gif'">
-                                                <f:then>
-                                                    <img src="{icon.2}" width="48px" alt="Naughty gif!">
-                                                </f:then>
-                                            </f:if>
-                                            <f:if condition="{icon.4}=='png'">
-                                                <f:then>
-                                                    <img src="{icon.2}" width="48px" alt="Poor png!">
-                                                </f:then>
-                                            </f:if>
-                                            <f:if condition="{icon.4}=='svg'">
-                                                <f:then>
-                                                    <core:icon identifier="{icon.2}" size="large"/>
-                                                </f:then>
-                                            </f:if>
+                                            <core:icon identifier="{icon.2}" size="large"/>
                                             <br>
                                             <small>{icon.0}</small>
                                         </li>

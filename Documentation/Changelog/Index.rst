@@ -6,6 +6,13 @@
 Changelog
 ===========
 
+- V6.1.0 for TYPO3 V11 & V12.
+    - Search for icons functionnality added.
+    - More new icons added.
+    - Bug correction on embedded icons.
+
+
+
 - V6.0.1 for TYPO3 V11 & V12.
     - JavaScript bug correction and optimization.
     - Adjusted github tag for composer install.

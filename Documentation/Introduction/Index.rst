@@ -16,6 +16,7 @@ This extension gives you the ability to:
 - Change the TYPO3 pages tree icons.
 - Apply Icon to 1st level supbpages of selected page.
 - Use all icons provided with this extension in your backend or frontend Fluid Templates.
+- Search for specific icons.
 - Redesign the TYPO3 login screen.
 
 A new Backend-Module to have a more comprehensive pages treeview.
@@ -24,7 +25,7 @@ You can now dress TYPO3 pages treeview with custom SVG icons.
 
 ..  attention::
 
-    The latest version :code:`6.0.1` has been redesigned for TYPO3 versions 11LTS and 12LTS.
+    The latest version :code:`6.1.0` has been redesigned for TYPO3 versions 11LTS and 12LTS.
 
     This version comes with English, French, German, Italian and Spanish translations.
 

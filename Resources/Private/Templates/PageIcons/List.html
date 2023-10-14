@@ -6,18 +6,21 @@
 
 <f:section name="Content">
     <div>
-        <f:form id="setPageIconForm" method="post" action="changePageIcon" controller="PageIcons">
-            <input type="hidden" id="pageId" name="pageId" value="{pageId}"/>
-            <input type="hidden" id="pageModule" name="pageModule" value="{pageInfos.module}"/>
-            <input type="hidden" id="pageDoktype" name="pageDoktype" value="{pageInfos.doktype}"/>
-            <input type="hidden" id="pageNavHide" name="pageNavHide" value="{pageInfos.nav_hide}"/>
-            <input type="hidden" id="pageIsSiteroot" name="pageIsSiteroot" value="{pageInfos.is_siteroot}"/>
-            <input type="hidden" id="newIcon" name="newIcon" value="{selectedIcon}"/>
+        <f:form id="setPageIconForm" method="post" action="changePageIcon" controller="PageIcons"
+                enctype="multipart/form-data">
+            <input type="hidden" id="pageId" name="pageId" value="{pageId}">
+            <input type="hidden" id="pageModule" name="pageModule" value="{pageInfos.module}">
+            <input type="hidden" id="pageDoktype" name="pageDoktype" value="{pageInfos.doktype}">
+            <input type="hidden" id="pageNavHide" name="pageNavHide" value="{pageInfos.nav_hide}">
+            <input type="hidden" id="pageIsSiteroot" name="pageIsSiteroot" value="{pageInfos.is_siteroot}">
+            <input type="hidden" id="newIcon" name="newIcon" value="{selectedIcon}">
+            <input type="hidden" id="searchWarningTitle" value="{searchWarningTitle}">
+            <input type="hidden" id="searchWarningMessage" value="{searchWarningMessage}">
         </f:form>
         <f:form id="setSubpagesIconsForm" method="post" action="changeSubpagesIcons" controller="PageIcons"
                 enctype="multipart/form-data">
-            <input type="hidden" id="pagePid" name="pagePid" value="{pageId}"/>
-            <input type="hidden" id="newSubIcon" name="newSubIcon" value="{selectedIcon}"/>
+            <input type="hidden" id="pagePid" name="pagePid" value="{pageId}">
+            <input type="hidden" id="newSubIcon" name="newSubIcon" value="{selectedIcon}">
         </f:form>
     </div>
 
@@ -62,7 +65,7 @@
                 <div class="callout-body">
                     [<em>
                     <f:translate key="{pageInfos.pageTypeLabel}"/>
-                    </em>]
+                </em>]
                     <f:if condition="{pageInfos.nav_hide}"> [<em>
                         <f:translate key="page.hiddenInMenu"/>
                     </em>]
@@ -89,7 +92,9 @@
             <core:icon identifier="spinner-circle" size="large"/>
         </div>
     </div>
-
+    <script>
+        const spinner = `<div class="widget-waiting"><core:icon identifier="spinner-circle" size="large"/></div>`;
+    </script>
 </f:section>
 
 <f:section name="Content0">

@@ -15,6 +15,7 @@ How to use the extension?
    PageIconChanger
    SubpagesIconsChanger
    IconUsageHelper
+   SearchForIcons
    Avatars
 
 ..  figure:: /Images/BackendView.jpg
