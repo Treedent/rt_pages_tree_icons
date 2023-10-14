@@ -7,7 +7,8 @@
         "Icons",
         "SVG",
         "Pages",
-        "Tree"
+        "Tree",
+        "core"
     ],
     "homepage": "https://extensions.typo3.org/extension/rt_pages_tree_icons/",
     "support": {
